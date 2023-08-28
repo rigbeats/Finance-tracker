@@ -80,7 +80,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Icons\compass_icon.png" />
     <Content Include="Icons\credit_card_icon.png" />
+    <Content Include="Icons\dollar_sign_icon.png" />
+    <Content Include="Icons\money_icon.png" />
+    <Content Include="Icons\save_icon.png" />
+    <Content Include="Icons\statistics_icon.png" />
+    <Content Include="Icons\user_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
