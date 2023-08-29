@@ -286,7 +286,7 @@
             this.BLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             this.BLogout.Location = new System.Drawing.Point(9, 631);
             this.BLogout.Name = "BLogout";
-            this.BLogout.Size = new System.Drawing.Size(179, 38);
+            this.BLogout.Size = new System.Drawing.Size(242, 38);
             this.BLogout.TabIndex = 93;
             this.BLogout.Text = "button22";
             this.BLogout.UseVisualStyleBackColor = false;
@@ -326,7 +326,7 @@
             this.BSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             this.BSettings.Location = new System.Drawing.Point(9, 568);
             this.BSettings.Name = "BSettings";
-            this.BSettings.Size = new System.Drawing.Size(179, 38);
+            this.BSettings.Size = new System.Drawing.Size(242, 38);
             this.BSettings.TabIndex = 90;
             this.BSettings.Text = "button23";
             this.BSettings.UseVisualStyleBackColor = false;
@@ -366,7 +366,7 @@
             this.BAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             this.BAccount.Location = new System.Drawing.Point(9, 356);
             this.BAccount.Name = "BAccount";
-            this.BAccount.Size = new System.Drawing.Size(179, 38);
+            this.BAccount.Size = new System.Drawing.Size(242, 38);
             this.BAccount.TabIndex = 83;
             this.BAccount.Text = "button15";
             this.BAccount.UseVisualStyleBackColor = false;
@@ -406,7 +406,7 @@
             this.BReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             this.BReport.Location = new System.Drawing.Point(9, 312);
             this.BReport.Name = "BReport";
-            this.BReport.Size = new System.Drawing.Size(179, 38);
+            this.BReport.Size = new System.Drawing.Size(242, 38);
             this.BReport.TabIndex = 78;
             this.BReport.UseVisualStyleBackColor = false;
             this.BReport.Click += new System.EventHandler(this.BReport_Click);
@@ -445,7 +445,7 @@
             this.BStatistics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             this.BStatistics.Location = new System.Drawing.Point(9, 268);
             this.BStatistics.Name = "BStatistics";
-            this.BStatistics.Size = new System.Drawing.Size(179, 38);
+            this.BStatistics.Size = new System.Drawing.Size(242, 38);
             this.BStatistics.TabIndex = 77;
             this.BStatistics.Text = "button17";
             this.BStatistics.UseVisualStyleBackColor = false;
@@ -485,7 +485,7 @@
             this.BPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             this.BPayment.Location = new System.Drawing.Point(9, 224);
             this.BPayment.Name = "BPayment";
-            this.BPayment.Size = new System.Drawing.Size(179, 38);
+            this.BPayment.Size = new System.Drawing.Size(242, 38);
             this.BPayment.TabIndex = 72;
             this.BPayment.UseVisualStyleBackColor = false;
             this.BPayment.Click += new System.EventHandler(this.BPayment_Click);
@@ -524,7 +524,7 @@
             this.BBudget.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             this.BBudget.Location = new System.Drawing.Point(9, 180);
             this.BBudget.Name = "BBudget";
-            this.BBudget.Size = new System.Drawing.Size(179, 38);
+            this.BBudget.Size = new System.Drawing.Size(242, 38);
             this.BBudget.TabIndex = 71;
             this.BBudget.Text = "button19";
             this.BBudget.UseVisualStyleBackColor = false;
@@ -564,7 +564,7 @@
             this.BCard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             this.BCard.Location = new System.Drawing.Point(9, 136);
             this.BCard.Name = "BCard";
-            this.BCard.Size = new System.Drawing.Size(179, 38);
+            this.BCard.Size = new System.Drawing.Size(242, 38);
             this.BCard.TabIndex = 1;
             this.BCard.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.BCard.UseVisualStyleBackColor = false;
@@ -605,7 +605,7 @@
             this.BOverview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             this.BOverview.Location = new System.Drawing.Point(9, 92);
             this.BOverview.Name = "BOverview";
-            this.BOverview.Size = new System.Drawing.Size(179, 38);
+            this.BOverview.Size = new System.Drawing.Size(242, 38);
             this.BOverview.TabIndex = 0;
             this.BOverview.Text = "BOverview";
             this.BOverview.UseVisualStyleBackColor = false;
