@@ -85,6 +85,15 @@
     <Content Include="Icons\dollar_sign_icon.png" />
     <Content Include="Icons\money_icon.png" />
     <Content Include="Icons\save_icon.png" />
+    <Content Include="Icons\selected_compass_icon.png" />
+    <Content Include="Icons\selected_credit_card_icon.png" />
+    <Content Include="Icons\selected_dollar_sign_icon.png" />
+    <Content Include="Icons\selected_money_icon.png" />
+    <Content Include="Icons\selected_save_icon.png" />
+    <Content Include="Icons\selected_settings_icon.png" />
+    <Content Include="Icons\selected_statistics_icon.png" />
+    <Content Include="Icons\selected_user_icon.png" />
+    <Content Include="Icons\selected_user_minus_icon.png" />
     <Content Include="Icons\settings_icon.png" />
     <Content Include="Icons\statistics_icon.png" />
     <Content Include="Icons\user_icon.png" />
