@@ -98,6 +98,8 @@
     <Content Include="Icons\statistics_icon.png" />
     <Content Include="Icons\user_icon.png" />
     <Content Include="Icons\user_minus_icon.png" />
+    <Content Include="Images\icon.ico" />
+    <Content Include="Images\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
