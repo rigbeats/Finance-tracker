@@ -299,5 +299,45 @@ namespace Finance_tracker
             SetSelectedCard(2);
             BCard_Click(BCard, EventArgs.Empty);
         }
+
+        private void Budget_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label45_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox19_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox20_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox18_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label44_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label43_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
