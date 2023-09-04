@@ -104,14 +104,19 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbCardHolder = new System.Windows.Forms.TextBox();
+            this.tbCardNumber = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pbDot1 = new System.Windows.Forms.PictureBox();
+            this.pbDot3 = new System.Windows.Forms.PictureBox();
             this.pbDot2 = new System.Windows.Forms.PictureBox();
-            this.lValidThru = new System.Windows.Forms.Label();
             this.lCardTitle3 = new System.Windows.Forms.Label();
-            this.lCardHolder = new System.Windows.Forms.Label();
             this.lCardTitle2 = new System.Windows.Forms.Label();
             this.lCardTitle1 = new System.Windows.Forms.Label();
-            this.lCardNumber = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbAdditionaSettings = new System.Windows.Forms.PictureBox();
+            this.AddDeleteCard = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.pbLargeCard = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -123,9 +128,7 @@
             this.Settings = new System.Windows.Forms.TabPage();
             this.Logout = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pbDot3 = new System.Windows.Forms.PictureBox();
-            this.pbDot1 = new System.Windows.Forms.PictureBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tbValidThru = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).BeginInit();
@@ -144,12 +147,13 @@
             this.panel9.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDot1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDot3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDot2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAdditionaSettings)).BeginInit();
+            this.AddDeleteCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLargeCard)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDot3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDot1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -1006,16 +1010,17 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tbValidThru);
+            this.groupBox1.Controls.Add(this.tbCardHolder);
+            this.groupBox1.Controls.Add(this.tbCardNumber);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.pbDot1);
             this.groupBox1.Controls.Add(this.pbDot3);
             this.groupBox1.Controls.Add(this.pbDot2);
-            this.groupBox1.Controls.Add(this.lValidThru);
             this.groupBox1.Controls.Add(this.lCardTitle3);
-            this.groupBox1.Controls.Add(this.lCardHolder);
             this.groupBox1.Controls.Add(this.lCardTitle2);
             this.groupBox1.Controls.Add(this.lCardTitle1);
-            this.groupBox1.Controls.Add(this.lCardNumber);
-            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.pbAdditionaSettings);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.pbLargeCard);
             this.groupBox1.Location = new System.Drawing.Point(699, 78);
@@ -1023,6 +1028,62 @@
             this.groupBox1.Size = new System.Drawing.Size(338, 274);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // tbCardHolder
+            // 
+            this.tbCardHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
+            this.tbCardHolder.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbCardHolder.Font = new System.Drawing.Font("Helvetica", 11.25F);
+            this.tbCardHolder.ForeColor = System.Drawing.Color.White;
+            this.tbCardHolder.Location = new System.Drawing.Point(58, 187);
+            this.tbCardHolder.Name = "tbCardHolder";
+            this.tbCardHolder.Size = new System.Drawing.Size(103, 18);
+            this.tbCardHolder.TabIndex = 116;
+            // 
+            // tbCardNumber
+            // 
+            this.tbCardNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
+            this.tbCardNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbCardNumber.Font = new System.Drawing.Font("Helvetica Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCardNumber.ForeColor = System.Drawing.Color.White;
+            this.tbCardNumber.Location = new System.Drawing.Point(51, 118);
+            this.tbCardNumber.Name = "tbCardNumber";
+            this.tbCardNumber.Size = new System.Drawing.Size(229, 23);
+            this.tbCardNumber.TabIndex = 115;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Helvetica", 11.25F);
+            this.button1.Location = new System.Drawing.Point(225, 240);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 114;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // pbDot1
+            // 
+            this.pbDot1.Image = ((System.Drawing.Image)(resources.GetObject("pbDot1.Image")));
+            this.pbDot1.Location = new System.Drawing.Point(131, 240);
+            this.pbDot1.Name = "pbDot1";
+            this.pbDot1.Size = new System.Drawing.Size(25, 25);
+            this.pbDot1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDot1.TabIndex = 113;
+            this.pbDot1.TabStop = false;
+            this.pbDot1.Visible = false;
+            this.pbDot1.Click += new System.EventHandler(this.pbDot1_Click);
+            // 
+            // pbDot3
+            // 
+            this.pbDot3.Image = ((System.Drawing.Image)(resources.GetObject("pbDot3.Image")));
+            this.pbDot3.Location = new System.Drawing.Point(181, 240);
+            this.pbDot3.Name = "pbDot3";
+            this.pbDot3.Size = new System.Drawing.Size(25, 25);
+            this.pbDot3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDot3.TabIndex = 112;
+            this.pbDot3.TabStop = false;
+            this.pbDot3.Visible = false;
+            this.pbDot3.Click += new System.EventHandler(this.pbDot3_Click);
             // 
             // pbDot2
             // 
@@ -1036,17 +1097,6 @@
             this.pbDot2.Visible = false;
             this.pbDot2.Click += new System.EventHandler(this.pbDot2_Click);
             // 
-            // lValidThru
-            // 
-            this.lValidThru.AutoSize = true;
-            this.lValidThru.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
-            this.lValidThru.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lValidThru.ForeColor = System.Drawing.Color.White;
-            this.lValidThru.Location = new System.Drawing.Point(192, 191);
-            this.lValidThru.Name = "lValidThru";
-            this.lValidThru.Size = new System.Drawing.Size(0, 17);
-            this.lValidThru.TabIndex = 110;
-            // 
             // lCardTitle3
             // 
             this.lCardTitle3.AutoSize = true;
@@ -1058,17 +1108,6 @@
             this.lCardTitle3.Size = new System.Drawing.Size(81, 16);
             this.lCardTitle3.TabIndex = 109;
             this.lCardTitle3.Text = "VALID THRU";
-            // 
-            // lCardHolder
-            // 
-            this.lCardHolder.AutoSize = true;
-            this.lCardHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
-            this.lCardHolder.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lCardHolder.ForeColor = System.Drawing.Color.White;
-            this.lCardHolder.Location = new System.Drawing.Point(54, 191);
-            this.lCardHolder.Name = "lCardHolder";
-            this.lCardHolder.Size = new System.Drawing.Size(0, 17);
-            this.lCardHolder.TabIndex = 108;
             // 
             // lCardTitle2
             // 
@@ -1094,27 +1133,50 @@
             this.lCardTitle1.TabIndex = 106;
             this.lCardTitle1.Text = "Primary card";
             // 
-            // lCardNumber
+            // pbAdditionaSettings
             // 
-            this.lCardNumber.AutoSize = true;
-            this.lCardNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
-            this.lCardNumber.Font = new System.Drawing.Font("Helvetica Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lCardNumber.ForeColor = System.Drawing.Color.White;
-            this.lCardNumber.Location = new System.Drawing.Point(54, 118);
-            this.lCardNumber.Name = "lCardNumber";
-            this.lCardNumber.Size = new System.Drawing.Size(0, 23);
-            this.lCardNumber.TabIndex = 105;
+            this.pbAdditionaSettings.BackColor = System.Drawing.Color.White;
+            this.pbAdditionaSettings.ContextMenuStrip = this.AddDeleteCard;
+            this.pbAdditionaSettings.Image = ((System.Drawing.Image)(resources.GetObject("pbAdditionaSettings.Image")));
+            this.pbAdditionaSettings.Location = new System.Drawing.Point(283, 23);
+            this.pbAdditionaSettings.Name = "pbAdditionaSettings";
+            this.pbAdditionaSettings.Size = new System.Drawing.Size(25, 25);
+            this.pbAdditionaSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAdditionaSettings.TabIndex = 104;
+            this.pbAdditionaSettings.TabStop = false;
+            this.pbAdditionaSettings.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbAdditionaSettings_MouseDown);
             // 
-            // pictureBox1
+            // AddDeleteCard
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(283, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 104;
-            this.pictureBox1.TabStop = false;
+            this.AddDeleteCard.BackColor = System.Drawing.Color.White;
+            this.AddDeleteCard.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddDeleteCard.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.AddDeleteCard.Name = "contextMenuStrip1";
+            this.AddDeleteCard.Size = new System.Drawing.Size(119, 48);
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
+            this.addToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
+            this.deleteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -1223,34 +1285,16 @@
             this.panel2.Size = new System.Drawing.Size(1053, 681);
             this.panel2.TabIndex = 1;
             // 
-            // pbDot3
+            // tbValidThru
             // 
-            this.pbDot3.Image = ((System.Drawing.Image)(resources.GetObject("pbDot3.Image")));
-            this.pbDot3.Location = new System.Drawing.Point(181, 240);
-            this.pbDot3.Name = "pbDot3";
-            this.pbDot3.Size = new System.Drawing.Size(25, 25);
-            this.pbDot3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDot3.TabIndex = 112;
-            this.pbDot3.TabStop = false;
-            this.pbDot3.Visible = false;
-            this.pbDot3.Click += new System.EventHandler(this.pbDot3_Click);
-            // 
-            // pbDot1
-            // 
-            this.pbDot1.Image = ((System.Drawing.Image)(resources.GetObject("pbDot1.Image")));
-            this.pbDot1.Location = new System.Drawing.Point(131, 240);
-            this.pbDot1.Name = "pbDot1";
-            this.pbDot1.Size = new System.Drawing.Size(25, 25);
-            this.pbDot1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDot1.TabIndex = 113;
-            this.pbDot1.TabStop = false;
-            this.pbDot1.Visible = false;
-            this.pbDot1.Click += new System.EventHandler(this.pbDot1_Click);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.tbValidThru.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
+            this.tbValidThru.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbValidThru.Font = new System.Drawing.Font("Helvetica", 11.25F);
+            this.tbValidThru.ForeColor = System.Drawing.Color.White;
+            this.tbValidThru.Location = new System.Drawing.Point(196, 188);
+            this.tbValidThru.Name = "tbValidThru";
+            this.tbValidThru.Size = new System.Drawing.Size(87, 18);
+            this.tbValidThru.TabIndex = 117;
             // 
             // Form1
             // 
@@ -1289,12 +1333,13 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDot1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDot3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDot2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAdditionaSettings)).EndInit();
+            this.AddDeleteCard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLargeCard)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbDot3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDot1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1352,15 +1397,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lValidThru;
         private System.Windows.Forms.Label lCardTitle3;
-        private System.Windows.Forms.Label lCardHolder;
         private System.Windows.Forms.Label lCardTitle2;
         private System.Windows.Forms.Label lCardTitle1;
-        private System.Windows.Forms.Label lCardNumber;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbAdditionaSettings;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pbLargeCard;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage Budget;
         private System.Windows.Forms.TabPage Payment;
@@ -1396,7 +1437,14 @@
         private System.Windows.Forms.PictureBox pbDot2;
         private System.Windows.Forms.PictureBox pbDot1;
         private System.Windows.Forms.PictureBox pbDot3;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ContextMenuStrip AddDeleteCard;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tbCardNumber;
+        private System.Windows.Forms.PictureBox pbLargeCard;
+        private System.Windows.Forms.TextBox tbCardHolder;
+        private System.Windows.Forms.TextBox tbValidThru;
     }
 }
 
