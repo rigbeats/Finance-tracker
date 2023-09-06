@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Finance_tracker.Entity_classes;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Finance_tracker
 {
@@ -96,6 +97,8 @@ namespace Finance_tracker
                 lastTransactionsTable.Items.Clear();
 
                 List<Card> cards = context.Cards.Where(x => x.UserId == userId).ToList();
+                CountOfDots(cards.Count);
+
                 if (cards.Count == 0)
                 {
                     string ImagePath = Path.Combine(projectPath, "Images\\gray_card.png");
@@ -107,37 +110,18 @@ namespace Finance_tracker
                 }
                 else
                 {
-                    switch (cards.Count)
-                    {
-                        case 1:
-                            pbDot1.Visible = true;
-                            pbDot1.Location = new Point(156, 240);
-                            break;
-                        case 2:
-                            pbDot1.Visible = true;
-                            pbDot1.Location = new Point(144, 240);
-                            pbDot2.Visible = true;
-                            pbDot2.Location = new Point(169, 240);
-                            break;
-                        case 3:
-                            pbDot1.Visible = true;
-                            pbDot1.Location = new Point(131, 240);
-                            pbDot2.Visible = true;
-                            pbDot2.Location = new Point(156, 240);
-                            pbDot3.Visible = true;
-                            pbDot3.Location = new Point(181, 240);
-                            break;
-                    }
+                    if (indexSelectedCard < 0)
+                        indexSelectedCard = 0;
                     var cardNumber = cards[indexSelectedCard].Number;
-                    lCardNumber.Text = string.Concat("**** **** **** ", cardNumber.Substring(12));
+                    tbCardNumber.Text = string.Concat("**** **** **** ", cardNumber.Substring(12));
 
-                    string fullName = cards[indexSelectedCard].HolderName 
-                        + " " 
+                    string fullName = cards[indexSelectedCard].HolderName
+                        + " "
                         + cards[indexSelectedCard].HolderSurname;
 
-                    lCardHolder.Text = fullName;
+                    tbCardHolder.Text = fullName;
 
-                    lValidThru.Text = cards[indexSelectedCard].ValidThru;
+                    tbValidThru.Text = cards[indexSelectedCard].ValidThru;
 
                     tBalance.Text = cards[indexSelectedCard].Balance;
 
@@ -148,7 +132,7 @@ namespace Finance_tracker
                         .Where(x => x.Number == cardNumber)
                         .Select(x => x.Id)
                         .FirstOrDefault();
-                        
+
                     List<Transaction> transactions = context.Transactions
                         .Where(x => x.CardId == idSelectedCard)
                         .Take(8)
@@ -169,6 +153,51 @@ namespace Finance_tracker
                         lastTransactionsTable.Items.Add(listViewItem);
                     }
                 }
+            }
+        }
+
+        public void CountOfDots(int count)
+        {
+            pbDot1.Visible = false;
+            pbDot2.Visible = false;
+            pbDot3.Visible = false;
+
+            if (count > 0)
+            {
+                switch (count)
+                {
+                    case 1:
+                        pbDot1.Visible = true;
+                        pbDot1.Location = new Point(156, 240);
+                        break;
+                    case 2:
+                        pbDot1.Visible = true;
+                        pbDot1.Location = new Point(144, 240);
+                        pbDot2.Visible = true;
+                        pbDot2.Location = new Point(169, 240);
+                        break;
+                    case 3:
+                        pbDot1.Visible = true;
+                        pbDot1.Location = new Point(131, 240);
+                        pbDot2.Visible = true;
+                        pbDot2.Location = new Point(156, 240);
+                        pbDot3.Visible = true;
+                        pbDot3.Location = new Point(181, 240);
+                        break;
+                }
+            }
+            else
+            {
+                lCardTitle1.BackColor = Color.FromArgb(166, 174, 183);
+                lCardTitle3.BackColor = Color.FromArgb(166, 174, 183);
+                lCardTitle2.BackColor = Color.FromArgb(166, 174, 183);
+                tbCardHolder.BackColor = Color.FromArgb(166, 174, 183);
+                tbValidThru.BackColor = Color.FromArgb(166, 174, 183);
+                tbCardNumber.BackColor = Color.FromArgb(166, 174, 183);
+
+                tbCardNumber.Text = "";
+                tbCardHolder.Text = "";
+                tbValidThru.Text = "";
             }
         }
 
@@ -265,7 +294,7 @@ namespace Finance_tracker
             pbDot2.Image = Image.FromFile(grayDotPath);
             pbDot3.Image = Image.FromFile(grayDotPath);
 
-            switch(index)
+            switch (index)
             {
                 case 0:
                     indexSelectedCard = 0;
@@ -300,44 +329,43 @@ namespace Finance_tracker
             BCard_Click(BCard, EventArgs.Empty);
         }
 
-        private void Budget_Click(object sender, EventArgs e)
+        private void pbAdditionaSettings_MouseDown(object sender, MouseEventArgs e)
         {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point location = new Point(
+                    e.Location.X - 130,
+                    e.Location.Y
+                );
+                AddDeleteCard.Show(pbAdditionaSettings, location);
+            }
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string ImagePath = Path.Combine(projectPath, "Images\\gray_card.png");
+            pbLargeCard.Image = Image.FromFile(ImagePath);
+
 
         }
 
-        private void richTextBox2_TextChanged(object sender, EventArgs e)
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            using (var context = new FinanceTrackerContext())
+            {
+                var deleteCard = context.Cards
+                    .Where(x => x.UserId == userId
+                             && x.ValidThru == tbValidThru.Text)
+                    .FirstOrDefault();
 
-        }
-
-        private void label45_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox19_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox20_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox18_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label44_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label43_Click(object sender, EventArgs e)
-        {
-
+                if (deleteCard != null)
+                {
+                    context.Cards.Remove(deleteCard);
+                    context.SaveChanges();
+                }
+                indexSelectedCard--;
+                BCard_Click(BCard, EventArgs.Empty);
+            }
         }
     }
 }
