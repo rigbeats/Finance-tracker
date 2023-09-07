@@ -64,7 +64,6 @@ namespace Finance_tracker
             pictureBox.Image = Image.FromFile(imagePath);
             label.ForeColor = Color.FromArgb(36, 94, 231);
 
-            //сохранение нажатой кнопки
             selectedButton.Item1 = pictureBox;
             selectedButton.Item2 = label;
             selectedButton.Item3 = imagePath;
@@ -98,21 +97,17 @@ namespace Finance_tracker
                 lastTransactionsTable.Items.Clear();
 
                 List<Card> cards = context.Cards.Where(x => x.UserId == userId).ToList();
-                CountOfDots(cards.Count);
+                int countOfCard = cards.Count;
+                CountOfDots(countOfCard);
 
-                if (cards.Count == 0)
+                if (countOfCard == 0)
                 {
-                    string ImagePath = Path.Combine(projectPath, "Images\\gray_card.png");
-                    pbLargeCard.Image = Image.FromFile(ImagePath);
-
-                    lCardTitle1.BackColor = Color.FromArgb(166, 174, 183);
-                    lCardTitle3.BackColor = Color.FromArgb(166, 174, 183);
-                    lCardTitle2.BackColor = Color.FromArgb(166, 174, 183);
+                    ColorCardGray();
                 }
                 else
                 {
-                    if (indexSelectedCard < 0)
-                        indexSelectedCard = 0;
+                    ColorCardBlue();
+
                     var cardNumber = cards[indexSelectedCard].Number;
                     tbCardNumber.Text = string.Concat("**** **** **** ", cardNumber.Substring(12));
 
@@ -121,13 +116,8 @@ namespace Finance_tracker
                         + cards[indexSelectedCard].HolderSurname;
 
                     tbCardHolder.Text = fullName;
-
                     tbValidThru.Text = cards[indexSelectedCard].ValidThru;
-
-                    tBalance.Text = cards[indexSelectedCard].Balance;
-
-
-                    ListViewItem listViewItem = null;
+                    tbBalance.Text = Convert.ToString(cards[indexSelectedCard].Balance);
 
                     int idSelectedCard = context.Cards
                         .Where(x => x.Number == cardNumber)
@@ -139,6 +129,7 @@ namespace Finance_tracker
                         .Take(8)
                         .ToList();
 
+                    ListViewItem listViewItem;
                     for (int i = 0; i < transactions.Count; i++)
                     {
                         var date = transactions[i].Date;
@@ -150,7 +141,6 @@ namespace Finance_tracker
                             transactions[i].Category,
                             $"{date.Day}/{date.Month}/{date.Year}"
                         });
-
                         lastTransactionsTable.Items.Add(listViewItem);
                     }
                 }
@@ -163,42 +153,26 @@ namespace Finance_tracker
             pbDot2.Visible = false;
             pbDot3.Visible = false;
 
-            if (count > 0)
+            switch (count)
             {
-                switch (count)
-                {
-                    case 1:
-                        pbDot1.Visible = true;
-                        pbDot1.Location = new Point(156, 240);
-                        break;
-                    case 2:
-                        pbDot1.Visible = true;
-                        pbDot1.Location = new Point(144, 240);
-                        pbDot2.Visible = true;
-                        pbDot2.Location = new Point(169, 240);
-                        break;
-                    case 3:
-                        pbDot1.Visible = true;
-                        pbDot1.Location = new Point(131, 240);
-                        pbDot2.Visible = true;
-                        pbDot2.Location = new Point(156, 240);
-                        pbDot3.Visible = true;
-                        pbDot3.Location = new Point(181, 240);
-                        break;
-                }
-            }
-            else
-            {
-                lCardTitle1.BackColor = Color.FromArgb(166, 174, 183);
-                lCardTitle3.BackColor = Color.FromArgb(166, 174, 183);
-                lCardTitle2.BackColor = Color.FromArgb(166, 174, 183);
-                tbCardHolder.BackColor = Color.FromArgb(166, 174, 183);
-                tbValidThru.BackColor = Color.FromArgb(166, 174, 183);
-                tbCardNumber.BackColor = Color.FromArgb(166, 174, 183);
-
-                tbCardNumber.Text = "";
-                tbCardHolder.Text = "";
-                tbValidThru.Text = "";
+                case 1:
+                    pbDot1.Visible = true;
+                    pbDot1.Location = new Point(156, 240);
+                    break;
+                case 2:
+                    pbDot1.Visible = true;
+                    pbDot1.Location = new Point(144, 240);
+                    pbDot2.Visible = true;
+                    pbDot2.Location = new Point(169, 240);
+                    break;
+                case 3:
+                    pbDot1.Visible = true;
+                    pbDot1.Location = new Point(131, 240);
+                    pbDot2.Visible = true;
+                    pbDot2.Location = new Point(156, 240);
+                    pbDot3.Visible = true;
+                    pbDot3.Location = new Point(181, 240);
+                    break;
             }
         }
 
@@ -344,21 +318,31 @@ namespace Finance_tracker
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string ImagePath = Path.Combine(projectPath, "Images\\gray_card.png");
-            pbLargeCard.Image = Image.FromFile(ImagePath);
+            int countOfCard;
+            using (var context = new FinanceTrackerContext())
+            {
+                List<Card> cards = context.Cards.Where(x => x.UserId == userId).ToList();
+                countOfCard = cards.Count;
+            }
+            if (countOfCard < 4)
+            {
+                CountOfDots(0);
+                ColorCardGray();
 
-            tbCardNumber.Clear();
-            tbValidThru.Clear();
-            tbCardHolder.Clear();
-            CountOfDots(0);
+                tbCardHolder.BackColor = Color.FromArgb(183, 192, 201);
+                tbValidThru.BackColor = Color.FromArgb(183, 192, 201);
+                tbCardNumber.BackColor = Color.FromArgb(183, 192, 201);
+                tbBalance.BackColor = Color.FromArgb(183, 192, 201);
 
-            lCardTitle1.BackColor = Color.FromArgb(166, 174, 183);
-            lCardTitle3.BackColor = Color.FromArgb(166, 174, 183);
-            lCardTitle2.BackColor = Color.FromArgb(166, 174, 183);
-            tbCardHolder.BackColor = Color.FromArgb(183, 192, 201);
-            tbValidThru.BackColor = Color.FromArgb(183, 192, 201);
-            tbCardNumber.BackColor = Color.FromArgb(183, 192, 201);
-            bAdd.Visible = true;
+                tbCardHolder.ReadOnly = false;
+                tbValidThru.ReadOnly = false;
+                tbCardNumber.ReadOnly = false;
+                tbBalance.ReadOnly = false;
+
+                bAdd.Visible = true;
+            }
+            else
+                MessageBox.Show("There can be only 3 cards");
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -375,7 +359,9 @@ namespace Finance_tracker
                     context.Cards.Remove(deleteCard);
                     context.SaveChanges();
                 }
-                indexSelectedCard--;
+
+                if (indexSelectedCard > 0)
+                    indexSelectedCard--;
                 BCard_Click(BCard, EventArgs.Empty);
             }
         }
@@ -383,28 +369,89 @@ namespace Finance_tracker
         private void bAdd_Click(object sender, EventArgs e)
         {
             bool eror = false;
-            
+
             string cardNumber = tbCardNumber.Text;
-            string name = tbCardHolder.Text;
+            string[] name = tbCardHolder.Text.Split(' ');
             string validThru = tbValidThru.Text;
-            string pattern = @"^(0[1-9]|1[0-2])\/[0-9]{2}$";
+            string balance = tbBalance.Text;
 
             if (cardNumber.Length != 16)
                 eror = true;
 
-            else if (name.Split(' ').Length != 2)
+            else if (name.Length != 2)
                 eror = true;
 
-            else if (!Regex.IsMatch(validThru, pattern))
+            else if (!Regex.IsMatch(validThru, @"^(0[1-9]|1[0-2])\/[0-9]{2}$"))
+                eror = true;
+
+            else if (!Regex.IsMatch(balance, "[0-9]+(,[0-9]+)?"))
                 eror = true;
 
             if (eror)
-                MessageBox.Show("Данные карты введены неверно");
+                MessageBox.Show("Invalid card data");
             else
             {
                 bAdd.Visible = false;
+                tbCardHolder.ReadOnly = true;
+                tbValidThru.ReadOnly = true;
+                tbCardNumber.ReadOnly = true;
+                tbBalance.ReadOnly = true;
+                tbBalance.BackColor = Color.White;
+
+                indexSelectedCard++;
+                using (var context = new FinanceTrackerContext())
+                {
+                    var card = new Card
+                    {
+                        Number = cardNumber,
+                        HolderName = name[0],
+                        HolderSurname = name[1],
+                        ValidThru = validThru,
+                        Balance = Convert.ToDecimal(balance),
+                        UserId = userId
+                    };
+
+                    context.Cards.Add(card);
+                    context.SaveChanges();
+                }
                 BCard_Click(BCard, EventArgs.Empty);
             }
+        }
+
+        private void ColorCardBlue()
+        {
+            string ImagePath = Path.Combine(projectPath, "Images\\blue_card.png");
+            pbLargeCard.Image = Image.FromFile(ImagePath);
+
+            lCardTitle1.BackColor = Color.FromArgb(36, 95, 232);
+            lCardTitle3.BackColor = Color.FromArgb(36, 95, 232);
+            lCardTitle2.BackColor = Color.FromArgb(36, 95, 232);
+            tbCardHolder.BackColor = Color.FromArgb(36, 95, 232);
+            tbValidThru.BackColor = Color.FromArgb(36, 95, 232);
+            tbCardNumber.BackColor = Color.FromArgb(36, 95, 232);
+
+            tbCardNumber.Clear();
+            tbValidThru.Clear();
+            tbCardHolder.Clear();
+            tbBalance.Clear();
+        }
+
+        private void ColorCardGray()
+        {
+            string ImagePath = Path.Combine(projectPath, "Images\\gray_card.png");
+            pbLargeCard.Image = Image.FromFile(ImagePath);
+
+            lCardTitle1.BackColor = Color.FromArgb(166, 174, 183);
+            lCardTitle3.BackColor = Color.FromArgb(166, 174, 183);
+            lCardTitle2.BackColor = Color.FromArgb(166, 174, 183);
+            tbCardHolder.BackColor = Color.FromArgb(166, 174, 183);
+            tbValidThru.BackColor = Color.FromArgb(166, 174, 183);
+            tbCardNumber.BackColor = Color.FromArgb(166, 174, 183);
+
+            tbCardNumber.Clear();
+            tbValidThru.Clear();
+            tbCardHolder.Clear();
+            tbBalance.Clear();
         }
     }
 }
