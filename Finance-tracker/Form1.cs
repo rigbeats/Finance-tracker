@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Finance_tracker.Entity_classes;
@@ -346,7 +347,18 @@ namespace Finance_tracker
             string ImagePath = Path.Combine(projectPath, "Images\\gray_card.png");
             pbLargeCard.Image = Image.FromFile(ImagePath);
 
+            tbCardNumber.Clear();
+            tbValidThru.Clear();
+            tbCardHolder.Clear();
+            CountOfDots(0);
 
+            lCardTitle1.BackColor = Color.FromArgb(166, 174, 183);
+            lCardTitle3.BackColor = Color.FromArgb(166, 174, 183);
+            lCardTitle2.BackColor = Color.FromArgb(166, 174, 183);
+            tbCardHolder.BackColor = Color.FromArgb(183, 192, 201);
+            tbValidThru.BackColor = Color.FromArgb(183, 192, 201);
+            tbCardNumber.BackColor = Color.FromArgb(183, 192, 201);
+            bAdd.Visible = true;
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -364,6 +376,33 @@ namespace Finance_tracker
                     context.SaveChanges();
                 }
                 indexSelectedCard--;
+                BCard_Click(BCard, EventArgs.Empty);
+            }
+        }
+
+        private void bAdd_Click(object sender, EventArgs e)
+        {
+            bool eror = false;
+            
+            string cardNumber = tbCardNumber.Text;
+            string name = tbCardHolder.Text;
+            string validThru = tbValidThru.Text;
+            string pattern = @"^(0[1-9]|1[0-2])\/[0-9]{2}$";
+
+            if (cardNumber.Length != 16)
+                eror = true;
+
+            else if (name.Split(' ').Length != 2)
+                eror = true;
+
+            else if (!Regex.IsMatch(validThru, pattern))
+                eror = true;
+
+            if (eror)
+                MessageBox.Show("Данные карты введены неверно");
+            else
+            {
+                bAdd.Visible = false;
                 BCard_Click(BCard, EventArgs.Empty);
             }
         }

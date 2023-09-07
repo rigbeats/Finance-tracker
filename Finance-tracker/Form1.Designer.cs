@@ -104,9 +104,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbValidThru = new System.Windows.Forms.TextBox();
             this.tbCardHolder = new System.Windows.Forms.TextBox();
             this.tbCardNumber = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bAdd = new System.Windows.Forms.Button();
             this.pbDot1 = new System.Windows.Forms.PictureBox();
             this.pbDot3 = new System.Windows.Forms.PictureBox();
             this.pbDot2 = new System.Windows.Forms.PictureBox();
@@ -128,7 +129,6 @@
             this.Settings = new System.Windows.Forms.TabPage();
             this.Logout = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tbValidThru = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).BeginInit();
@@ -1013,7 +1013,7 @@
             this.groupBox1.Controls.Add(this.tbValidThru);
             this.groupBox1.Controls.Add(this.tbCardHolder);
             this.groupBox1.Controls.Add(this.tbCardNumber);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.bAdd);
             this.groupBox1.Controls.Add(this.pbDot1);
             this.groupBox1.Controls.Add(this.pbDot3);
             this.groupBox1.Controls.Add(this.pbDot2);
@@ -1028,6 +1028,17 @@
             this.groupBox1.Size = new System.Drawing.Size(338, 274);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // tbValidThru
+            // 
+            this.tbValidThru.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
+            this.tbValidThru.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbValidThru.Font = new System.Drawing.Font("Helvetica", 11.25F);
+            this.tbValidThru.ForeColor = System.Drawing.Color.White;
+            this.tbValidThru.Location = new System.Drawing.Point(196, 188);
+            this.tbValidThru.Name = "tbValidThru";
+            this.tbValidThru.Size = new System.Drawing.Size(87, 18);
+            this.tbValidThru.TabIndex = 117;
             // 
             // tbCardHolder
             // 
@@ -1051,15 +1062,19 @@
             this.tbCardNumber.Size = new System.Drawing.Size(229, 23);
             this.tbCardNumber.TabIndex = 115;
             // 
-            // button1
+            // bAdd
             // 
-            this.button1.Font = new System.Drawing.Font("Helvetica", 11.25F);
-            this.button1.Location = new System.Drawing.Point(225, 240);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 114;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
+            this.bAdd.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAdd.ForeColor = System.Drawing.Color.White;
+            this.bAdd.Location = new System.Drawing.Point(223, 240);
+            this.bAdd.Name = "bAdd";
+            this.bAdd.Size = new System.Drawing.Size(83, 28);
+            this.bAdd.TabIndex = 114;
+            this.bAdd.Text = "Add";
+            this.bAdd.UseVisualStyleBackColor = false;
+            this.bAdd.Visible = false;
+            this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
             // 
             // pbDot1
             // 
@@ -1285,17 +1300,6 @@
             this.panel2.Size = new System.Drawing.Size(1053, 681);
             this.panel2.TabIndex = 1;
             // 
-            // tbValidThru
-            // 
-            this.tbValidThru.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
-            this.tbValidThru.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbValidThru.Font = new System.Drawing.Font("Helvetica", 11.25F);
-            this.tbValidThru.ForeColor = System.Drawing.Color.White;
-            this.tbValidThru.Location = new System.Drawing.Point(196, 188);
-            this.tbValidThru.Name = "tbValidThru";
-            this.tbValidThru.Size = new System.Drawing.Size(87, 18);
-            this.tbValidThru.TabIndex = 117;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1440,7 +1444,7 @@
         private System.Windows.Forms.ContextMenuStrip AddDeleteCard;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bAdd;
         private System.Windows.Forms.TextBox tbCardNumber;
         private System.Windows.Forms.PictureBox pbLargeCard;
         private System.Windows.Forms.TextBox tbCardHolder;
