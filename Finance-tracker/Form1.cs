@@ -21,7 +21,6 @@ namespace Finance_tracker
         string projectPath = Path.GetFullPath(Path.Combine(Application.StartupPath, "..\\.."));
         (PictureBox, Label, string) selectedButton;
         int userId;
-        int indexSelectedCard;
 
         public Form1(int userId)
         {
@@ -48,38 +47,11 @@ namespace Finance_tracker
             });
         }
 
-        private void DeselectButton()
-        {
-            string imagePath = selectedButton.Item3;
-            imagePath = imagePath.Replace("selected_", "");
-            selectedButton.Item1.Image = Image.FromFile(imagePath);
-            selectedButton.Item2.ForeColor = Color.FromArgb(74, 85, 103);
-        }
 
-        private void SelectButton(string path, PictureBox pictureBox, Label label, TabPage tabPage)
-        {
-            string imagePath = Path.Combine(projectPath, path);
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // CARD
 
-            tabControl.SelectedTab = tabPage;
-            pictureBox.Image = Image.FromFile(imagePath);
-            label.ForeColor = Color.FromArgb(36, 94, 231);
-
-            selectedButton.Item1 = pictureBox;
-            selectedButton.Item2 = label;
-            selectedButton.Item3 = imagePath;
-        }
-
-        private void BOverview_Click(object sender, EventArgs e)
-        {
-            DeselectButton();
-
-            SelectButton(
-                "Icons\\selected_compass_icon.png",
-                pbOverview,
-                lOverview,
-                Overview
-                );
-        }
+        int indexSelectedCard;
 
         private void BCard_Click(object sender, EventArgs e)
         {
@@ -147,6 +119,27 @@ namespace Finance_tracker
             }
         }
 
+        private void DeselectButton()
+        {
+            string imagePath = selectedButton.Item3;
+            imagePath = imagePath.Replace("selected_", "");
+            selectedButton.Item1.Image = Image.FromFile(imagePath);
+            selectedButton.Item2.ForeColor = Color.FromArgb(74, 85, 103);
+        }
+
+        private void SelectButton(string path, PictureBox pictureBox, Label label, TabPage tabPage)
+        {
+            string imagePath = Path.Combine(projectPath, path);
+
+            tabControl.SelectedTab = tabPage;
+            pictureBox.Image = Image.FromFile(imagePath);
+            label.ForeColor = Color.FromArgb(36, 94, 231);
+
+            selectedButton.Item1 = pictureBox;
+            selectedButton.Item2 = label;
+            selectedButton.Item3 = imagePath;
+        }
+
         public void CountOfDots(int count)
         {
             pbDot1.Visible = false;
@@ -174,90 +167,6 @@ namespace Finance_tracker
                     pbDot3.Location = new Point(181, 240);
                     break;
             }
-        }
-
-        private void BBudget_Click(object sender, EventArgs e)
-        {
-            DeselectButton();
-
-            SelectButton(
-                "Icons\\selected_dollar_sign_icon.png",
-                pbBudget,
-                lBudget,
-                Budget
-                );
-        }
-
-        private void BPayment_Click(object sender, EventArgs e)
-        {
-            DeselectButton();
-
-            SelectButton(
-                "Icons\\selected_money_icon.png",
-                pbPayment,
-                lPayment,
-                Payment
-                );
-        }
-
-        private void BStatistics_Click(object sender, EventArgs e)
-        {
-            DeselectButton();
-
-            SelectButton(
-                "Icons\\selected_statistics_icon.png",
-                pbStatistics,
-                lStatistics,
-                Statistics
-                );
-        }
-
-        private void BReport_Click(object sender, EventArgs e)
-        {
-            DeselectButton();
-
-            SelectButton(
-                "Icons\\selected_save_icon.png",
-                pbReport,
-                lReport,
-                Report
-                );
-        }
-
-        private void BAccount_Click(object sender, EventArgs e)
-        {
-            DeselectButton();
-
-            SelectButton(
-                "Icons\\selected_user_icon.png",
-                pbAccount,
-                lAccount,
-                Account
-                );
-        }
-
-        private void BLogout_Click(object sender, EventArgs e)
-        {
-            DeselectButton();
-
-            SelectButton(
-                "Icons\\selected_user_minus_icon.png",
-                pbLogout,
-                lLogout,
-                Logout
-                );
-        }
-
-        private void BSettings_Click(object sender, EventArgs e)
-        {
-            DeselectButton();
-
-            SelectButton(
-                "Icons\\selected_settings_icon.png",
-                pbSettings,
-                lSettings,
-                Settings
-                );
         }
 
         private void SetSelectedCard(int index)
@@ -452,6 +361,145 @@ namespace Finance_tracker
             tbValidThru.Clear();
             tbCardHolder.Clear();
             tbBalance.Clear();
+        }
+
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //REPORT
+
+        //string selectedPeriod
+
+        private void BReport_Click(object sender, EventArgs e)
+        {
+            DeselectButton();
+
+            SelectButton(
+                "Icons\\selected_save_icon.png",
+                pbReport,
+                lReport,
+                Report
+                );
+        }
+
+        private void ColorChoosedPeriodButton(int index)
+        {
+            bLastWeek.BackColor = Color.FromArgb(166, 174, 183);
+            bLastMonth.BackColor = Color.FromArgb(166, 174, 183);
+            bLastYear.BackColor = Color.FromArgb(166, 174, 183);
+
+            switch (index)
+            {
+                case 0:
+                    indexSelectedCard = 0;
+                    break;
+                case 1:
+                    indexSelectedCard = 1;
+                    break;
+                case 2:
+                    indexSelectedCard = 2;
+                    break;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void BOverview_Click(object sender, EventArgs e)
+        {
+            DeselectButton();
+
+            SelectButton(
+                "Icons\\selected_compass_icon.png",
+                pbOverview,
+                lOverview,
+                Overview
+                );
+        }
+
+        private void BBudget_Click(object sender, EventArgs e)
+        {
+            DeselectButton();
+
+            SelectButton(
+                "Icons\\selected_dollar_sign_icon.png",
+                pbBudget,
+                lBudget,
+                Budget
+                );
+        }
+
+        private void BPayment_Click(object sender, EventArgs e)
+        {
+            DeselectButton();
+
+            SelectButton(
+                "Icons\\selected_money_icon.png",
+                pbPayment,
+                lPayment,
+                Payment
+                );
+        }
+
+        private void BStatistics_Click(object sender, EventArgs e)
+        {
+            DeselectButton();
+
+            SelectButton(
+                "Icons\\selected_statistics_icon.png",
+                pbStatistics,
+                lStatistics,
+                Statistics
+                );
+        }
+
+        private void BAccount_Click(object sender, EventArgs e)
+        {
+            DeselectButton();
+
+            SelectButton(
+                "Icons\\selected_user_icon.png",
+                pbAccount,
+                lAccount,
+                Account
+                );
+        }
+
+        private void BLogout_Click(object sender, EventArgs e)
+        {
+            DeselectButton();
+
+            SelectButton(
+                "Icons\\selected_user_minus_icon.png",
+                pbLogout,
+                lLogout,
+                Logout
+                );
+        }
+
+        private void BSettings_Click(object sender, EventArgs e)
+        {
+            DeselectButton();
+
+            SelectButton(
+                "Icons\\selected_settings_icon.png",
+                pbSettings,
+                lSettings,
+                Settings
+                );
         }
     }
 }
