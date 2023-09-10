@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Finance_tracker.Entity_classes;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace Finance_tracker
 {
@@ -123,7 +121,7 @@ namespace Finance_tracker
         {
             string imagePath = selectedButton.Item3;
             imagePath = imagePath.Replace("selected_", "");
-            selectedButton.Item1.Image = Image.FromFile(imagePath);
+            selectedButton.Item1.Image = System.Drawing.Image.FromFile(imagePath);
             selectedButton.Item2.ForeColor = Color.FromArgb(74, 85, 103);
         }
 
@@ -132,7 +130,7 @@ namespace Finance_tracker
             string imagePath = Path.Combine(projectPath, path);
 
             tabControl.SelectedTab = tabPage;
-            pictureBox.Image = Image.FromFile(imagePath);
+            pictureBox.Image = System.Drawing.Image.FromFile(imagePath);
             label.ForeColor = Color.FromArgb(36, 94, 231);
 
             selectedButton.Item1 = pictureBox;
@@ -174,23 +172,23 @@ namespace Finance_tracker
             string grayDotPath = Path.Combine(projectPath, "Icons\\dot_icon.png");
             string blueDotPath = Path.Combine(projectPath, "Icons\\selected_dot_icon.png");
 
-            pbDot1.Image = Image.FromFile(grayDotPath);
-            pbDot2.Image = Image.FromFile(grayDotPath);
-            pbDot3.Image = Image.FromFile(grayDotPath);
+            pbDot1.Image = System.Drawing.Image.FromFile(grayDotPath);
+            pbDot2.Image = System.Drawing.Image.FromFile(grayDotPath);
+            pbDot3.Image = System.Drawing.Image.FromFile(grayDotPath);
 
             switch (index)
             {
                 case 0:
                     indexSelectedCard = 0;
-                    pbDot1.Image = Image.FromFile(blueDotPath);
+                    pbDot1.Image = System.Drawing.Image.FromFile(blueDotPath);
                     break;
                 case 1:
                     indexSelectedCard = 1;
-                    pbDot2.Image = Image.FromFile(blueDotPath);
+                    pbDot2.Image = System.Drawing.Image.FromFile(blueDotPath);
                     break;
                 case 2:
                     indexSelectedCard = 2;
-                    pbDot3.Image = Image.FromFile(blueDotPath);
+                    pbDot3.Image = System.Drawing.Image.FromFile(blueDotPath);
                     break;
             }
         }
@@ -330,7 +328,7 @@ namespace Finance_tracker
         private void ColorCardBlue()
         {
             string ImagePath = Path.Combine(projectPath, "Images\\blue_card.png");
-            pbLargeCard.Image = Image.FromFile(ImagePath);
+            pbLargeCard.Image = System.Drawing.Image.FromFile(ImagePath);
 
             lCardTitle1.BackColor = Color.FromArgb(36, 95, 232);
             lCardTitle3.BackColor = Color.FromArgb(36, 95, 232);
@@ -348,7 +346,7 @@ namespace Finance_tracker
         private void ColorCardGray()
         {
             string ImagePath = Path.Combine(projectPath, "Images\\gray_card.png");
-            pbLargeCard.Image = Image.FromFile(ImagePath);
+            pbLargeCard.Image = System.Drawing.Image.FromFile(ImagePath);
 
             lCardTitle1.BackColor = Color.FromArgb(166, 174, 183);
             lCardTitle3.BackColor = Color.FromArgb(166, 174, 183);
@@ -367,7 +365,7 @@ namespace Finance_tracker
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //REPORT
 
-        //string selectedPeriod
+        string selectedPeriod = "week";
 
         private void BReport_Click(object sender, EventArgs e)
         {
@@ -390,19 +388,98 @@ namespace Finance_tracker
             switch (index)
             {
                 case 0:
-                    indexSelectedCard = 0;
+                    bLastWeek.BackColor = Color.FromArgb(74, 85, 103);
                     break;
                 case 1:
-                    indexSelectedCard = 1;
+                    bLastMonth.BackColor = Color.FromArgb(74, 85, 103);
                     break;
                 case 2:
-                    indexSelectedCard = 2;
+                    bLastYear.BackColor = Color.FromArgb(74, 85, 103);
                     break;
             }
         }
 
+        private void bLastWeek_Click(object sender, EventArgs e)
+        {
+            ColorChoosedPeriodButton(0);
+            selectedPeriod = "week";
+        }
 
+        private void bLastMonth_Click(object sender, EventArgs e)
+        {
+            ColorChoosedPeriodButton(1);
+            selectedPeriod = "month";
+        }
 
+        private void bLastYear_Click(object sender, EventArgs e)
+        {
+            ColorChoosedPeriodButton(2);
+            selectedPeriod = "year";
+        }
+
+        private void bSaveReport_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string pdfPath = saveFileDialog.FileName;
+
+                var doc = new Document();
+                var writer = PdfWriter.GetInstance(doc,
+                    new FileStream(pdfPath, FileMode.Create));
+
+                doc.Open();
+
+                var paragraph = new Paragraph("Account statement");
+                paragraph.Alignment = Element.ALIGN_CENTER;
+
+                doc.Add(paragraph);
+                doc.Add(new Chunk());
+
+                PdfPTable table = new PdfPTable(4);
+
+                table.AddCell("Amount");
+                table.AddCell("Transaction");
+                table.AddCell("Category");
+                table.AddCell("Date");
+
+                var transactions = new List<Transaction>();
+                using (var context = new FinanceTrackerContext())
+                {
+                    var currentDate = DateTime.Now;
+                    var initialDate = new DateTime();
+
+                    switch (selectedPeriod)
+                    {
+                        case "week":
+                            initialDate = currentDate.AddDays(-7);
+                            break;
+                        case "month":
+                            initialDate = currentDate.AddMonths(-1);
+                            break;
+                        case "year":
+                            initialDate = currentDate.AddYears(-1);
+                            break;
+                    }
+
+                    transactions = context.Transactions
+                        .Where(x => x.Date >= initialDate
+                            && x.Date <= currentDate)
+                        .ToList();
+                }
+
+                foreach (var transaction in transactions)
+                {
+                    table.AddCell(Convert.ToString(transaction.Amount));
+                    table.AddCell(transaction.Target);
+                    table.AddCell(transaction.Category);
+                    table.AddCell(Convert.ToString(transaction.Date));
+                }
+
+                doc.Add(table);
+
+                doc.Close();
+            }
+        }
 
 
 
@@ -501,5 +578,6 @@ namespace Finance_tracker
                 Settings
                 );
         }
+
     }
 }

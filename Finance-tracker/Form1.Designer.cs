@@ -127,7 +127,7 @@
             this.Statistics = new System.Windows.Forms.TabPage();
             this.Report = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.bSaveReport = new System.Windows.Forms.Button();
             this.bLastYear = new System.Windows.Forms.Button();
             this.bLastMonth = new System.Windows.Forms.Button();
             this.bLastWeek = new System.Windows.Forms.Button();
@@ -1293,7 +1293,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Controls.Add(this.bSaveReport);
             this.groupBox4.Controls.Add(this.bLastYear);
             this.groupBox4.Controls.Add(this.bLastMonth);
             this.groupBox4.Controls.Add(this.bLastWeek);
@@ -1304,18 +1304,19 @@
             this.groupBox4.TabIndex = 110;
             this.groupBox4.TabStop = false;
             // 
-            // button4
+            // bSaveReport
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(456, 369);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(168, 46);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "save";
-            this.button4.UseVisualStyleBackColor = false;
+            this.bSaveReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
+            this.bSaveReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bSaveReport.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bSaveReport.ForeColor = System.Drawing.Color.White;
+            this.bSaveReport.Location = new System.Drawing.Point(456, 369);
+            this.bSaveReport.Name = "bSaveReport";
+            this.bSaveReport.Size = new System.Drawing.Size(168, 46);
+            this.bSaveReport.TabIndex = 7;
+            this.bSaveReport.Text = "save";
+            this.bSaveReport.UseVisualStyleBackColor = false;
+            this.bSaveReport.Click += new System.EventHandler(this.bSaveReport_Click);
             // 
             // bLastYear
             // 
@@ -1329,6 +1330,7 @@
             this.bLastYear.TabIndex = 6;
             this.bLastYear.Text = "last year";
             this.bLastYear.UseVisualStyleBackColor = false;
+            this.bLastYear.Click += new System.EventHandler(this.bLastYear_Click);
             // 
             // bLastMonth
             // 
@@ -1342,6 +1344,7 @@
             this.bLastMonth.TabIndex = 5;
             this.bLastMonth.Text = "last month";
             this.bLastMonth.UseVisualStyleBackColor = false;
+            this.bLastMonth.Click += new System.EventHandler(this.bLastMonth_Click);
             // 
             // bLastWeek
             // 
@@ -1355,6 +1358,7 @@
             this.bLastWeek.TabIndex = 4;
             this.bLastWeek.Text = "last week";
             this.bLastWeek.UseVisualStyleBackColor = false;
+            this.bLastWeek.Click += new System.EventHandler(this.bLastWeek_Click);
             // 
             // label17
             // 
@@ -1420,7 +1424,8 @@
             // 
             // saveFileDialog
             // 
-            this.saveFileDialog.Filter = "\"PDF файл (*pdf)|*pdf\"";
+            this.saveFileDialog.Filter = "\"PDF file (*.pdf)|*.pdf|Все файлы (*.*)|*.*\"";
+            this.saveFileDialog.RestoreDirectory = true;
             // 
             // Form1
             // 
@@ -1583,7 +1588,7 @@
         private System.Windows.Forms.Button bLastWeek;
         private System.Windows.Forms.Button bLastMonth;
         private System.Windows.Forms.Button bLastYear;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button bSaveReport;
     }
 }
 
