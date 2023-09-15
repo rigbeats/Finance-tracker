@@ -16,6 +16,8 @@ namespace Finance_tracker.Entity_classes
 
         public string Password { get; set; }
 
+        public int DefaultCardId { get; set; }
+
         public virtual ICollection<Card> Cards { get; set; }
     }
 }
