@@ -78,6 +78,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\CardBalance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CardBalance.designer.cs">
+      <DependentUpon>CardBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CardBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CardBar.Designer.cs">
+      <DependentUpon>CardBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TransactionTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TransactionTable.designer.cs">
+      <DependentUpon>TransactionTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entity classes\Card.cs" />
     <Compile Include="Entity classes\FinanceTrackerContext.cs" />
     <Compile Include="Entity classes\Transaction.cs" />
@@ -90,6 +108,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\CardBalance.resx">
+      <DependentUpon>CardBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CardBar.resx">
+      <DependentUpon>CardBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TransactionTable.resx">
+      <DependentUpon>TransactionTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
