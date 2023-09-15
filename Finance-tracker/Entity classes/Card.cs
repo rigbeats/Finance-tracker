@@ -13,9 +13,7 @@ namespace Finance_tracker.Entity_classes
 
         public string Number { get; set; }
 
-        public string HolderName { get; set; }
-
-        public string HolderSurname { get; set; }
+        public string HolderFullName { get; set; }
 
         public string ValidThru { get; set; }
 
