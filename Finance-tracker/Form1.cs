@@ -531,6 +531,65 @@ namespace Finance_tracker
 
 
 
+        ///////////////////////////////////////////////////////////////////
+        //TRANSFER
+
+        private void BPayment_Click(object sender, EventArgs e)
+        {
+            DeselectButton();
+
+            SelectButton(
+                "Icons\\selected_money_icon.png",
+                pbPayment,
+                lPayment,
+                Payment
+                );
+        }
+
+        private void bTransfer_Click(object sender, EventArgs e)
+        {
+            //string cardNumber = tbTCardNumber.Text;
+            //string[] name = tbCardHolder.Text.Split(' ');
+
+            //bool correctData = CheckCorrectCardData(
+            //   cardNumber,
+            //    name.Length);
+
+            //if (correctData)
+            //{
+
+            //}
+        }
+
+        private void MakeTransaction()
+        {
+            using (var context = new FinanceTrackerContext())
+            {
+                int? defaultCardId = context.Users
+                    .Where(x => x.Id == userId)
+                    .FirstOrDefault()
+                    .DefaultCardId;
+
+                if (defaultCardId == null)
+                    MessageBox.Show("Please select the default card in Settings");
+
+                else
+                {
+                    var transaction = new Transaction()
+                    {
+                        CardId = Convert.ToInt32(defaultCardId),
+                    };
+                }
+
+
+            }
+        }
+
+
+
+
+
+
 
 
 
@@ -567,18 +626,6 @@ namespace Finance_tracker
                 pbBudget,
                 lBudget,
                 Budget
-                );
-        }
-
-        private void BPayment_Click(object sender, EventArgs e)
-        {
-            DeselectButton();
-
-            SelectButton(
-                "Icons\\selected_money_icon.png",
-                pbPayment,
-                lPayment,
-                Payment
                 );
         }
 

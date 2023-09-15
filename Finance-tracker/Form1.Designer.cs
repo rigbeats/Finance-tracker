@@ -124,6 +124,38 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Budget = new System.Windows.Forms.TabPage();
             this.Payment = new System.Windows.Forms.TabPage();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.tbTAmount = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.bTransfer = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbTCardHolder = new System.Windows.Forms.TextBox();
+            this.tbTCardNumber = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.Statistics = new System.Windows.Forms.TabPage();
             this.Report = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -163,6 +195,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbDot2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdditionaSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLargeCard)).BeginInit();
+            this.Payment.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.groupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.Report.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
@@ -1263,12 +1305,387 @@
             // 
             // Payment
             // 
+            this.Payment.BackColor = System.Drawing.Color.White;
+            this.Payment.Controls.Add(this.groupBox12);
+            this.Payment.Controls.Add(this.groupBox11);
+            this.Payment.Controls.Add(this.groupBox10);
+            this.Payment.Controls.Add(this.groupBox7);
+            this.Payment.Controls.Add(this.groupBox6);
+            this.Payment.Controls.Add(this.label18);
+            this.Payment.Controls.Add(this.label23);
+            this.Payment.Controls.Add(this.groupBox5);
             this.Payment.Location = new System.Drawing.Point(4, 19);
             this.Payment.Name = "Payment";
             this.Payment.Size = new System.Drawing.Size(1045, 658);
             this.Payment.TabIndex = 3;
             this.Payment.Text = "4";
-            this.Payment.UseVisualStyleBackColor = true;
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.label26);
+            this.groupBox12.Controls.Add(this.pictureBox3);
+            this.groupBox12.Location = new System.Drawing.Point(263, 454);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(95, 95);
+            this.groupBox12.TabIndex = 123;
+            this.groupBox12.TabStop = false;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Helvetica Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
+            this.label26.Location = new System.Drawing.Point(16, 67);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(63, 19);
+            this.label26.TabIndex = 120;
+            this.label26.Text = "utilities";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(25, 18);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 119;
+            this.pictureBox3.TabStop = false;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.label25);
+            this.groupBox11.Controls.Add(this.pictureBox2);
+            this.groupBox11.Location = new System.Drawing.Point(145, 454);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(95, 95);
+            this.groupBox11.TabIndex = 122;
+            this.groupBox11.TabStop = false;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Helvetica Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
+            this.label25.Location = new System.Drawing.Point(17, 67);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(60, 19);
+            this.label25.TabIndex = 120;
+            this.label25.Text = "mobile";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(25, 18);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 119;
+            this.pictureBox2.TabStop = false;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Location = new System.Drawing.Point(27, 553);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(95, 95);
+            this.groupBox10.TabIndex = 121;
+            this.groupBox10.TabStop = false;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label24);
+            this.groupBox7.Controls.Add(this.pictureBox1);
+            this.groupBox7.Location = new System.Drawing.Point(27, 454);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(95, 95);
+            this.groupBox7.TabIndex = 120;
+            this.groupBox7.TabStop = false;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Helvetica Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
+            this.label24.Location = new System.Drawing.Point(14, 67);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(67, 19);
+            this.label24.TabIndex = 120;
+            this.label24.Text = "internet";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(25, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 119;
+            this.pictureBox1.TabStop = false;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.textBox6);
+            this.groupBox6.Controls.Add(this.label30);
+            this.groupBox6.Controls.Add(this.textBox5);
+            this.groupBox6.Controls.Add(this.label29);
+            this.groupBox6.Controls.Add(this.textBox4);
+            this.groupBox6.Controls.Add(this.label28);
+            this.groupBox6.Controls.Add(this.label27);
+            this.groupBox6.Location = new System.Drawing.Point(385, 72);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(639, 302);
+            this.groupBox6.TabIndex = 119;
+            this.groupBox6.TabStop = false;
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.Color.White;
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Font = new System.Drawing.Font("Helvetica Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
+            this.textBox6.Location = new System.Drawing.Point(27, 241);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(152, 23);
+            this.textBox6.TabIndex = 120;
+            this.textBox6.Text = "111";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Helvetica", 14F);
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(138)))), ((int)(((byte)(155)))));
+            this.label30.Location = new System.Drawing.Point(26, 203);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(75, 22);
+            this.label30.TabIndex = 119;
+            this.label30.Text = "Amount";
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.White;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Font = new System.Drawing.Font("Helvetica Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
+            this.textBox5.Location = new System.Drawing.Point(26, 168);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(152, 23);
+            this.textBox5.TabIndex = 118;
+            this.textBox5.Text = "111";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Helvetica", 14F);
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(138)))), ((int)(((byte)(155)))));
+            this.label29.Location = new System.Drawing.Point(26, 132);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(82, 22);
+            this.label29.TabIndex = 117;
+            this.label29.Text = "Purpose";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.White;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Font = new System.Drawing.Font("Helvetica Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
+            this.textBox4.Location = new System.Drawing.Point(30, 96);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(152, 23);
+            this.textBox4.TabIndex = 116;
+            this.textBox4.Text = "111";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Helvetica", 14F);
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(138)))), ((int)(((byte)(155)))));
+            this.label28.Location = new System.Drawing.Point(26, 65);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(77, 22);
+            this.label28.TabIndex = 106;
+            this.label28.Text = "Number";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.White;
+            this.label27.Font = new System.Drawing.Font("Helvetica Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
+            this.label27.Location = new System.Drawing.Point(26, 23);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(102, 23);
+            this.label27.TabIndex = 3;
+            this.label27.Text = "Payments";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(138)))), ((int)(((byte)(155)))));
+            this.label18.Location = new System.Drawing.Point(23, 45);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(307, 18);
+            this.label18.TabIndex = 118;
+            this.label18.Text = "Here you can make payments and transfers";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.White;
+            this.label23.Font = new System.Drawing.Font("Helvetica Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
+            this.label23.Location = new System.Drawing.Point(21, 11);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(101, 25);
+            this.label23.TabIndex = 117;
+            this.label23.Text = "Payment";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.tbTAmount);
+            this.groupBox5.Controls.Add(this.label32);
+            this.groupBox5.Controls.Add(this.bTransfer);
+            this.groupBox5.Controls.Add(this.textBox1);
+            this.groupBox5.Controls.Add(this.tbTCardHolder);
+            this.groupBox5.Controls.Add(this.tbTCardNumber);
+            this.groupBox5.Controls.Add(this.label13);
+            this.groupBox5.Controls.Add(this.label14);
+            this.groupBox5.Controls.Add(this.label15);
+            this.groupBox5.Controls.Add(this.label16);
+            this.groupBox5.Controls.Add(this.pictureBox5);
+            this.groupBox5.Location = new System.Drawing.Point(26, 72);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(336, 366);
+            this.groupBox5.TabIndex = 116;
+            this.groupBox5.TabStop = false;
+            // 
+            // tbTAmount
+            // 
+            this.tbTAmount.BackColor = System.Drawing.Color.White;
+            this.tbTAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbTAmount.Font = new System.Drawing.Font("Helvetica Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
+            this.tbTAmount.Location = new System.Drawing.Point(30, 281);
+            this.tbTAmount.Name = "tbTAmount";
+            this.tbTAmount.ReadOnly = true;
+            this.tbTAmount.Size = new System.Drawing.Size(277, 23);
+            this.tbTAmount.TabIndex = 120;
+            this.tbTAmount.Text = "111";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.White;
+            this.label32.Font = new System.Drawing.Font("Helvetica Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(138)))), ((int)(((byte)(155)))));
+            this.label32.Location = new System.Drawing.Point(26, 250);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(83, 23);
+            this.label32.TabIndex = 119;
+            this.label32.Text = "Amount";
+            // 
+            // bTransfer
+            // 
+            this.bTransfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
+            this.bTransfer.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bTransfer.ForeColor = System.Drawing.Color.White;
+            this.bTransfer.Location = new System.Drawing.Point(28, 313);
+            this.bTransfer.Name = "bTransfer";
+            this.bTransfer.Size = new System.Drawing.Size(280, 33);
+            this.bTransfer.TabIndex = 118;
+            this.bTransfer.Text = "transfer";
+            this.bTransfer.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Helvetica", 11.25F);
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(190, 183);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(87, 18);
+            this.textBox1.TabIndex = 117;
+            // 
+            // tbTCardHolder
+            // 
+            this.tbTCardHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(129)))), ((int)(((byte)(255)))));
+            this.tbTCardHolder.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbTCardHolder.Font = new System.Drawing.Font("Helvetica", 11.25F);
+            this.tbTCardHolder.ForeColor = System.Drawing.Color.White;
+            this.tbTCardHolder.Location = new System.Drawing.Point(52, 182);
+            this.tbTCardHolder.Name = "tbTCardHolder";
+            this.tbTCardHolder.Size = new System.Drawing.Size(103, 18);
+            this.tbTCardHolder.TabIndex = 116;
+            // 
+            // tbTCardNumber
+            // 
+            this.tbTCardNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(129)))), ((int)(((byte)(255)))));
+            this.tbTCardNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbTCardNumber.Font = new System.Drawing.Font("Helvetica Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTCardNumber.ForeColor = System.Drawing.Color.White;
+            this.tbTCardNumber.Location = new System.Drawing.Point(52, 112);
+            this.tbTCardNumber.Name = "tbTCardNumber";
+            this.tbTCardNumber.Size = new System.Drawing.Size(229, 23);
+            this.tbTCardNumber.TabIndex = 115;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
+            this.label13.Font = new System.Drawing.Font("Helvetica", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(187, 164);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(81, 16);
+            this.label13.TabIndex = 109;
+            this.label13.Text = "VALID THRU";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
+            this.label14.Font = new System.Drawing.Font("Helvetica", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(49, 164);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(100, 16);
+            this.label14.TabIndex = 107;
+            this.label14.Text = "CARD HOLDER";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
+            this.label15.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(49, 74);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(92, 17);
+            this.label15.TabIndex = 106;
+            this.label15.Text = "Primary card";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.White;
+            this.label16.Font = new System.Drawing.Font("Helvetica Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
+            this.label16.Location = new System.Drawing.Point(26, 23);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(188, 23);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Transfer to the card";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(20, 58);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(291, 186);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 1;
+            this.pictureBox5.TabStop = false;
             // 
             // Statistics
             // 
@@ -1471,6 +1888,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbDot2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdditionaSettings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLargeCard)).EndInit();
+            this.Payment.ResumeLayout(false);
+            this.Payment.PerformLayout();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.Report.ResumeLayout(false);
             this.Report.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -1589,6 +2022,38 @@
         private System.Windows.Forms.Button bLastMonth;
         private System.Windows.Forms.Button bLastYear;
         private System.Windows.Forms.Button bSaveReport;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox tbTAmount;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button bTransfer;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbTCardHolder;
+        private System.Windows.Forms.TextBox tbTCardNumber;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 
