@@ -106,18 +106,12 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.Statistics = new System.Windows.Forms.TabPage();
             this.Report = new System.Windows.Forms.TabPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.bSaveReport = new System.Windows.Forms.Button();
-            this.bLastYear = new System.Windows.Forms.Button();
-            this.bLastMonth = new System.Windows.Forms.Button();
-            this.bLastWeek = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.Account = new System.Windows.Forms.TabPage();
             this.Settings = new System.Windows.Forms.TabPage();
             this.Logout = new System.Windows.Forms.TabPage();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.saveBar = new Finance_tracker.Controls.SaveBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).BeginInit();
@@ -143,7 +137,6 @@
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.Report.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -1091,7 +1084,7 @@
             // Report
             // 
             this.Report.BackColor = System.Drawing.Color.White;
-            this.Report.Controls.Add(this.groupBox4);
+            this.Report.Controls.Add(this.saveBar);
             this.Report.Controls.Add(this.label11);
             this.Report.Controls.Add(this.label12);
             this.Report.Location = new System.Drawing.Point(4, 19);
@@ -1099,87 +1092,6 @@
             this.Report.Size = new System.Drawing.Size(1045, 658);
             this.Report.TabIndex = 5;
             this.Report.Text = "6";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.bSaveReport);
-            this.groupBox4.Controls.Add(this.bLastYear);
-            this.groupBox4.Controls.Add(this.bLastMonth);
-            this.groupBox4.Controls.Add(this.bLastWeek);
-            this.groupBox4.Controls.Add(this.label17);
-            this.groupBox4.Location = new System.Drawing.Point(20, 78);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(656, 446);
-            this.groupBox4.TabIndex = 110;
-            this.groupBox4.TabStop = false;
-            // 
-            // bSaveReport
-            // 
-            this.bSaveReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
-            this.bSaveReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bSaveReport.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bSaveReport.ForeColor = System.Drawing.Color.White;
-            this.bSaveReport.Location = new System.Drawing.Point(456, 369);
-            this.bSaveReport.Name = "bSaveReport";
-            this.bSaveReport.Size = new System.Drawing.Size(168, 46);
-            this.bSaveReport.TabIndex = 7;
-            this.bSaveReport.Text = "save";
-            this.bSaveReport.UseVisualStyleBackColor = false;
-            this.bSaveReport.Click += new System.EventHandler(this.bSaveReport_Click);
-            // 
-            // bLastYear
-            // 
-            this.bLastYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(174)))), ((int)(((byte)(183)))));
-            this.bLastYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bLastYear.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bLastYear.ForeColor = System.Drawing.Color.White;
-            this.bLastYear.Location = new System.Drawing.Point(413, 80);
-            this.bLastYear.Name = "bLastYear";
-            this.bLastYear.Size = new System.Drawing.Size(168, 46);
-            this.bLastYear.TabIndex = 6;
-            this.bLastYear.Text = "last year";
-            this.bLastYear.UseVisualStyleBackColor = false;
-            this.bLastYear.Click += new System.EventHandler(this.bLastYear_Click);
-            // 
-            // bLastMonth
-            // 
-            this.bLastMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(174)))), ((int)(((byte)(183)))));
-            this.bLastMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bLastMonth.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bLastMonth.ForeColor = System.Drawing.Color.White;
-            this.bLastMonth.Location = new System.Drawing.Point(246, 80);
-            this.bLastMonth.Name = "bLastMonth";
-            this.bLastMonth.Size = new System.Drawing.Size(168, 46);
-            this.bLastMonth.TabIndex = 5;
-            this.bLastMonth.Text = "last month";
-            this.bLastMonth.UseVisualStyleBackColor = false;
-            this.bLastMonth.Click += new System.EventHandler(this.bLastMonth_Click);
-            // 
-            // bLastWeek
-            // 
-            this.bLastWeek.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(85)))), ((int)(((byte)(103)))));
-            this.bLastWeek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bLastWeek.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bLastWeek.ForeColor = System.Drawing.Color.White;
-            this.bLastWeek.Location = new System.Drawing.Point(79, 80);
-            this.bLastWeek.Name = "bLastWeek";
-            this.bLastWeek.Size = new System.Drawing.Size(168, 46);
-            this.bLastWeek.TabIndex = 4;
-            this.bLastWeek.Text = "last week";
-            this.bLastWeek.UseVisualStyleBackColor = false;
-            this.bLastWeek.Click += new System.EventHandler(this.bLastWeek_Click);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.White;
-            this.label17.Font = new System.Drawing.Font("Helvetica Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.label17.Location = new System.Drawing.Point(32, 28);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(184, 23);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "Account statement";
             // 
             // label11
             // 
@@ -1231,10 +1143,12 @@
             this.Logout.Text = "9";
             this.Logout.UseVisualStyleBackColor = true;
             // 
-            // saveFileDialog
+            // saveBar
             // 
-            this.saveFileDialog.Filter = "\"PDF file (*.pdf)|*.pdf|Все файлы (*.*)|*.*\"";
-            this.saveFileDialog.RestoreDirectory = true;
+            this.saveBar.Location = new System.Drawing.Point(20, 78);
+            this.saveBar.Name = "saveBar";
+            this.saveBar.Size = new System.Drawing.Size(658, 448);
+            this.saveBar.TabIndex = 111;
             // 
             // Form1
             // 
@@ -1282,8 +1196,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.Report.ResumeLayout(false);
             this.Report.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1335,15 +1247,8 @@
         private System.Windows.Forms.TabPage Settings;
         private System.Windows.Forms.TabPage Logout;
         private System.Windows.Forms.TabPage Budget;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button bLastWeek;
-        private System.Windows.Forms.Button bLastMonth;
-        private System.Windows.Forms.Button bLastYear;
-        private System.Windows.Forms.Button bSaveReport;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -1379,6 +1284,7 @@
         private Controls.CardBar cardInfo;
         private Controls.CardBalance cardBalance;
         private Controls.TransactionTable transactionTable;
+        private Controls.SaveBar saveBar;
     }
 }
 
