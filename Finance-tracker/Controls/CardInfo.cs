@@ -53,7 +53,7 @@ namespace Finance_tracker.Controls
             set { indexSelectedCard = value; }
         }
 
-        public event EventHandler CardClick;
+        public event Action UpdateCardTab;
 
         public CardInfo()
         {
@@ -197,19 +197,19 @@ namespace Finance_tracker.Controls
         private void pbDot1_Click(object sender, EventArgs e)
         {
             SetSelectedCard(0);
-            CardClick?.Invoke(this, EventArgs.Empty);
+            UpdateCardTab?.Invoke();
         }
 
         private void pbDot2_Click(object sender, EventArgs e)
         {
             SetSelectedCard(1);
-            CardClick.Invoke(this, EventArgs.Empty);
+            UpdateCardTab.Invoke();
         }
 
         private void pbDot3_Click(object sender, EventArgs e)
         {
             SetSelectedCard(2);
-            CardClick?.Invoke(this, EventArgs.Empty);
+            UpdateCardTab?.Invoke();
         }
 
         private void pbAdditionaSettings_MouseDown(object sender, MouseEventArgs e)
@@ -260,11 +260,11 @@ namespace Finance_tracker.Controls
         {
             using (var context = new FinanceTrackerContext())
             {
-                var cardNumber = CardNumber;
+                var validThru = ValidThru;
 
                 var deleteCard = context.Cards
                     .Where(x => x.UserId == UserId
-                             && x.Number == cardNumber)
+                             && x.ValidThru == validThru)
                     .FirstOrDefault();
 
                 if (deleteCard != null)
@@ -277,7 +277,7 @@ namespace Finance_tracker.Controls
             if (IndexSelectedCard > 0)
                 IndexSelectedCard--;
 
-            CardClick?.Invoke(this, EventArgs.Empty);
+            UpdateCardTab?.Invoke();
         }
 
         private void bAdd_Click(object sender, EventArgs e)
@@ -312,7 +312,7 @@ namespace Finance_tracker.Controls
                 }
 
                 IndexSelectedCard++;
-                CardClick?.Invoke(this, EventArgs.Empty);
+                UpdateCardTab?.Invoke();
             }
         }
 

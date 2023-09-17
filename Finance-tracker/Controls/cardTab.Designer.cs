@@ -95,7 +95,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Name = "cardTab";
-            this.Size = new System.Drawing.Size(1045, 658);
+            this.Size = new System.Drawing.Size(1053, 681);
             this.ResumeLayout(false);
             this.PerformLayout();
 

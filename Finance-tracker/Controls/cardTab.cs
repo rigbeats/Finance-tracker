@@ -21,6 +21,8 @@ namespace Finance_tracker.Controls
 
             this.cardInfo.UserId = UserId;
             this.cardInfo.CardBalance = this.cardBalance;
+
+            cardInfo.UpdateCardTab += UpdateTab;
         }
 
         public void UpdateTab()
@@ -31,9 +33,9 @@ namespace Finance_tracker.Controls
             using (var context = new FinanceTrackerContext())
             {
                 cards = context.Cards.Where(x => x.UserId == UserId).ToList();
-                countOfCards = cards.Count;
             }
 
+            countOfCards = cards.Count;
             if (countOfCards > 0)
             {
                 cardInfo.CountOfDots(countOfCards);
