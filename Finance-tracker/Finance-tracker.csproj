@@ -90,6 +90,12 @@
     <Compile Include="Controls\CardBar.Designer.cs">
       <DependentUpon>CardBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SaveBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SaveBar.Designer.cs">
+      <DependentUpon>SaveBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\TransactionTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\CardBar.resx">
       <DependentUpon>CardBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SaveBar.resx">
+      <DependentUpon>SaveBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TransactionTable.resx">
       <DependentUpon>TransactionTable.cs</DependentUpon>
