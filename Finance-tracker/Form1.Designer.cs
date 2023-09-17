@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -61,20 +60,12 @@
             this.pbOverview = new System.Windows.Forms.PictureBox();
             this.BOverview = new System.Windows.Forms.Button();
             this.label33 = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.AddDeleteCard = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.Overview = new System.Windows.Forms.TabPage();
             this.Card = new System.Windows.Forms.TabPage();
+            this.transactionTable = new Finance_tracker.Controls.TransactionTable();
             this.cardBalance = new Finance_tracker.Controls.CardBalance();
-            this.bAdd = new System.Windows.Forms.Button();
-            this.pbDot1 = new System.Windows.Forms.PictureBox();
-            this.pbDot3 = new System.Windows.Forms.PictureBox();
-            this.pbDot2 = new System.Windows.Forms.PictureBox();
-            this.pbAdditionaSettings = new System.Windows.Forms.PictureBox();
             this.cardInfo = new Finance_tracker.Controls.CardBar();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -127,7 +118,6 @@
             this.Settings = new System.Windows.Forms.TabPage();
             this.Logout = new System.Windows.Forms.TabPage();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.transactionTable = new Finance_tracker.Controls.TransactionTable();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).BeginInit();
@@ -139,14 +129,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBudget)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOverview)).BeginInit();
-            this.AddDeleteCard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.Card.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDot1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDot3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDot2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAdditionaSettings)).BeginInit();
             this.Payment.SuspendLayout();
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -588,44 +573,6 @@
             this.label33.TabIndex = 100;
             this.label33.Text = "Main menu";
             // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(22, 51);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // AddDeleteCard
-            // 
-            this.AddDeleteCard.BackColor = System.Drawing.Color.White;
-            this.AddDeleteCard.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddDeleteCard.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem,
-            this.deleteToolStripMenuItem});
-            this.AddDeleteCard.Name = "contextMenuStrip1";
-            this.AddDeleteCard.Size = new System.Drawing.Size(119, 48);
-            // 
-            // addToolStripMenuItem
-            // 
-            this.addToolStripMenuItem.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.addToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.addToolStripMenuItem.Text = "Add";
-            this.addToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.deleteToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.deleteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
@@ -670,11 +617,6 @@
             this.Card.BackColor = System.Drawing.Color.White;
             this.Card.Controls.Add(this.transactionTable);
             this.Card.Controls.Add(this.cardBalance);
-            this.Card.Controls.Add(this.bAdd);
-            this.Card.Controls.Add(this.pbDot1);
-            this.Card.Controls.Add(this.pbDot3);
-            this.Card.Controls.Add(this.pbDot2);
-            this.Card.Controls.Add(this.pbAdditionaSettings);
             this.Card.Controls.Add(this.cardInfo);
             this.Card.Controls.Add(this.label4);
             this.Card.Controls.Add(this.label3);
@@ -686,6 +628,13 @@
             this.Card.TabIndex = 1;
             this.Card.Text = "2";
             // 
+            // transactionTable
+            // 
+            this.transactionTable.Location = new System.Drawing.Point(20, 78);
+            this.transactionTable.Name = "transactionTable";
+            this.transactionTable.Size = new System.Drawing.Size(656, 511);
+            this.transactionTable.TabIndex = 0;
+            // 
             // cardBalance
             // 
             this.cardBalance.BackColor = System.Drawing.Color.White;
@@ -695,75 +644,15 @@
             this.cardBalance.Size = new System.Drawing.Size(340, 111);
             this.cardBalance.TabIndex = 120;
             // 
-            // bAdd
-            // 
-            this.bAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
-            this.bAdd.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAdd.ForeColor = System.Drawing.Color.White;
-            this.bAdd.Location = new System.Drawing.Point(922, 318);
-            this.bAdd.Name = "bAdd";
-            this.bAdd.Size = new System.Drawing.Size(83, 28);
-            this.bAdd.TabIndex = 119;
-            this.bAdd.Text = "Add";
-            this.bAdd.UseVisualStyleBackColor = false;
-            this.bAdd.Visible = false;
-            this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
-            // 
-            // pbDot1
-            // 
-            this.pbDot1.Image = ((System.Drawing.Image)(resources.GetObject("pbDot1.Image")));
-            this.pbDot1.Location = new System.Drawing.Point(830, 318);
-            this.pbDot1.Name = "pbDot1";
-            this.pbDot1.Size = new System.Drawing.Size(25, 25);
-            this.pbDot1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDot1.TabIndex = 118;
-            this.pbDot1.TabStop = false;
-            this.pbDot1.Visible = false;
-            this.pbDot1.Click += new System.EventHandler(this.pbDot1_Click);
-            // 
-            // pbDot3
-            // 
-            this.pbDot3.Image = ((System.Drawing.Image)(resources.GetObject("pbDot3.Image")));
-            this.pbDot3.Location = new System.Drawing.Point(880, 318);
-            this.pbDot3.Name = "pbDot3";
-            this.pbDot3.Size = new System.Drawing.Size(25, 25);
-            this.pbDot3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDot3.TabIndex = 117;
-            this.pbDot3.TabStop = false;
-            this.pbDot3.Visible = false;
-            this.pbDot3.Click += new System.EventHandler(this.pbDot3_Click);
-            // 
-            // pbDot2
-            // 
-            this.pbDot2.Image = ((System.Drawing.Image)(resources.GetObject("pbDot2.Image")));
-            this.pbDot2.Location = new System.Drawing.Point(855, 318);
-            this.pbDot2.Name = "pbDot2";
-            this.pbDot2.Size = new System.Drawing.Size(25, 25);
-            this.pbDot2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDot2.TabIndex = 116;
-            this.pbDot2.TabStop = false;
-            this.pbDot2.Visible = false;
-            this.pbDot2.Click += new System.EventHandler(this.pbDot2_Click);
-            // 
-            // pbAdditionaSettings
-            // 
-            this.pbAdditionaSettings.BackColor = System.Drawing.Color.White;
-            this.pbAdditionaSettings.ContextMenuStrip = this.AddDeleteCard;
-            this.pbAdditionaSettings.Image = ((System.Drawing.Image)(resources.GetObject("pbAdditionaSettings.Image")));
-            this.pbAdditionaSettings.Location = new System.Drawing.Point(982, 101);
-            this.pbAdditionaSettings.Name = "pbAdditionaSettings";
-            this.pbAdditionaSettings.Size = new System.Drawing.Size(25, 25);
-            this.pbAdditionaSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAdditionaSettings.TabIndex = 115;
-            this.pbAdditionaSettings.TabStop = false;
-            this.pbAdditionaSettings.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbAdditionaSettings_MouseDown);
-            // 
             // cardInfo
             // 
+            this.cardInfo.CardBalance = null;
+            this.cardInfo.IndexSelectedCard = 0;
             this.cardInfo.Location = new System.Drawing.Point(699, 78);
             this.cardInfo.Name = "cardInfo";
             this.cardInfo.Size = new System.Drawing.Size(340, 276);
             this.cardInfo.TabIndex = 110;
+            this.cardInfo.UserId = 0;
             // 
             // label4
             // 
@@ -1347,13 +1236,6 @@
             this.saveFileDialog.Filter = "\"PDF file (*.pdf)|*.pdf|Все файлы (*.*)|*.*\"";
             this.saveFileDialog.RestoreDirectory = true;
             // 
-            // transactionTable
-            // 
-            this.transactionTable.Location = new System.Drawing.Point(20, 78);
-            this.transactionTable.Name = "transactionTable";
-            this.transactionTable.Size = new System.Drawing.Size(656, 511);
-            this.transactionTable.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1378,15 +1260,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBudget)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOverview)).EndInit();
-            this.AddDeleteCard.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.Card.ResumeLayout(false);
             this.Card.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDot1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDot3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDot2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAdditionaSettings)).EndInit();
             this.Payment.ResumeLayout(false);
             this.Payment.PerformLayout();
             this.groupBox12.ResumeLayout(false);
@@ -1445,10 +1322,6 @@
         private System.Windows.Forms.Button BOverview;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.ContextMenuStrip AddDeleteCard;
-        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage Overview;
         private System.Windows.Forms.TabPage Card;
@@ -1503,11 +1376,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button bAdd;
-        private System.Windows.Forms.PictureBox pbDot1;
-        private System.Windows.Forms.PictureBox pbDot3;
-        private System.Windows.Forms.PictureBox pbDot2;
-        private System.Windows.Forms.PictureBox pbAdditionaSettings;
         private Controls.CardBar cardInfo;
         private Controls.CardBalance cardBalance;
         private Controls.TransactionTable transactionTable;
