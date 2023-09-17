@@ -25,6 +25,8 @@ namespace Finance_tracker.Controls
 
         public void FillTable(List<Transaction> transactions)
         {
+            ClearTable();
+
             ListViewItem listViewItem;
 
             for (int i = 0; i < transactions.Count; i++)

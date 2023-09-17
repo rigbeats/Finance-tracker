@@ -1,6 +1,6 @@
 ﻿namespace Finance_tracker.Controls
 {
-    partial class CardBar
+    partial class CardInfo
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CardBar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CardInfo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pbAdditionaSettings = new System.Windows.Forms.PictureBox();
             this.bAdd = new System.Windows.Forms.Button();

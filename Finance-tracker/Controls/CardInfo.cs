@@ -13,7 +13,7 @@ using Finance_tracker.Entity_classes;
 
 namespace Finance_tracker.Controls
 {
-    public partial class CardBar : UserControl
+    public partial class CardInfo : UserControl
     {
         string projectPath = Path.GetFullPath(Path.Combine(Application.StartupPath, "..\\.."));
         int indexSelectedCard;
@@ -55,7 +55,7 @@ namespace Finance_tracker.Controls
 
         public event EventHandler CardClick;
 
-        public CardBar()
+        public CardInfo()
         {
             InitializeComponent();
         }
@@ -314,6 +314,27 @@ namespace Finance_tracker.Controls
                 IndexSelectedCard++;
                 CardClick?.Invoke(this, EventArgs.Empty);
             }
+        }
+
+        public List<Transaction> GetLastTransaction()
+        {
+            List<Transaction> transactions;
+            var cardNumber = tbCardNumber.Text;
+
+            using (var context = new FinanceTrackerContext())
+            {
+                int idSelectedCard = context.Cards
+                .Where(x => x.Number == cardNumber)
+                .Select(x => x.Id)
+                .FirstOrDefault();
+
+                transactions = context.Transactions
+                    .Where(x => x.CardId == idSelectedCard)
+                    .Take(8)
+                    .ToList();
+            }
+
+            return transactions;
         }
     }
 }
