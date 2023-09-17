@@ -26,7 +26,7 @@ namespace Finance_tracker
             InitializeComponent();
 
             this.userId = userId;
-            cardTab.UserId = userId;
+            cardPage.UserId = userId;
         }
 
         public event EventHandler CardTabUpdate;
@@ -69,6 +69,12 @@ namespace Finance_tracker
             selectedButton.Item3 = imagePath;
         }
 
+        public void ClearAllPages()
+        {
+            paymentPage.Visible = false;
+            cardPage.Visible = false;
+        }
+
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // CARD
@@ -76,6 +82,7 @@ namespace Finance_tracker
         private void BCard_Click(object sender, EventArgs e)
         {
             DeselectButton();
+            ClearAllPages();
 
             SelectButton(
                 "Icons\\selected_credit_card_icon.png",
@@ -83,7 +90,8 @@ namespace Finance_tracker
                 lCard
                 );
 
-            cardTab.UpdateTab();
+            cardPage.Visible = true;
+            cardPage.UpdateTable();
         }
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -106,12 +114,15 @@ namespace Finance_tracker
         private void BPayment_Click(object sender, EventArgs e)
         {
             DeselectButton();
+            ClearAllPages();
 
             SelectButton(
                 "Icons\\selected_money_icon.png",
                 pbPayment,
                 lPayment
                 );
+
+            paymentPage.Visible = true;
         }
 
         private void bTransfer_Click(object sender, EventArgs e)
