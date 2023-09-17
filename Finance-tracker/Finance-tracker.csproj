@@ -90,11 +90,23 @@
     <Compile Include="Controls\CardInfo.Designer.cs">
       <DependentUpon>CardInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\cardTab.cs">
+    <Compile Include="Controls\cardPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\cardTab.Designer.cs">
-      <DependentUpon>cardTab.cs</DependentUpon>
+    <Compile Include="Controls\cardPage.Designer.cs">
+      <DependentUpon>cardPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\paymentPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\paymentPage.Designer.cs">
+      <DependentUpon>paymentPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SaveFile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SaveFile.Designer.cs">
+      <DependentUpon>SaveFile.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\TransactionTable.cs">
       <SubType>UserControl</SubType>
@@ -120,8 +132,14 @@
     <EmbeddedResource Include="Controls\CardInfo.resx">
       <DependentUpon>CardInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\cardTab.resx">
-      <DependentUpon>cardTab.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\cardPage.resx">
+      <DependentUpon>cardPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\paymentPage.resx">
+      <DependentUpon>paymentPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SaveFile.resx">
+      <DependentUpon>SaveFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TransactionTable.resx">
       <DependentUpon>TransactionTable.cs</DependentUpon>
