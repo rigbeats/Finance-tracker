@@ -282,7 +282,6 @@ namespace Finance_tracker.Controls
 
         private void bAdd_Click(object sender, EventArgs e)
         {
-            string balance = CardBalance.Balance;
             bool correctCardData = CheckCorrectCardData();
             bool correctBalance = CardBalance.CheckCorrectBalance();
 
@@ -296,6 +295,7 @@ namespace Finance_tracker.Controls
 
                 CardBalance.TbBackColor = Color.White;
 
+                string balance = CardBalance.Balance;
                 var card = new Card
                 {
                     Number = CardNumber,

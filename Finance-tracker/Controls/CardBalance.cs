@@ -42,7 +42,7 @@ namespace Finance_tracker.Controls
             if (!Regex.IsMatch(balance, "^[0-9]+(,[0-9]+)?$"))
             {
                 if (balance == "")
-                    balance = "0";
+                    tbBalance.Text = "0";
                 else
                 {
                     MessageBox.Show("Invalid balance");
