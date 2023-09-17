@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -32,6 +33,24 @@ namespace Finance_tracker.Controls
         public void ClearBalance()
         {
             tbBalance.Clear();
+        }
+
+        public bool CheckCorrectBalance()
+        {
+            var balance = tbBalance.Text;
+
+            if (!Regex.IsMatch(balance, "^[0-9]+(,[0-9]+)?$"))
+            {
+                if (balance == "")
+                    balance = "0";
+                else
+                {
+                    MessageBox.Show("Invalid balance");
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

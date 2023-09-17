@@ -26,9 +26,11 @@ namespace Finance_tracker.Controls
         public void FillTable(List<Transaction> transactions)
         {
             ListViewItem listViewItem;
+
             for (int i = 0; i < transactions.Count; i++)
             {
                 var date = transactions[i].Date;
+
                 listViewItem = new ListViewItem(new string[]
                 {
                             Convert.ToString(i + 1),
@@ -37,6 +39,7 @@ namespace Finance_tracker.Controls
                             transactions[i].Category,
                             $"{date.Day}/{date.Month}/{date.Year}"
                 });
+
                 lastTransactionsTable.Items.Add(listViewItem);
             }
         }
