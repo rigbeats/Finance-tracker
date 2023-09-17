@@ -84,11 +84,17 @@
     <Compile Include="Controls\CardBalance.designer.cs">
       <DependentUpon>CardBalance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\CardBar.cs">
+    <Compile Include="Controls\CardInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\CardBar.Designer.cs">
-      <DependentUpon>CardBar.cs</DependentUpon>
+    <Compile Include="Controls\CardInfo.Designer.cs">
+      <DependentUpon>CardInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\cardTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\cardTab.Designer.cs">
+      <DependentUpon>cardTab.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\TransactionTable.cs">
       <SubType>UserControl</SubType>
@@ -111,8 +117,11 @@
     <EmbeddedResource Include="Controls\CardBalance.resx">
       <DependentUpon>CardBalance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\CardBar.resx">
-      <DependentUpon>CardBar.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\CardInfo.resx">
+      <DependentUpon>CardInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\cardTab.resx">
+      <DependentUpon>cardTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TransactionTable.resx">
       <DependentUpon>TransactionTable.cs</DependentUpon>
