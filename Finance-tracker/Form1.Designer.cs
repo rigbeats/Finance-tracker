@@ -61,9 +61,9 @@
             this.BOverview = new System.Windows.Forms.Button();
             this.label33 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.paymentPage = new Finance_tracker.Controls.paymentPage();
-            this.cardPage = new Finance_tracker.Controls.cardPage();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.cardPage = new Finance_tracker.Controls.cardPage();
+            this.paymentPage = new Finance_tracker.Controls.paymentPage();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).BeginInit();
@@ -508,22 +508,13 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
-            this.panel2.Controls.Add(this.paymentPage);
             this.panel2.Controls.Add(this.cardPage);
+            this.panel2.Controls.Add(this.paymentPage);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(211, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1053, 681);
             this.panel2.TabIndex = 1;
-            // 
-            // paymentPage
-            // 
-            this.paymentPage.BackColor = System.Drawing.Color.White;
-            this.paymentPage.Location = new System.Drawing.Point(0, -3);
-            this.paymentPage.Name = "paymentPage";
-            this.paymentPage.Size = new System.Drawing.Size(1053, 681);
-            this.paymentPage.TabIndex = 1;
-            this.paymentPage.Visible = false;
             // 
             // cardPage
             // 
@@ -534,6 +525,15 @@
             this.cardPage.TabIndex = 0;
             this.cardPage.UserId = 0;
             this.cardPage.Visible = false;
+            // 
+            // paymentPage
+            // 
+            this.paymentPage.BackColor = System.Drawing.Color.White;
+            this.paymentPage.Location = new System.Drawing.Point(-3, 0);
+            this.paymentPage.Name = "paymentPage";
+            this.paymentPage.Size = new System.Drawing.Size(1053, 681);
+            this.paymentPage.TabIndex = 1;
+            this.paymentPage.Visible = false;
             // 
             // Form1
             // 

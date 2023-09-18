@@ -75,10 +75,6 @@ namespace Finance_tracker
             cardPage.Visible = false;
         }
 
-
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // CARD
-
         private void BCard_Click(object sender, EventArgs e)
         {
             DeselectButton();
@@ -93,9 +89,6 @@ namespace Finance_tracker
             cardPage.Visible = true;
             cardPage.UpdateTable();
         }
-
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //REPORT
 
         private void BReport_Click(object sender, EventArgs e)
         {
@@ -124,65 +117,6 @@ namespace Finance_tracker
 
             paymentPage.Visible = true;
         }
-
-        private void bTransfer_Click(object sender, EventArgs e)
-        {
-            //string cardNumber = tbTCardNumber.Text;
-            //string[] name = tbCardHolder.Text.Split(' ');
-
-            //bool correctData = CheckCorrectCardData(
-            //   cardNumber,
-            //    name.Length);
-
-            //if (correctData)
-            //{
-
-            //}
-        }
-
-        private void MakeTransaction()
-        {
-            using (var context = new FinanceTrackerContext())
-            {
-                int? defaultCardId = context.Users
-                    .Where(x => x.Id == userId)
-                    .FirstOrDefault()
-                    .DefaultCardId;
-
-                if (defaultCardId == null)
-                    MessageBox.Show("Please select the default card in Settings");
-
-                else
-                {
-                    var transaction = new Transaction()
-                    {
-                        CardId = Convert.ToInt32(defaultCardId),
-                    };
-                }
-
-
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         private void BOverview_Click(object sender, EventArgs e)
         {
@@ -249,5 +183,48 @@ namespace Finance_tracker
                 lSettings
                 );
         }
+
+        //////////////////////////////////////
+
+        private void bTransfer_Click(object sender, EventArgs e)
+        {
+            //string cardNumber = tbTCardNumber.Text;
+            //string[] name = tbCardHolder.Text.Split(' ');
+
+            //bool correctData = CheckCorrectCardData(
+            //   cardNumber,
+            //    name.Length);
+
+            //if (correctData)
+            //{
+
+            //}
+        }
+
+        private void MakeTransaction()
+        {
+            using (var context = new FinanceTrackerContext())
+            {
+                int? defaultCardId = context.Users
+                    .Where(x => x.Id == userId)
+                    .FirstOrDefault()
+                    .DefaultCardId;
+
+                if (defaultCardId == null)
+                    MessageBox.Show("Please select the default card in Settings");
+
+                else
+                {
+                    var transaction = new Transaction()
+                    {
+                        CardId = Convert.ToInt32(defaultCardId),
+                    };
+                }
+
+
+            }
+        }
+
+        ///////////////////////////////////////////
     }
 }

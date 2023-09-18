@@ -84,11 +84,17 @@
     <Compile Include="Controls\CardBalance.designer.cs">
       <DependentUpon>CardBalance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\CardInfo.cs">
+    <Compile Include="Controls\SelectCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\CardInfo.Designer.cs">
-      <DependentUpon>CardInfo.cs</DependentUpon>
+    <Compile Include="Controls\SelectCard.Designer.cs">
+      <DependentUpon>SelectCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CreditCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CreditCard.Designer.cs">
+      <DependentUpon>CreditCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\cardPage.cs">
       <SubType>UserControl</SubType>
@@ -129,8 +135,11 @@
     <EmbeddedResource Include="Controls\CardBalance.resx">
       <DependentUpon>CardBalance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\CardInfo.resx">
-      <DependentUpon>CardInfo.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\SelectCard.resx">
+      <DependentUpon>SelectCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CreditCard.resx">
+      <DependentUpon>CreditCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\cardPage.resx">
       <DependentUpon>cardPage.cs</DependentUpon>
