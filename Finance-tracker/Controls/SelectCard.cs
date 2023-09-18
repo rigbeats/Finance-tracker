@@ -219,10 +219,16 @@ namespace Finance_tracker.Controls
         public List<Transaction> GetLastTransaction()
         {
             List<Transaction> transactions;
-            var cardNumber = creditCard.CardNumber;
+            var validThru = creditCard.ValidThru;
 
             using (var context = new FinanceTrackerContext())
             {
+                var cardNumber = context.Cards
+                    .Where(x => x.UserId == UserId
+                        && x.ValidThru == validThru)
+                    .Select(x => x.Number)
+                    .FirstOrDefault();
+
                 int idSelectedCard = context.Cards
                 .Where(x => x.Number == cardNumber)
                 .Select(x => x.Id)
