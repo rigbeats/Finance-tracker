@@ -3,49 +3,24 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Dynamic;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Finance_tracker.Entity_classes;
-
+using Org.BouncyCastle.Asn1.X509;
 
 namespace Finance_tracker.Controls
 {
-    public partial class CardInfo : UserControl
+    public partial class SelectCard : UserControl
     {
         string projectPath = Path.GetFullPath(Path.Combine(Application.StartupPath, "..\\.."));
         int indexSelectedCard;
+
         public int UserId { get; set; }
+
         public CardBalance CardBalance { get; set; }
-
-        public string CardNumber
-        { get { return tbCardNumber.Text; } }
-
-        public string CardHolder
-        { get { return tbCardHolder.Text; } }
-
-        public string ValidThru
-        { get { return tbValidThru.Text; } }
-
-        public Color TbNumberBackColor
-        { set { tbCardNumber.BackColor = value; } }
-
-        public Color TbHolderBackColor
-        { set { tbCardHolder.BackColor = value; } }
-
-        public Color TbValidThruBackColor
-        { set { tbValidThru.BackColor = value; } }
-
-        public bool TbNumberReadOnly
-        { set { tbCardNumber.ReadOnly = value; } }
-
-        public bool TbHolderReadOnly
-        { set { tbCardHolder.ReadOnly = value; } }
-
-        public bool TbValidThruReadOnly
-        { set { tbValidThru.ReadOnly = value; } }
 
         public int IndexSelectedCard
         {
@@ -53,90 +28,15 @@ namespace Finance_tracker.Controls
             set { indexSelectedCard = value; }
         }
 
+        public CreditCard CreditCard { get; set; }
+
         public event Action UpdateCardTab;
 
-        public CardInfo()
+        public SelectCard()
         {
             InitializeComponent();
-        }
 
-        public void FillFields(string number, string fullName, string validThru)
-        {
-            var cardNumber = string.Concat("**** **** **** ", number.Substring(12));
-            tbCardNumber.Text = cardNumber;
-            tbCardHolder.Text = fullName;
-            tbValidThru.Text = validThru;
-        }
-
-        public void ColorCardBlue()
-        {
-            string ImagePath = Path.Combine(projectPath, "Images\\blue_card.png");
-            pbLargeCard.Image = System.Drawing.Image.FromFile(ImagePath);
-
-            lCardTitle1.BackColor = Color.FromArgb(36, 95, 232);
-            lCardTitle3.BackColor = Color.FromArgb(36, 95, 232);
-            lCardTitle2.BackColor = Color.FromArgb(36, 95, 232);
-            tbCardHolder.BackColor = Color.FromArgb(36, 95, 232);
-            tbValidThru.BackColor = Color.FromArgb(36, 95, 232);
-            tbCardNumber.BackColor = Color.FromArgb(36, 95, 232);
-
-            tbCardNumber.Clear();
-            tbValidThru.Clear();
-            tbCardHolder.Clear();
-        }
-
-        public void ColorCardGray()
-        {
-            string ImagePath = Path.Combine(projectPath, "Images\\gray_card.png");
-            pbLargeCard.Image = System.Drawing.Image.FromFile(ImagePath);
-
-            lCardTitle1.BackColor = Color.FromArgb(166, 174, 183);
-            lCardTitle3.BackColor = Color.FromArgb(166, 174, 183);
-            lCardTitle2.BackColor = Color.FromArgb(166, 174, 183);
-            tbCardHolder.BackColor = Color.FromArgb(166, 174, 183);
-            tbValidThru.BackColor = Color.FromArgb(166, 174, 183);
-            tbCardNumber.BackColor = Color.FromArgb(166, 174, 183);
-
-            tbCardNumber.Clear();
-            tbValidThru.Clear();
-            tbCardHolder.Clear();
-        }
-
-        public bool CheckCorrectCardData()
-        {
-            string cardNumber = tbCardNumber.Text;
-            var cardHolder = tbCardHolder.Text;
-            string validThru = tbValidThru.Text;
-            int numberOfWordsInName = cardHolder.Split(' ').Length;
-
-            bool eror = false;
-            string erorText = string.Empty;
-
-            if (cardNumber.Length != 16)
-            {
-                erorText = "Invalid card number";
-                eror = true;
-            }
-
-            else if (numberOfWordsInName != 2)
-            {
-                erorText = "Invalid card holder";
-                eror = true;
-            }
-
-            else if (!Regex.IsMatch(validThru, @"^(0[1-9]|1[0-2])\/[0-9]{2}$"))
-            {
-                erorText = "Invalid valid thru";
-                eror = true;
-            }
-
-            if (eror)
-            {
-                MessageBox.Show(erorText);
-                return false;
-            }
-
-            return true;
+            CreditCard = this.creditCard;
         }
 
         public void CountOfDots(int count)
@@ -237,17 +137,17 @@ namespace Finance_tracker.Controls
             if (countOfCard < 3)
             {
                 CountOfDots(0);
-                ColorCardGray();
+                creditCard.ColorCardGray();
                 CardBalance.ClearBalance();
 
-                TbNumberBackColor = Color.FromArgb(183, 192, 201);
-                TbHolderBackColor = Color.FromArgb(183, 192, 201);
-                TbValidThruBackColor = Color.FromArgb(183, 192, 201);
+                creditCard.TbNumberBackColor = Color.FromArgb(183, 192, 201);
+                creditCard.TbHolderBackColor = Color.FromArgb(183, 192, 201);
+                creditCard.TbValidThruBackColor = Color.FromArgb(183, 192, 201);
                 CardBalance.TbBackColor = Color.FromArgb(183, 192, 201);
 
-                TbNumberReadOnly = false;
-                TbHolderReadOnly = false;
-                TbValidThruReadOnly = false;
+                creditCard.TbNumberReadOnly = false;
+                creditCard.TbHolderReadOnly = false;
+                creditCard.TbValidThruReadOnly = false;
                 CardBalance.TbReadOnly = false;
                 bAdd.Visible = true;
 
@@ -260,7 +160,7 @@ namespace Finance_tracker.Controls
         {
             using (var context = new FinanceTrackerContext())
             {
-                var validThru = ValidThru;
+                var validThru = creditCard.ValidThru;
 
                 var deleteCard = context.Cards
                     .Where(x => x.UserId == UserId
@@ -282,14 +182,14 @@ namespace Finance_tracker.Controls
 
         private void bAdd_Click(object sender, EventArgs e)
         {
-            bool correctCardData = CheckCorrectCardData();
+            bool correctCardData = creditCard.CheckCorrectCardData();
             bool correctBalance = CardBalance.CheckCorrectBalance();
 
             if (correctCardData && correctBalance)
             {
-                TbNumberReadOnly = true;
-                TbHolderReadOnly = true;
-                TbValidThruReadOnly = true;
+                creditCard.TbNumberReadOnly = true;
+                creditCard.TbHolderReadOnly = true;
+                creditCard.TbValidThruReadOnly = true;
                 CardBalance.TbReadOnly = true;
                 bAdd.Visible = true;
 
@@ -298,9 +198,9 @@ namespace Finance_tracker.Controls
                 string balance = CardBalance.Balance;
                 var card = new Card
                 {
-                    Number = CardNumber,
-                    HolderFullName = CardHolder,
-                    ValidThru = ValidThru,
+                    Number = creditCard.CardNumber,
+                    HolderFullName = creditCard.CardHolder,
+                    ValidThru = creditCard.ValidThru,
                     Balance = Convert.ToDecimal(balance),
                     UserId = UserId
                 };
@@ -319,7 +219,7 @@ namespace Finance_tracker.Controls
         public List<Transaction> GetLastTransaction()
         {
             List<Transaction> transactions;
-            var cardNumber = tbCardNumber.Text;
+            var cardNumber = creditCard.CardNumber;
 
             using (var context = new FinanceTrackerContext())
             {

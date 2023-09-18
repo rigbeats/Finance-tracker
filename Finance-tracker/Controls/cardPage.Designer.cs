@@ -28,38 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.transactionTable = new Finance_tracker.Controls.TransactionTable();
-            this.cardBalance = new Finance_tracker.Controls.CardBalance();
-            this.cardInfo = new Finance_tracker.Controls.CardInfo();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.transactionTable = new Finance_tracker.Controls.TransactionTable();
+            this.cardBalance = new Finance_tracker.Controls.CardBalance();
+            this.selectCard = new Finance_tracker.Controls.SelectCard();
             this.SuspendLayout();
-            // 
-            // transactionTable
-            // 
-            this.transactionTable.Location = new System.Drawing.Point(15, 78);
-            this.transactionTable.Name = "transactionTable";
-            this.transactionTable.Size = new System.Drawing.Size(656, 511);
-            this.transactionTable.TabIndex = 121;
-            // 
-            // cardBalance
-            // 
-            this.cardBalance.BackColor = System.Drawing.Color.White;
-            this.cardBalance.Balance = "0";
-            this.cardBalance.Location = new System.Drawing.Point(694, 370);
-            this.cardBalance.Name = "cardBalance";
-            this.cardBalance.Size = new System.Drawing.Size(340, 111);
-            this.cardBalance.TabIndex = 125;
-            // 
-            // cardInfo
-            // 
-            this.cardInfo.CardBalance = null;
-            this.cardInfo.IndexSelectedCard = 0;
-            this.cardInfo.Location = new System.Drawing.Point(694, 78);
-            this.cardInfo.Name = "cardInfo";
-            this.cardInfo.Size = new System.Drawing.Size(340, 276);
-            this.cardInfo.TabIndex = 124;
-            this.cardInfo.UserId = 0;
             // 
             // label3
             // 
@@ -84,17 +58,43 @@
             this.label2.TabIndex = 122;
             this.label2.Text = "Card";
             // 
-            // cardTab
+            // transactionTable
+            // 
+            this.transactionTable.Location = new System.Drawing.Point(15, 78);
+            this.transactionTable.Name = "transactionTable";
+            this.transactionTable.Size = new System.Drawing.Size(656, 511);
+            this.transactionTable.TabIndex = 121;
+            // 
+            // cardBalance
+            // 
+            this.cardBalance.BackColor = System.Drawing.Color.White;
+            this.cardBalance.Balance = "0";
+            this.cardBalance.Location = new System.Drawing.Point(694, 370);
+            this.cardBalance.Name = "cardBalance";
+            this.cardBalance.Size = new System.Drawing.Size(340, 111);
+            this.cardBalance.TabIndex = 125;
+            // 
+            // selectCard
+            // 
+            this.selectCard.CardBalance = null;
+            this.selectCard.IndexSelectedCard = 0;
+            this.selectCard.Location = new System.Drawing.Point(694, 78);
+            this.selectCard.Name = "selectCard";
+            this.selectCard.Size = new System.Drawing.Size(340, 274);
+            this.selectCard.TabIndex = 126;
+            this.selectCard.UserId = 0;
+            // 
+            // cardPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.selectCard);
             this.Controls.Add(this.transactionTable);
             this.Controls.Add(this.cardBalance);
-            this.Controls.Add(this.cardInfo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Name = "cardTab";
+            this.Name = "cardPage";
             this.Size = new System.Drawing.Size(1053, 681);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -105,8 +105,8 @@
 
         private TransactionTable transactionTable;
         private CardBalance cardBalance;
-        private CardInfo cardInfo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private SelectCard selectCard;
     }
 }

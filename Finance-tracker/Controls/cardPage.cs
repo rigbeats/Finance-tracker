@@ -18,11 +18,10 @@ namespace Finance_tracker.Controls
         public cardPage()
         {
             InitializeComponent();
+            selectCard.UserId = UserId;
+            selectCard.CardBalance = this.cardBalance;
 
-            this.cardInfo.UserId = UserId;
-            this.cardInfo.CardBalance = this.cardBalance;
-
-            cardInfo.UpdateCardTab += UpdateTable;
+            selectCard.UpdateCardTab += UpdateTable;
         }
 
         public void UpdateTable()
@@ -38,27 +37,27 @@ namespace Finance_tracker.Controls
             countOfCards = cards.Count;
             if (countOfCards > 0)
             {
-                cardInfo.CountOfDots(countOfCards);
-                cardInfo.ColorCardBlue();
+                selectCard.CountOfDots(countOfCards);
+                selectCard.CreditCard.ColorCardBlue();
 
-                var indexSelectedCard = cardInfo.IndexSelectedCard;
+                var indexSelectedCard = selectCard.IndexSelectedCard;
                 var cardNumber = cards[indexSelectedCard].Number;
                 var fullName = cards[indexSelectedCard].HolderFullName;
                 var validThru = cards[indexSelectedCard].ValidThru;
                 var balance = Convert.ToString(cards[indexSelectedCard].Balance);
 
-                cardInfo.FillFields(
+                selectCard.CreditCard.FillFields(
                     cardNumber,
                     fullName,
                     validThru);
                 cardBalance.Balance = balance;
 
-                var transactions = cardInfo.GetLastTransaction();
+                var transactions = selectCard.GetLastTransaction();
                 transactionTable.FillTable(transactions);
             }
             else
             {
-                cardInfo.ColorCardGray();
+                selectCard.CreditCard.ColorCardGray();
             }
         }
     }
