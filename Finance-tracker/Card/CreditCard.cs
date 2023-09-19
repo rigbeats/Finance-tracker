@@ -27,13 +27,22 @@ namespace Finance_tracker.Controls
         { get { return tbValidThru.Text; } }
 
         public Color TbNumberBackColor
-        { set { tbCardNumber.BackColor = value; } }
+        {
+            set { tbCardNumber.BackColor = value; }
+            get { return tbCardNumber.BackColor; }
+        }
 
         public Color TbHolderBackColor
-        { set { tbCardHolder.BackColor = value; } }
+        { 
+            set { tbCardHolder.BackColor = value; } 
+            get { return tbCardHolder.BackColor; }
+        }
 
         public Color TbValidThruBackColor
-        { set { tbValidThru.BackColor = value; } }
+        {
+            set { tbValidThru.BackColor = value; } 
+            get { return tbValidThru.BackColor; }
+        }
 
         public bool TbNumberReadOnly
         { set { tbCardNumber.ReadOnly = value; } }

@@ -1,6 +1,6 @@
 ﻿namespace Finance_tracker.Controls
 {
-    partial class paymentPage
+    partial class reportPage
     {
         /// <summary> 
         /// Обязательная переменная конструктора.

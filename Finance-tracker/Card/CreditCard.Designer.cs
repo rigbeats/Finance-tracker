@@ -69,7 +69,7 @@
             this.tbCardNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbCardNumber.Font = new System.Drawing.Font("Helvetica Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCardNumber.ForeColor = System.Drawing.Color.White;
-            this.tbCardNumber.Location = new System.Drawing.Point(29, 61);
+            this.tbCardNumber.Location = new System.Drawing.Point(28, 61);
             this.tbCardNumber.Name = "tbCardNumber";
             this.tbCardNumber.ReadOnly = true;
             this.tbCardNumber.Size = new System.Drawing.Size(229, 23);
