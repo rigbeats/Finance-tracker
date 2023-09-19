@@ -78,46 +78,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\CardBalance.cs">
+    <Compile Include="Card\CardBalance.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\CardBalance.designer.cs">
+    <Compile Include="Card\CardBalance.designer.cs">
       <DependentUpon>CardBalance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SelectCard.cs">
+    <Compile Include="Card\SelectCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\SelectCard.Designer.cs">
+    <Compile Include="Card\SelectCard.Designer.cs">
       <DependentUpon>SelectCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\CreditCard.cs">
+    <Compile Include="Card\CreditCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\CreditCard.Designer.cs">
+    <Compile Include="Card\CreditCard.Designer.cs">
       <DependentUpon>CreditCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\cardPage.cs">
+    <Compile Include="Card\cardPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\cardPage.Designer.cs">
+    <Compile Include="Card\cardPage.Designer.cs">
       <DependentUpon>cardPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\paymentPage.cs">
+    <Compile Include="Payment\PaymentPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\paymentPage.Designer.cs">
-      <DependentUpon>paymentPage.cs</DependentUpon>
+    <Compile Include="Payment\PaymentPage.Designer.cs">
+      <DependentUpon>PaymentPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SaveFile.cs">
+    <Compile Include="Payment\TransferToTheCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\SaveFile.Designer.cs">
+    <Compile Include="Payment\TransferToTheCard.Designer.cs">
+      <DependentUpon>TransferToTheCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\TypeOfPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Payment\TypeOfPayment.Designer.cs">
+      <DependentUpon>TypeOfPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\reportPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\reportPage.Designer.cs">
+      <DependentUpon>reportPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\SaveFile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\SaveFile.Designer.cs">
       <DependentUpon>SaveFile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\TransactionTable.cs">
+    <Compile Include="Card\TransactionTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\TransactionTable.designer.cs">
+    <Compile Include="Card\TransactionTable.designer.cs">
       <DependentUpon>TransactionTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity classes\Card.cs" />
@@ -132,25 +150,34 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Controls\CardBalance.resx">
+    <EmbeddedResource Include="Card\CardBalance.resx">
       <DependentUpon>CardBalance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\SelectCard.resx">
+    <EmbeddedResource Include="Card\SelectCard.resx">
       <DependentUpon>SelectCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\CreditCard.resx">
+    <EmbeddedResource Include="Card\CreditCard.resx">
       <DependentUpon>CreditCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\cardPage.resx">
+    <EmbeddedResource Include="Card\cardPage.resx">
       <DependentUpon>cardPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\paymentPage.resx">
-      <DependentUpon>paymentPage.cs</DependentUpon>
+    <EmbeddedResource Include="Payment\PaymentPage.resx">
+      <DependentUpon>PaymentPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\SaveFile.resx">
+    <EmbeddedResource Include="Payment\TransferToTheCard.resx">
+      <DependentUpon>TransferToTheCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\TypeOfPayment.resx">
+      <DependentUpon>TypeOfPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\reportPage.resx">
+      <DependentUpon>reportPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\SaveFile.resx">
       <DependentUpon>SaveFile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TransactionTable.resx">
+    <EmbeddedResource Include="Card\TransactionTable.resx">
       <DependentUpon>TransactionTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
@@ -193,7 +220,10 @@
     <Content Include="Icons\dollar_sign_icon.png" />
     <Content Include="Icons\dot_icon.png" />
     <Content Include="Icons\ellipsis_icon.png" />
+    <Content Include="Icons\home_icon.png" />
+    <Content Include="Icons\internet_icon.png" />
     <Content Include="Icons\money_icon.png" />
+    <Content Include="Icons\phone_icon.png" />
     <Content Include="Icons\plus_icon.png" />
     <Content Include="Icons\save_icon.png" />
     <Content Include="Icons\selected_compass_icon.png" />
