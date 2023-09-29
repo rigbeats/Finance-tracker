@@ -20,6 +20,9 @@ namespace Finance_tracker
         string projectPath = Path.GetFullPath(Path.Combine(Application.StartupPath, "..\\.."));
         (PictureBox, Label, string) selectedButton;
         int userId;
+        int? PreviousCardId { get; set; }
+
+        public event EventHandler CardTabUpdate;
 
         public Form1(int userId)
         {
@@ -27,9 +30,10 @@ namespace Finance_tracker
 
             this.userId = userId;
             cardPage.UserId = userId;
-        }
 
-        public event EventHandler CardTabUpdate;
+            //////////////////////ЗАТЫЧКА ДЛЯ ПРОВЕРКИ
+            paymentPage.CardId = 0; //PreviousCardId;
+        }
 
         private async void Form1_Load(object sender, EventArgs e)
         {
@@ -71,8 +75,9 @@ namespace Finance_tracker
 
         public void ClearAllPages()
         {
-            paymentPage.Visible = false;
+            reportPage.Visible = false;
             cardPage.Visible = false;
+            paymentPage.Visible = false;
         }
 
         private void BCard_Click(object sender, EventArgs e)
@@ -93,16 +98,16 @@ namespace Finance_tracker
         private void BReport_Click(object sender, EventArgs e)
         {
             DeselectButton();
+            ClearAllPages();
 
             SelectButton(
                 "Icons\\selected_save_icon.png",
                 pbReport,
                 lReport
                 );
-        }
 
-        ///////////////////////////////////////////////////////////////////
-        //TRANSFER
+            reportPage.Visible = true;
+        }
 
         private void BPayment_Click(object sender, EventArgs e)
         {

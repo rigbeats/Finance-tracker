@@ -62,8 +62,9 @@
             this.label33 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.paymentPage = new Finance_tracker.PaymentPage.PaymentPage();
             this.cardPage = new Finance_tracker.Controls.cardPage();
-            this.paymentPage = new Finance_tracker.Controls.paymentPage();
+            this.reportPage = new Finance_tracker.Controls.reportPage();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).BeginInit();
@@ -508,13 +509,23 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
-            this.panel2.Controls.Add(this.cardPage);
             this.panel2.Controls.Add(this.paymentPage);
+            this.panel2.Controls.Add(this.cardPage);
+            this.panel2.Controls.Add(this.reportPage);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(211, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1053, 681);
             this.panel2.TabIndex = 1;
+            // 
+            // paymentPage
+            // 
+            this.paymentPage.BackColor = System.Drawing.Color.White;
+            this.paymentPage.CardId = null;
+            this.paymentPage.Location = new System.Drawing.Point(-3, 0);
+            this.paymentPage.Name = "paymentPage";
+            this.paymentPage.Size = new System.Drawing.Size(1053, 681);
+            this.paymentPage.TabIndex = 2;
             // 
             // cardPage
             // 
@@ -526,14 +537,14 @@
             this.cardPage.UserId = 0;
             this.cardPage.Visible = false;
             // 
-            // paymentPage
+            // reportPage
             // 
-            this.paymentPage.BackColor = System.Drawing.Color.White;
-            this.paymentPage.Location = new System.Drawing.Point(-3, 0);
-            this.paymentPage.Name = "paymentPage";
-            this.paymentPage.Size = new System.Drawing.Size(1053, 681);
-            this.paymentPage.TabIndex = 1;
-            this.paymentPage.Visible = false;
+            this.reportPage.BackColor = System.Drawing.Color.White;
+            this.reportPage.Location = new System.Drawing.Point(-3, 0);
+            this.reportPage.Name = "reportPage";
+            this.reportPage.Size = new System.Drawing.Size(1053, 681);
+            this.reportPage.TabIndex = 1;
+            this.reportPage.Visible = false;
             // 
             // Form1
             // 
@@ -600,7 +611,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private Controls.cardPage cardPage;
-        private Controls.paymentPage paymentPage;
+        private Controls.reportPage reportPage;
+        private PaymentPage.PaymentPage paymentPage;
     }
 }
 
