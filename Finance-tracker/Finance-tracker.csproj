@@ -102,6 +102,12 @@
     <Compile Include="Card\cardPage.Designer.cs">
       <DependentUpon>cardPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Payment\Payment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Payment\Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Payment\PaymentPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -161,6 +167,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Card\cardPage.resx">
       <DependentUpon>cardPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\PaymentPage.agq-CM.resx">
+      <DependentUpon>PaymentPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\PaymentPage.asa-TZ.resx">
+      <DependentUpon>PaymentPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\PaymentPage.lkt-US.resx">
+      <DependentUpon>PaymentPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payment\PaymentPage.resx">
       <DependentUpon>PaymentPage.cs</DependentUpon>
