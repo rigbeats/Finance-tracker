@@ -30,7 +30,7 @@ namespace Finance_tracker.Controls
 
         public CreditCard CreditCard { get; set; }
 
-        public event Action UpdateCardTab;
+        public event Action UpdateCardPage;
 
         public SelectCard()
         {
@@ -97,19 +97,19 @@ namespace Finance_tracker.Controls
         private void pbDot1_Click(object sender, EventArgs e)
         {
             SetSelectedCard(0);
-            UpdateCardTab?.Invoke();
+            UpdateCardPage?.Invoke();
         }
 
         private void pbDot2_Click(object sender, EventArgs e)
         {
             SetSelectedCard(1);
-            UpdateCardTab.Invoke();
+            UpdateCardPage.Invoke();
         }
 
         private void pbDot3_Click(object sender, EventArgs e)
         {
             SetSelectedCard(2);
-            UpdateCardTab?.Invoke();
+            UpdateCardPage?.Invoke();
         }
 
         private void pbAdditionaSettings_MouseDown(object sender, MouseEventArgs e)
@@ -177,7 +177,7 @@ namespace Finance_tracker.Controls
             if (IndexSelectedCard > 0)
                 IndexSelectedCard--;
 
-            UpdateCardTab?.Invoke();
+            UpdateCardPage?.Invoke();
         }
 
         private void bAdd_Click(object sender, EventArgs e)
@@ -212,7 +212,7 @@ namespace Finance_tracker.Controls
                 }
 
                 IndexSelectedCard++;
-                UpdateCardTab?.Invoke();
+                UpdateCardPage?.Invoke();
             }
         }
 
@@ -236,6 +236,7 @@ namespace Finance_tracker.Controls
 
                 transactions = context.Transactions
                     .Where(x => x.CardId == idSelectedCard)
+                    .OrderByDescending(x => x.Date)
                     .Take(8)
                     .ToList();
             }

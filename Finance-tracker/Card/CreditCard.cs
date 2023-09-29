@@ -122,6 +122,9 @@ namespace Finance_tracker.Controls
                 eror = true;
             }
 
+            //Cлева месяц, справа год
+            //Пропустит 12/22
+            //Не пропустит 14/22
             else if (!Regex.IsMatch(validThru, @"^(0[1-9]|1[0-2])\/[0-9]{2}$"))
             {
                 erorText = "Invalid valid thru";
@@ -135,6 +138,13 @@ namespace Finance_tracker.Controls
             }
 
             return true;
+        }
+
+        public void ClearCard()
+        {
+            tbCardNumber.Clear();
+            tbValidThru.Clear();
+            tbCardHolder.Clear();
         }
     }
 }

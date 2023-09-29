@@ -37,7 +37,6 @@ namespace Finance_tracker.Controls
                 {
                             Convert.ToString(i + 1),
                             Convert.ToString(transactions[i].Amount),
-                            transactions[i].Target,
                             transactions[i].Category,
                             $"{date.Day}/{date.Month}/{date.Year}"
                 });
