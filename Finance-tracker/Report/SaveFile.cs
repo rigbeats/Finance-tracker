@@ -97,9 +97,9 @@ namespace Finance_tracker.Controls
             var table = new PdfPTable(4);
             var headers = new string[]
             {
-                "Amount",
-                "Transaction",
+                "Number",
                 "Category",
+                "Amount",
                 "Date"
             };
 
@@ -113,8 +113,9 @@ namespace Finance_tracker.Controls
             {
                 var date = transaction.Date;
 
-                table.AddCell(GetCellWithText(transaction.Amount));
+                table.AddCell(GetCellWithText(transaction.Number));
                 table.AddCell(GetCellWithText(transaction.Category));
+                table.AddCell(GetCellWithText(transaction.Amount));
                 table.AddCell(GetCellWithText($"{date.Day}.{date.Month}.{date.Year}"));
             }
 
