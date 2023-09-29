@@ -34,7 +34,6 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -49,9 +48,9 @@
             this.lastTransactionsTable = new System.Windows.Forms.ListView();
             this.number = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.transaction = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel9 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -62,7 +61,6 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -75,7 +73,6 @@
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.panel6);
-            this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.panel8);
             this.panel3.Controls.Add(this.panel4);
@@ -90,7 +87,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(138)))), ((int)(((byte)(155)))));
-            this.label10.Location = new System.Drawing.Point(528, 6);
+            this.label10.Location = new System.Drawing.Point(445, 6);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 18);
             this.label10.TabIndex = 106;
@@ -109,7 +106,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(138)))), ((int)(((byte)(155)))));
-            this.label9.Location = new System.Drawing.Point(357, 6);
+            this.label9.Location = new System.Drawing.Point(250, 6);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 18);
             this.label9.TabIndex = 106;
@@ -123,23 +120,12 @@
             this.panel6.Size = new System.Drawing.Size(656, 1);
             this.panel6.TabIndex = 6;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(138)))), ((int)(((byte)(155)))));
-            this.label8.Location = new System.Drawing.Point(192, 6);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 18);
-            this.label8.TabIndex = 106;
-            this.label8.Text = "Transaction";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(138)))), ((int)(((byte)(155)))));
-            this.label7.Location = new System.Drawing.Point(76, 6);
+            this.label7.Location = new System.Drawing.Point(105, 6);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 18);
             this.label7.TabIndex = 105;
@@ -242,13 +228,13 @@
             this.lastTransactionsTable.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.number,
             this.amount,
-            this.transaction,
             this.category,
             this.date});
             this.lastTransactionsTable.Font = new System.Drawing.Font("Helvetica Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lastTransactionsTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(85)))), ((int)(((byte)(103)))));
             this.lastTransactionsTable.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lastTransactionsTable.HideSelection = false;
+            this.lastTransactionsTable.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.lastTransactionsTable.Location = new System.Drawing.Point(1, 102);
             this.lastTransactionsTable.Name = "lastTransactionsTable";
             this.lastTransactionsTable.Size = new System.Drawing.Size(654, 407);
@@ -260,27 +246,28 @@
             // number
             // 
             this.number.Text = "Number";
-            this.number.Width = 71;
+            this.number.Width = 100;
             // 
             // amount
             // 
             this.amount.Text = "Amount";
-            this.amount.Width = 119;
-            // 
-            // transaction
-            // 
-            this.transaction.Text = "Transaction";
-            this.transaction.Width = 165;
+            this.amount.Width = 150;
             // 
             // category
             // 
             this.category.Text = "Category";
-            this.category.Width = 170;
+            this.category.Width = 190;
             // 
             // date
             // 
             this.date.Text = "Date";
-            this.date.Width = 125;
+            this.date.Width = 145;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(22, 51);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // panel9
             // 
@@ -387,12 +374,6 @@
             this.label6.TabIndex = 3;
             this.label6.Text = "Last 8 transactions";
             // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(22, 51);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
             // TransactionTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,7 +399,6 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel4;
@@ -433,7 +413,6 @@
         private System.Windows.Forms.ListView lastTransactionsTable;
         private System.Windows.Forms.ColumnHeader number;
         private System.Windows.Forms.ColumnHeader amount;
-        private System.Windows.Forms.ColumnHeader transaction;
         private System.Windows.Forms.ColumnHeader category;
         private System.Windows.Forms.ColumnHeader date;
         private System.Windows.Forms.Panel panel9;
