@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.creditCard = new Finance_tracker.Controls.CreditCard();
             this.tbTAmount = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.bTransfer = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
-            this.creditCard = new Finance_tracker.Controls.CreditCard();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +51,16 @@
             this.groupBox5.TabIndex = 117;
             this.groupBox5.TabStop = false;
             // 
+            // creditCard
+            // 
+            this.creditCard.Location = new System.Drawing.Point(20, 58);
+            this.creditCard.Name = "creditCard";
+            this.creditCard.Size = new System.Drawing.Size(291, 186);
+            this.creditCard.TabIndex = 121;
+            this.creditCard.TbHolderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(129)))), ((int)(((byte)(255)))));
+            this.creditCard.TbNumberBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(129)))), ((int)(((byte)(255)))));
+            this.creditCard.TbValidThruBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(129)))), ((int)(((byte)(255)))));
+            // 
             // tbTAmount
             // 
             this.tbTAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(95)))), ((int)(((byte)(232)))));
@@ -61,7 +71,7 @@
             this.tbTAmount.Name = "tbTAmount";
             this.tbTAmount.Size = new System.Drawing.Size(277, 23);
             this.tbTAmount.TabIndex = 120;
-            this.tbTAmount.Text = " 111";
+            this.tbTAmount.Text = " ";
             // 
             // label32
             // 
@@ -86,6 +96,7 @@
             this.bTransfer.TabIndex = 118;
             this.bTransfer.Text = "transfer";
             this.bTransfer.UseVisualStyleBackColor = false;
+            this.bTransfer.Click += new System.EventHandler(this.bTransfer_Click);
             // 
             // label16
             // 
@@ -98,16 +109,6 @@
             this.label16.Size = new System.Drawing.Size(188, 23);
             this.label16.TabIndex = 2;
             this.label16.Text = "Transfer to the card";
-            // 
-            // creditCard
-            // 
-            this.creditCard.Location = new System.Drawing.Point(20, 58);
-            this.creditCard.Name = "creditCard";
-            this.creditCard.Size = new System.Drawing.Size(291, 186);
-            this.creditCard.TabIndex = 121;
-            this.creditCard.TbHolderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(129)))), ((int)(((byte)(255)))));
-            this.creditCard.TbNumberBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(129)))), ((int)(((byte)(255)))));
-            this.creditCard.TbValidThruBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(129)))), ((int)(((byte)(255)))));
             // 
             // TransferToTheCard
             // 
