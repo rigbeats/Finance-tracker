@@ -78,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Budget\budgetPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Budget\budgetPage.Designer.cs">
+      <DependentUpon>budgetPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Card\CardBalance.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -102,6 +108,8 @@
     <Compile Include="Card\cardPage.Designer.cs">
       <DependentUpon>cardPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entity classes\BudgetEntry.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Payment\Payment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -156,6 +164,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Budget\budgetPage.resx">
+      <DependentUpon>budgetPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Card\CardBalance.resx">
       <DependentUpon>CardBalance.cs</DependentUpon>
     </EmbeddedResource>

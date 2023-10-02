@@ -78,6 +78,7 @@ namespace Finance_tracker
             reportPage.Visible = false;
             cardPage.Visible = false;
             paymentPage.Visible = false;
+            budgetPage.Visible = false;
         }
 
         private void BCard_Click(object sender, EventArgs e)
@@ -143,6 +144,8 @@ namespace Finance_tracker
                 pbBudget,
                 lBudget
                 );
+            budgetPage.Visible = true;
+            budgetPage.LoadData();
         }
 
         private void BStatistics_Click(object sender, EventArgs e)
@@ -228,6 +231,11 @@ namespace Finance_tracker
 
 
             }
+        }
+
+        private void paymentPage_Load(object sender, EventArgs e)
+        {
+
         }
 
         ///////////////////////////////////////////

@@ -62,5 +62,10 @@ namespace Finance_tracker.Controls
                 selectCard.CreditCard.ColorCardGray();
             }
         }
+
+        private void cardPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

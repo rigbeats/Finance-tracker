@@ -18,5 +18,6 @@ namespace Finance_tracker.Entity_classes
         public DbSet<Card> Cards { get; set; }
 
         public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<BudgetEntry> BudgetEntries { get; set; }
     }
 }
