@@ -238,6 +238,11 @@ namespace Finance_tracker
 
         }
 
+        private void budgetPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
         ///////////////////////////////////////////
     }
 }

@@ -26,21 +26,11 @@ namespace Finance_tracker.Budget
             rtbIncome.TextChanged += RTB_TextChanged;
             rtbNeeds.TextChanged += RTB_TextChanged;
             rtbWants.TextChanged += RTB_TextChanged;
-            //rtbWants1.TextChanged += RTB_TextChanged;
-            //rtbWants2.TextChanged += RTB_TextChanged;
-            //rtbDebts1.TextChanged += RTB_TextChanged;
-            //rtbDebts2.TextChanged += RTB_TextChanged;
-            //rtbTotalNeeds.TextChanged += RTB_TextChanged;
-            //rtbTotalWants.TextChanged += RTB_TextChanged;
-            //rtbTotalDebts.TextChanged += RTB_TextChanged;
-
-            // Initialize the form when it's loaded
             LoadData();
         }
 
         private void RTB_TextChanged(object sender, EventArgs e)
         {
-            // Handle RTB text changed event
             RecalculateTotals();
         }
 
@@ -54,14 +44,12 @@ namespace Finance_tracker.Budget
             int totalExpenses = needs + wants;
 
             // Update the total RTBs
-            //rtbTotalNeeds.Text = totalNeeds.ToString();
-            //rtbTotalWants.Text = totalWants.ToString();
-            //rtbTotalDebts.Text = totalDebts.ToString();
+            rtbTotalExpenses.Text = totalExpenses.ToString();
 
-            //// Check if the sum of Needs, Wants, and Debts exceeds Income
+            // Check if the sum of Needs, Wants, and Debts exceeds Income
             //if (totalNeeds + totalWants + totalDebts > income)
             //{
-            //    // Handle the case where expenses exceed income (e.g., show a warning)
+            //    Handle the case where expenses exceed income (e.g., show a warning)
             //}
         }
 
@@ -80,7 +68,6 @@ namespace Finance_tracker.Budget
             using (var context = new FinanceTrackerContext())
             {
                 // Load data from the database and populate the RTBs
-                //var entries = context.BudgetEntries.ToList();
                 var entries = context.BudgetEntries.ToList();
 
                 foreach (var entry in entries)
@@ -97,6 +84,10 @@ namespace Finance_tracker.Budget
                     {
                         rtbWants.Text = entry.Amount.ToString();
                     }
+                    else if (entry.Category == "Totals")
+                    {
+                        rtbWants.Text = entry.Amount.ToString();
+                    }
                     // Handle other categories similarly
                 }
             }
@@ -104,34 +95,31 @@ namespace Finance_tracker.Budget
 
         public void SaveData()
         {
-            using (var context = new FinanceTrackerContext())
-            {
-                // Update or insert data into the database based on the RTB values
-                UpdateOrInsertBudgetEntry(context, "Income", "Income", ParseInt(rtbIncome.Text));
-                UpdateOrInsertBudgetEntry(context, "Needs", "Rent", ParseInt(rtbNeeds.Text));
-                UpdateOrInsertBudgetEntry(context, "Wants", "Utilities", ParseInt(rtbWants.Text));
-                // Handle other categories similarly
-
-                // Save changes to the database
-                context.SaveChanges();
-            }
+            UpdateOrInsertBudgetEntry("Income", "Income", ParseInt(rtbIncome.Text));
+            UpdateOrInsertBudgetEntry("Needs", "Rent", ParseInt(rtbNeeds.Text));
+            UpdateOrInsertBudgetEntry("Wants", "Utilities", ParseInt(rtbWants.Text));
+            UpdateOrInsertBudgetEntry("Totals","Total Expenses", ParseInt(rtbTotalExpenses.Text));
         }
 
-        private void UpdateOrInsertBudgetEntry(FinanceTrackerContext context, string category, string name, int amount)
+        private void UpdateOrInsertBudgetEntry(string category, string name, int amount)
         {
-            var entry = context.BudgetEntries.SingleOrDefault(e => e.Category == category && e.Name == name);
+            using (var context = new FinanceTrackerContext())
+            {
+                var entry = context.BudgetEntries.SingleOrDefault(e => e.Category == category && e.Name == name);
+                if (entry == null)
+                {
+                    // Insert a new entry if it doesn't exist
+                    entry = new BudgetEntry { Category = category, Name = name, Amount = amount };
+                    context.BudgetEntries.Add(entry);
+                }
+                else
+                {
+                    // Update the existing entry if it exists
+                    entry.Amount = amount;
+                }
+                context.SaveChanges();
+            }
 
-            if (entry == null)
-            {
-                // Insert a new entry if it doesn't exist
-                entry = new BudgetEntry { Category = category, Name = name, Amount = amount };
-                context.BudgetEntries.Add(entry);
-            }
-            else
-            {
-                // Update the existing entry if it exists
-                entry.Amount = amount;
-            }
         }
         private void budgetPage_Load(object sender, EventArgs e)
         {
@@ -141,6 +129,11 @@ namespace Finance_tracker.Budget
         private void rtbTotalExpenses_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveData();
         }
     }
 }

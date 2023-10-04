@@ -32,6 +32,7 @@
             this.rtbNeeds = new System.Windows.Forms.RichTextBox();
             this.rtbWants = new System.Windows.Forms.RichTextBox();
             this.rtbTotalExpenses = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rtbIncome
@@ -60,17 +61,28 @@
             // 
             // rtbTotalExpenses
             // 
-            this.rtbTotalExpenses.Location = new System.Drawing.Point(88, 313);
+            this.rtbTotalExpenses.Location = new System.Drawing.Point(88, 375);
             this.rtbTotalExpenses.Name = "rtbTotalExpenses";
             this.rtbTotalExpenses.Size = new System.Drawing.Size(250, 25);
             this.rtbTotalExpenses.TabIndex = 3;
             this.rtbTotalExpenses.Text = "";
             this.rtbTotalExpenses.TextChanged += new System.EventHandler(this.rtbTotalExpenses_TextChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(391, 67);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // budgetPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.rtbTotalExpenses);
             this.Controls.Add(this.rtbWants);
             this.Controls.Add(this.rtbNeeds);
@@ -88,5 +100,6 @@
         private System.Windows.Forms.RichTextBox rtbNeeds;
         private System.Windows.Forms.RichTextBox rtbWants;
         private System.Windows.Forms.RichTextBox rtbTotalExpenses;
+        private System.Windows.Forms.Button button1;
     }
 }

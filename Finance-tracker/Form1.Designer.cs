@@ -61,11 +61,11 @@
             this.BOverview = new System.Windows.Forms.Button();
             this.label33 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.budgetPage = new Finance_tracker.Budget.budgetPage();
             this.paymentPage = new Finance_tracker.PaymentPage.PaymentPage();
             this.cardPage = new Finance_tracker.Controls.cardPage();
             this.reportPage = new Finance_tracker.Controls.reportPage();
-            this.budgetPage = new Finance_tracker.Budget.budgetPage();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).BeginInit();
@@ -552,6 +552,14 @@
             this.panel2.Size = new System.Drawing.Size(1404, 838);
             this.panel2.TabIndex = 1;
             // 
+            // budgetPage
+            // 
+            this.budgetPage.Location = new System.Drawing.Point(0, 0);
+            this.budgetPage.Name = "budgetPage";
+            this.budgetPage.Size = new System.Drawing.Size(1404, 838);
+            this.budgetPage.TabIndex = 3;
+            this.budgetPage.Load += new System.EventHandler(this.budgetPage_Load);
+            // 
             // paymentPage
             // 
             this.paymentPage.BackColor = System.Drawing.Color.White;
@@ -583,13 +591,6 @@
             this.reportPage.Size = new System.Drawing.Size(1404, 838);
             this.reportPage.TabIndex = 1;
             this.reportPage.Visible = false;
-            // 
-            // budgetPage
-            // 
-            this.budgetPage.Location = new System.Drawing.Point(0, 0);
-            this.budgetPage.Name = "budgetPage";
-            this.budgetPage.Size = new System.Drawing.Size(1404, 838);
-            this.budgetPage.TabIndex = 3;
             // 
             // Form1
             // 
