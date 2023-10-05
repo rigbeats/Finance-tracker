@@ -24,8 +24,8 @@ namespace Finance_tracker.Budget
         {
             // Attach TextChanged event handlers to your RTBs
             rtbIncome.TextChanged += RTB_TextChanged;
-            rtbNeeds.TextChanged += RTB_TextChanged;
-            rtbWants.TextChanged += RTB_TextChanged;
+            rtbRentMortgage.TextChanged += RTB_TextChanged;
+            rtbPropertyTaxBill.TextChanged += RTB_TextChanged;
             LoadData();
         }
 
@@ -38,8 +38,8 @@ namespace Finance_tracker.Budget
         {
             // Calculate the totals and update the corresponding RTBs
             int income = ParseInt(rtbIncome.Text);
-            int needs = ParseInt(rtbNeeds.Text);
-            int wants = ParseInt(rtbWants.Text);
+            int needs = ParseInt(rtbRentMortgage.Text);
+            int wants = ParseInt(rtbPropertyTaxBill.Text);
 
             int totalExpenses = needs + wants;
 
@@ -72,21 +72,33 @@ namespace Finance_tracker.Budget
 
                 foreach (var entry in entries)
                 {
-                    if (entry.Category == "Income")
+                    if (entry.Name == "Income")
                     {
                         rtbIncome.Text = entry.Amount.ToString();
                     }
-                    else if (entry.Category == "Needs")
+                    else if (entry.Name == "Rent/mortgage")
                     {
-                        rtbNeeds.Text = entry.Amount.ToString();
+                        rtbRentMortgage.Text = entry.Amount.ToString();
                     }
-                    else if (entry.Category == "Wants")
+                    else if (entry.Name == "Property tax bill")
                     {
-                        rtbWants.Text = entry.Amount.ToString();
+                        rtbPropertyTaxBill.Text = entry.Amount.ToString();
                     }
-                    else if (entry.Category == "Totals")
+                    else if (entry.Name == "Property tax bill")
                     {
-                        rtbWants.Text = entry.Amount.ToString();
+                        rtbPropertyTaxBill.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Property tax bill")
+                    {
+                        rtbPropertyTaxBill.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Property tax bill")
+                    {
+                        rtbPropertyTaxBill.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Totals")
+                    {
+                        rtbPropertyTaxBill.Text = entry.Amount.ToString();
                     }
                     // Handle other categories similarly
                 }
@@ -96,8 +108,8 @@ namespace Finance_tracker.Budget
         public void SaveData()
         {
             UpdateOrInsertBudgetEntry("Income", "Income", ParseInt(rtbIncome.Text));
-            UpdateOrInsertBudgetEntry("Needs", "Rent", ParseInt(rtbNeeds.Text));
-            UpdateOrInsertBudgetEntry("Wants", "Utilities", ParseInt(rtbWants.Text));
+            UpdateOrInsertBudgetEntry("Needs", "Rent/mortgage", ParseInt(rtbRentMortgage.Text));
+            UpdateOrInsertBudgetEntry("Wants", "Utilities", ParseInt(rtbPropertyTaxBill.Text));
             UpdateOrInsertBudgetEntry("Totals","Total Expenses", ParseInt(rtbTotalExpenses.Text));
         }
 
