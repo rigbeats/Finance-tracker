@@ -44,7 +44,7 @@ namespace Finance_tracker.Budget
             int totalExpenses = needs + wants;
 
             // Update the total RTBs
-            rtbTotalExpenses.Text = totalExpenses.ToString();
+            //rtbTotalExpenses.Text = totalExpenses.ToString();
 
             // Check if the sum of Needs, Wants, and Debts exceeds Income
             //if (totalNeeds + totalWants + totalDebts > income)
@@ -110,7 +110,7 @@ namespace Finance_tracker.Budget
             UpdateOrInsertBudgetEntry("Income", "Income", ParseInt(rtbIncome.Text));
             UpdateOrInsertBudgetEntry("Needs", "Rent/mortgage", ParseInt(rtbRentMortgage.Text));
             UpdateOrInsertBudgetEntry("Wants", "Utilities", ParseInt(rtbPropertyTaxBill.Text));
-            UpdateOrInsertBudgetEntry("Totals","Total Expenses", ParseInt(rtbTotalExpenses.Text));
+            //UpdateOrInsertBudgetEntry("Totals","Total Expenses", ParseInt(rtbTotalExpenses.Text));
         }
 
         private void UpdateOrInsertBudgetEntry(string category, string name, int amount)
@@ -146,6 +146,16 @@ namespace Finance_tracker.Budget
         private void button1_Click(object sender, EventArgs e)
         {
             SaveData();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbOtherDebts_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
