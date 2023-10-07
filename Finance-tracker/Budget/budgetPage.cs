@@ -22,35 +22,33 @@ namespace Finance_tracker.Budget
         // Event handler for RichTextBox text changes
         private void InitializeEventHandlers()
         {
-            // Attach TextChanged event handlers to your RTBs
-            rtbIncome.TextChanged += RTB_TextChanged;
-            rtbRentMortgage.TextChanged += RTB_TextChanged;
-            rtbPropertyTaxBill.TextChanged += RTB_TextChanged;
             LoadData();
         }
 
-        private void RTB_TextChanged(object sender, EventArgs e)
+        private void RecalculateTotals(string category)
         {
-            RecalculateTotals();
-        }
-
-        private void RecalculateTotals()
-        {
-            // Calculate the totals and update the corresponding RTBs
-            int income = ParseInt(rtbIncome.Text);
-            int needs = ParseInt(rtbRentMortgage.Text);
-            int wants = ParseInt(rtbPropertyTaxBill.Text);
-
-            int totalExpenses = needs + wants;
-
-            // Update the total RTBs
-            //rtbTotalExpenses.Text = totalExpenses.ToString();
-
-            // Check if the sum of Needs, Wants, and Debts exceeds Income
-            //if (totalNeeds + totalWants + totalDebts > income)
-            //{
-            //    Handle the case where expenses exceed income (e.g., show a warning)
-            //}
+            int totalAmount = 0;
+            using (var context = new FinanceTrackerContext())
+            {
+                totalAmount = context.BudgetEntries
+                    .Where(x => x.Category == category)
+                    .Sum(x => x.Amount);
+            }
+            if (category == "Needs")
+            {
+                lTotalNeedsAmount.Text = totalAmount.ToString();
+                lFinalNeedsAmount.Text = totalAmount.ToString();
+            }
+            else if (category == "Wants")
+            {
+                lTotalWantsAmount.Text = totalAmount.ToString();
+                lFinalWantsAmount.Text = totalAmount.ToString();
+            }
+            else if (category == "Debts")
+            {
+                lTotalDebtsAmount.Text = totalAmount.ToString();
+                lFinalDebtsAmount.Text = totalAmount.ToString();
+            }
         }
 
         private int ParseInt(string text)
@@ -62,7 +60,7 @@ namespace Finance_tracker.Budget
             }
             return 0;
         }
-
+        #region loading and saving data
         public void LoadData()
         {
             using (var context = new FinanceTrackerContext())
@@ -72,10 +70,16 @@ namespace Finance_tracker.Budget
 
                 foreach (var entry in entries)
                 {
+
+                    //Income
+
                     if (entry.Name == "Income")
                     {
                         rtbIncome.Text = entry.Amount.ToString();
                     }
+
+                    //Needs
+
                     else if (entry.Name == "Rent/mortgage")
                     {
                         rtbRentMortgage.Text = entry.Amount.ToString();
@@ -84,23 +88,146 @@ namespace Finance_tracker.Budget
                     {
                         rtbPropertyTaxBill.Text = entry.Amount.ToString();
                     }
-                    else if (entry.Name == "Property tax bill")
+                    else if (entry.Name == "Auto insurance premiums")
                     {
-                        rtbPropertyTaxBill.Text = entry.Amount.ToString();
+                        rtbAutoInsurancePremiums.Text = entry.Amount.ToString();
                     }
-                    else if (entry.Name == "Property tax bill")
+                    else if (entry.Name == "Health insurance premiums")
                     {
-                        rtbPropertyTaxBill.Text = entry.Amount.ToString();
+                        rtbHealthInsurancePremiums.Text = entry.Amount.ToString();
                     }
-                    else if (entry.Name == "Property tax bill")
+                    else if (entry.Name == "Life insurance premiums")
                     {
-                        rtbPropertyTaxBill.Text = entry.Amount.ToString();
+                        rtbLifeInsurancePremiums.Text = entry.Amount.ToString();
                     }
-                    else if (entry.Name == "Totals")
+                    else if (entry.Name == "Electricity and gas bill")
                     {
-                        rtbPropertyTaxBill.Text = entry.Amount.ToString();
+                        rtbElectricityAndGasBill.Text = entry.Amount.ToString();
                     }
-                    // Handle other categories similarly
+                    else if (entry.Name == "Gasoline")
+                    {
+                        rtbGasoline.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Public transportation")
+                    {
+                        rtbPublicTransportation.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Phone bill")
+                    {
+                        rtbPhoneBill.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Sanitation/garbage bill")
+                    {
+                        rtbSanitationGarbageBill.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Groceries")
+                    {
+                        rtbGroceries.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Car payment")
+                    {
+                        rtbCarPayment.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Internet bill")
+                    {
+                        rtbInternetBill.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Other needs")
+                    {
+                        rtbOtherNeeds.Text = entry.Amount.ToString();
+                    }
+
+                    //Wants
+
+                    else if (entry.Name == "Clothing, jewelry")
+                    {
+                        rtbClothingJewelry.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Dining out")
+                    {
+                        rtbDiningOut.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Special meals at home")
+                    {
+                        rtbSpecialMealsAtHome.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Alcohol")
+                    {
+                        rtbAlcohol.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Movie, concert tickets")
+                    {
+                        rtbMovieConcertTickets.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Gym/club memberships")
+                    {
+                        rtbGymClubMemberships.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Travel expenses")
+                    {
+                        rtbTravelExpenses.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Cable/streaming packages")
+                    {
+                        rtbCableStreamingPackages.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Home decor items")
+                    {
+                        rtbHomeDecorItems.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Other wants")
+                    {
+                        rtbOtherWants.Text = entry.Amount.ToString();
+                    }
+
+                    //Debts
+
+                    else if (entry.Name == "Emergency contributions")
+                    {
+                        rtbEmergencyContributions.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Savings contributions")
+                    {
+                        rtbSavingsContributions.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Individual retirement")
+                    {
+                        rtbIndividualRetirement.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Other investments")
+                    {
+                        rtbOtherInvestments.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Credit card payments")
+                    {
+                        rtbCreditCardPayments.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Student loan payments")
+                    {
+                        rtbStudentLoanPayments.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Other debts")
+                    {
+                        rtbOtherDebts.Text = entry.Amount.ToString();
+                    }
+
+                    //Totals
+
+                    else if (entry.Name == "Total needs")
+                    {
+                        lTotalNeedsAmount.Text = entry.Amount.ToString();
+                        lFinalNeedsAmount.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Total wants")
+                    {
+                        lTotalWantsAmount.Text = entry.Amount.ToString();
+                        lFinalWantsAmount.Text = entry.Amount.ToString();
+                    }
+                    else if (entry.Name == "Total debts")
+                    {
+                        lTotalDebtsAmount.Text = entry.Amount.ToString();
+                        lFinalDebtsAmount.Text = entry.Amount.ToString();
+                    }
                 }
             }
         }
@@ -108,9 +235,53 @@ namespace Finance_tracker.Budget
         public void SaveData()
         {
             UpdateOrInsertBudgetEntry("Income", "Income", ParseInt(rtbIncome.Text));
+
+            //Needs
+
             UpdateOrInsertBudgetEntry("Needs", "Rent/mortgage", ParseInt(rtbRentMortgage.Text));
-            UpdateOrInsertBudgetEntry("Wants", "Utilities", ParseInt(rtbPropertyTaxBill.Text));
-            //UpdateOrInsertBudgetEntry("Totals","Total Expenses", ParseInt(rtbTotalExpenses.Text));
+            UpdateOrInsertBudgetEntry("Needs", "Property tax bill", ParseInt(rtbPropertyTaxBill.Text));
+            UpdateOrInsertBudgetEntry("Needs", "Auto insurance premiums", ParseInt(rtbAutoInsurancePremiums.Text));
+            UpdateOrInsertBudgetEntry("Needs", "Health insurance premiums", ParseInt(rtbHealthInsurancePremiums.Text));
+            UpdateOrInsertBudgetEntry("Needs", "Life insurance premiums", ParseInt(rtbLifeInsurancePremiums.Text));
+            UpdateOrInsertBudgetEntry("Needs", "Electricity and gas bill", ParseInt(rtbElectricityAndGasBill.Text));
+            UpdateOrInsertBudgetEntry("Needs", "Gasoline", ParseInt(rtbGasoline.Text));
+            UpdateOrInsertBudgetEntry("Needs", "Public transportation", ParseInt(rtbPublicTransportation.Text));
+            UpdateOrInsertBudgetEntry("Needs", "Phone bill", ParseInt(rtbPhoneBill.Text));
+            UpdateOrInsertBudgetEntry("Needs", "Sanitation/garbage bill", ParseInt(rtbSanitationGarbageBill.Text));
+            UpdateOrInsertBudgetEntry("Needs", "Groceries", ParseInt(rtbGroceries.Text));
+            UpdateOrInsertBudgetEntry("Needs", "Car payment", ParseInt(rtbCarPayment.Text));
+            UpdateOrInsertBudgetEntry("Needs", "Internet bill", ParseInt(rtbInternetBill.Text));
+            UpdateOrInsertBudgetEntry("Needs", "Other needs", ParseInt(rtbOtherNeeds.Text));
+            
+            //Wants
+
+            UpdateOrInsertBudgetEntry("Wants", "Clothing, jewelry", ParseInt(rtbClothingJewelry.Text));
+            UpdateOrInsertBudgetEntry("Wants", "Dining out", ParseInt(rtbDiningOut.Text));
+            UpdateOrInsertBudgetEntry("Wants", "Special meals at home", ParseInt(rtbSpecialMealsAtHome.Text));
+            UpdateOrInsertBudgetEntry("Wants", "Alcohol", ParseInt(rtbAlcohol.Text));
+            UpdateOrInsertBudgetEntry("Wants", "Movie, concert tickets", ParseInt(rtbMovieConcertTickets.Text));
+            UpdateOrInsertBudgetEntry("Wants", "Gym/club memberships", ParseInt(rtbGymClubMemberships.Text));
+            UpdateOrInsertBudgetEntry("Wants", "Travel expenses", ParseInt(rtbTravelExpenses.Text));
+            UpdateOrInsertBudgetEntry("Wants", "Cable/streaming packages", ParseInt(rtbCableStreamingPackages.Text));
+            UpdateOrInsertBudgetEntry("Wants", "Home decor items", ParseInt(rtbHomeDecorItems.Text));
+            UpdateOrInsertBudgetEntry("Wants", "Other wants", ParseInt(rtbOtherWants.Text));
+
+            //Debts
+
+            UpdateOrInsertBudgetEntry("Debts", "Emergency contributions", ParseInt(rtbEmergencyContributions.Text));
+            UpdateOrInsertBudgetEntry("Debts", "Savings contributions", ParseInt(rtbSavingsContributions.Text));
+            UpdateOrInsertBudgetEntry("Debts", "Individual retirement", ParseInt(rtbIndividualRetirement.Text));
+            UpdateOrInsertBudgetEntry("Debts", "Other investments", ParseInt(rtbOtherInvestments.Text));
+            UpdateOrInsertBudgetEntry("Debts", "Credit card payments", ParseInt(rtbCreditCardPayments.Text));
+            UpdateOrInsertBudgetEntry("Debts", "Student loan payments", ParseInt(rtbStudentLoanPayments.Text));
+            UpdateOrInsertBudgetEntry("Debts", "Other debts", ParseInt(rtbOtherDebts.Text));
+
+            //Totals
+
+            UpdateOrInsertBudgetEntry("Totals", "Total needs", ParseInt(lTotalNeedsAmount.Text));
+            UpdateOrInsertBudgetEntry("Totals", "Total wants", ParseInt(lTotalWantsAmount.Text));
+            UpdateOrInsertBudgetEntry("Totals", "Total debts", ParseInt(lTotalDebtsAmount.Text));
+
         }
 
         private void UpdateOrInsertBudgetEntry(string category, string name, int amount)
@@ -133,29 +304,28 @@ namespace Finance_tracker.Budget
             }
 
         }
+        #endregion
         private void budgetPage_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void rtbTotalExpenses_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSaveNeeds_Click(object sender, EventArgs e)
         {
             SaveData();
+            RecalculateTotals("Needs");
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void btnSaveWants_Click(object sender, EventArgs e)
         {
-
+            SaveData();
+            RecalculateTotals("Wants");
         }
 
-        private void rtbOtherDebts_TextChanged(object sender, EventArgs e)
+        private void btnSaveDebts_Click(object sender, EventArgs e)
         {
-
+            SaveData();
+            RecalculateTotals("Debts");
         }
     }
 }

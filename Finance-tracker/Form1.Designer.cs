@@ -117,7 +117,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(281, 838);
+            this.panel1.Size = new System.Drawing.Size(281, 634);
             this.panel1.TabIndex = 0;
             // 
             // panel5
@@ -549,11 +549,12 @@
             this.panel2.Location = new System.Drawing.Point(281, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1404, 838);
+            this.panel2.Size = new System.Drawing.Size(965, 634);
             this.panel2.TabIndex = 1;
             // 
             // budgetPage
             // 
+            this.budgetPage.AutoScroll = true;
             this.budgetPage.Location = new System.Drawing.Point(0, 0);
             this.budgetPage.Name = "budgetPage";
             this.budgetPage.Size = new System.Drawing.Size(1404, 838);
@@ -596,7 +597,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1685, 838);
+            this.ClientSize = new System.Drawing.Size(1246, 634);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

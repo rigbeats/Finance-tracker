@@ -67,6 +67,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -83,6 +84,12 @@
     </Compile>
     <Compile Include="Budget\budgetPage.Designer.cs">
       <DependentUpon>budgetPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Budget\BudgetPieChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Budget\BudgetPieChart.Designer.cs">
+      <DependentUpon>BudgetPieChart.cs</DependentUpon>
     </Compile>
     <Compile Include="Card\CardBalance.cs">
       <SubType>UserControl</SubType>
@@ -165,6 +172,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Budget\budgetPage.resx">
       <DependentUpon>budgetPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Budget\BudgetPieChart.resx">
+      <DependentUpon>BudgetPieChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Card\CardBalance.resx">
       <DependentUpon>CardBalance.cs</DependentUpon>

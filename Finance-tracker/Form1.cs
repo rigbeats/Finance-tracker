@@ -12,9 +12,10 @@ using Finance_tracker.Entity_classes;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using Finance_tracker.Controls;
+using System.Runtime.CompilerServices;
 
 namespace Finance_tracker
-{
+{ 
     public partial class Form1 : Form
     {
         string projectPath = Path.GetFullPath(Path.Combine(Application.StartupPath, "..\\.."));
