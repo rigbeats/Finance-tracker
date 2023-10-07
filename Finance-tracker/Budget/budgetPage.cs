@@ -327,5 +327,175 @@ namespace Finance_tracker.Budget
             SaveData();
             RecalculateTotals("Debts");
         }
+
+        private void lMonthlyIncome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lInternetBill_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lCarPayment_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lGroceries_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lSanitationGarbageBill_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lPhoneBill_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lPublicTransportation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lGasoline_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lElectricityAndGasBill_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lLifeInsurancePremiums_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lHealthInsurancePremiums_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lAutoInsurancePremiums_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lPropertyTaxBill_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lRentMortgage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lNeeds_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbOtherNeeds_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbInternetBill_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbCarPayment_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbGroceries_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbSanitationGarbageBill_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbPhoneBill_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbPublicTransportation_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbGasoline_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbElectricityAndGasBill_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbLifeInsurancePremiums_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbHealthInsurancePremiums_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbAutoInsurancePremiums_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lExpenses_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lOtherNeeds_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbPropertyTaxBill_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbRentMortgage_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbIncome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void budgetPieChart1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void budgetPieChart1_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

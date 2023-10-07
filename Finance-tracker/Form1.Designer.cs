@@ -557,7 +557,7 @@
             this.budgetPage.AutoScroll = true;
             this.budgetPage.Location = new System.Drawing.Point(0, 0);
             this.budgetPage.Name = "budgetPage";
-            this.budgetPage.Size = new System.Drawing.Size(1404, 838);
+            this.budgetPage.Size = new System.Drawing.Size(965, 634);
             this.budgetPage.TabIndex = 3;
             this.budgetPage.Load += new System.EventHandler(this.budgetPage_Load);
             // 
@@ -568,7 +568,7 @@
             this.paymentPage.Location = new System.Drawing.Point(-4, 0);
             this.paymentPage.Margin = new System.Windows.Forms.Padding(5);
             this.paymentPage.Name = "paymentPage";
-            this.paymentPage.Size = new System.Drawing.Size(1404, 838);
+            this.paymentPage.Size = new System.Drawing.Size(969, 634);
             this.paymentPage.TabIndex = 2;
             this.paymentPage.Load += new System.EventHandler(this.paymentPage_Load);
             // 
@@ -578,7 +578,7 @@
             this.cardPage.Location = new System.Drawing.Point(0, 0);
             this.cardPage.Margin = new System.Windows.Forms.Padding(5);
             this.cardPage.Name = "cardPage";
-            this.cardPage.Size = new System.Drawing.Size(1404, 838);
+            this.cardPage.Size = new System.Drawing.Size(965, 634);
             this.cardPage.TabIndex = 0;
             this.cardPage.UserId = 0;
             this.cardPage.Visible = false;

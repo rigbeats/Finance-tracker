@@ -79,7 +79,6 @@
             this.lFinalWants = new System.Windows.Forms.Label();
             this.lFinalDebtsAmount = new System.Windows.Forms.Label();
             this.lFinalDebts = new System.Windows.Forms.Label();
-            this.lForBeautyDownBelow = new System.Windows.Forms.Label();
             this.lRentMortgage = new System.Windows.Forms.Label();
             this.lPropertyTaxBill = new System.Windows.Forms.Label();
             this.lAutoInsurancePremiums = new System.Windows.Forms.Label();
@@ -113,36 +112,44 @@
             this.lOtherDebts = new System.Windows.Forms.Label();
             this.btnSaveWants = new System.Windows.Forms.Button();
             this.btnSaveDebts = new System.Windows.Forms.Button();
-            this.budgetPieChart1 = new Finance_tracker.Budget.BudgetPieChart();
+            this.labelOnTheBottom = new System.Windows.Forms.Label();
+            this.budgetPieChartExpenses = new Finance_tracker.Budget.BudgetPieChart();
             this.SuspendLayout();
             // 
             // rtbIncome
             // 
-            this.rtbIncome.Location = new System.Drawing.Point(20, 2823);
+            this.rtbIncome.Location = new System.Drawing.Point(9, 71);
+            this.rtbIncome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbIncome.Name = "rtbIncome";
-            this.rtbIncome.Size = new System.Drawing.Size(250, 25);
+            this.rtbIncome.Size = new System.Drawing.Size(249, 25);
             this.rtbIncome.TabIndex = 0;
             this.rtbIncome.Text = "";
+            this.rtbIncome.TextChanged += new System.EventHandler(this.rtbIncome_TextChanged);
             // 
             // rtbRentMortgage
             // 
-            this.rtbRentMortgage.Location = new System.Drawing.Point(20, 3000);
+            this.rtbRentMortgage.Location = new System.Drawing.Point(9, 249);
+            this.rtbRentMortgage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbRentMortgage.Name = "rtbRentMortgage";
-            this.rtbRentMortgage.Size = new System.Drawing.Size(250, 25);
+            this.rtbRentMortgage.Size = new System.Drawing.Size(249, 25);
             this.rtbRentMortgage.TabIndex = 1;
             this.rtbRentMortgage.Text = "";
+            this.rtbRentMortgage.TextChanged += new System.EventHandler(this.rtbRentMortgage_TextChanged);
             // 
             // rtbPropertyTaxBill
             // 
-            this.rtbPropertyTaxBill.Location = new System.Drawing.Point(296, 3000);
+            this.rtbPropertyTaxBill.Location = new System.Drawing.Point(285, 249);
+            this.rtbPropertyTaxBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbPropertyTaxBill.Name = "rtbPropertyTaxBill";
-            this.rtbPropertyTaxBill.Size = new System.Drawing.Size(250, 25);
+            this.rtbPropertyTaxBill.Size = new System.Drawing.Size(249, 25);
             this.rtbPropertyTaxBill.TabIndex = 2;
             this.rtbPropertyTaxBill.Text = "";
+            this.rtbPropertyTaxBill.TextChanged += new System.EventHandler(this.rtbPropertyTaxBill_TextChanged);
             // 
             // btnSaveNeeds
             // 
-            this.btnSaveNeeds.Location = new System.Drawing.Point(665, 3306);
+            this.btnSaveNeeds.Location = new System.Drawing.Point(653, 555);
+            this.btnSaveNeeds.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSaveNeeds.Name = "btnSaveNeeds";
             this.btnSaveNeeds.Size = new System.Drawing.Size(75, 23);
             this.btnSaveNeeds.TabIndex = 4;
@@ -156,12 +163,13 @@
             this.lMonthlyIncome.BackColor = System.Drawing.Color.White;
             this.lMonthlyIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMonthlyIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lMonthlyIncome.Location = new System.Drawing.Point(15, 2782);
+            this.lMonthlyIncome.Location = new System.Drawing.Point(4, 31);
             this.lMonthlyIncome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lMonthlyIncome.Name = "lMonthlyIncome";
             this.lMonthlyIncome.Size = new System.Drawing.Size(203, 31);
             this.lMonthlyIncome.TabIndex = 123;
             this.lMonthlyIncome.Text = "Monthly income";
+            this.lMonthlyIncome.Click += new System.EventHandler(this.lMonthlyIncome_Click);
             // 
             // lExpenses
             // 
@@ -169,108 +177,133 @@
             this.lExpenses.BackColor = System.Drawing.Color.White;
             this.lExpenses.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lExpenses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lExpenses.Location = new System.Drawing.Point(20, 2868);
+            this.lExpenses.Location = new System.Drawing.Point(9, 117);
             this.lExpenses.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lExpenses.Name = "lExpenses";
             this.lExpenses.Size = new System.Drawing.Size(133, 31);
             this.lExpenses.TabIndex = 124;
             this.lExpenses.Text = "Expenses";
+            this.lExpenses.Click += new System.EventHandler(this.lExpenses_Click);
             // 
             // rtbAutoInsurancePremiums
             // 
-            this.rtbAutoInsurancePremiums.Location = new System.Drawing.Point(572, 3000);
+            this.rtbAutoInsurancePremiums.Location = new System.Drawing.Point(561, 249);
+            this.rtbAutoInsurancePremiums.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbAutoInsurancePremiums.Name = "rtbAutoInsurancePremiums";
-            this.rtbAutoInsurancePremiums.Size = new System.Drawing.Size(250, 25);
+            this.rtbAutoInsurancePremiums.Size = new System.Drawing.Size(249, 25);
             this.rtbAutoInsurancePremiums.TabIndex = 125;
             this.rtbAutoInsurancePremiums.Text = "";
+            this.rtbAutoInsurancePremiums.TextChanged += new System.EventHandler(this.rtbAutoInsurancePremiums_TextChanged);
             // 
             // rtbElectricityAndGasBill
             // 
-            this.rtbElectricityAndGasBill.Location = new System.Drawing.Point(573, 3072);
+            this.rtbElectricityAndGasBill.Location = new System.Drawing.Point(563, 321);
+            this.rtbElectricityAndGasBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbElectricityAndGasBill.Name = "rtbElectricityAndGasBill";
-            this.rtbElectricityAndGasBill.Size = new System.Drawing.Size(250, 25);
+            this.rtbElectricityAndGasBill.Size = new System.Drawing.Size(249, 25);
             this.rtbElectricityAndGasBill.TabIndex = 128;
             this.rtbElectricityAndGasBill.Text = "";
+            this.rtbElectricityAndGasBill.TextChanged += new System.EventHandler(this.rtbElectricityAndGasBill_TextChanged);
             // 
             // rtbLifeInsurancePremiums
             // 
-            this.rtbLifeInsurancePremiums.Location = new System.Drawing.Point(296, 3072);
+            this.rtbLifeInsurancePremiums.Location = new System.Drawing.Point(285, 321);
+            this.rtbLifeInsurancePremiums.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbLifeInsurancePremiums.Name = "rtbLifeInsurancePremiums";
-            this.rtbLifeInsurancePremiums.Size = new System.Drawing.Size(250, 25);
+            this.rtbLifeInsurancePremiums.Size = new System.Drawing.Size(249, 25);
             this.rtbLifeInsurancePremiums.TabIndex = 127;
             this.rtbLifeInsurancePremiums.Text = "";
+            this.rtbLifeInsurancePremiums.TextChanged += new System.EventHandler(this.rtbLifeInsurancePremiums_TextChanged);
             // 
             // rtbHealthInsurancePremiums
             // 
-            this.rtbHealthInsurancePremiums.Location = new System.Drawing.Point(21, 3072);
+            this.rtbHealthInsurancePremiums.Location = new System.Drawing.Point(11, 321);
+            this.rtbHealthInsurancePremiums.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbHealthInsurancePremiums.Name = "rtbHealthInsurancePremiums";
-            this.rtbHealthInsurancePremiums.Size = new System.Drawing.Size(250, 25);
+            this.rtbHealthInsurancePremiums.Size = new System.Drawing.Size(249, 25);
             this.rtbHealthInsurancePremiums.TabIndex = 126;
             this.rtbHealthInsurancePremiums.Text = "";
+            this.rtbHealthInsurancePremiums.TextChanged += new System.EventHandler(this.rtbHealthInsurancePremiums_TextChanged);
             // 
             // rtbPhoneBill
             // 
-            this.rtbPhoneBill.Location = new System.Drawing.Point(573, 3148);
+            this.rtbPhoneBill.Location = new System.Drawing.Point(563, 398);
+            this.rtbPhoneBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbPhoneBill.Name = "rtbPhoneBill";
-            this.rtbPhoneBill.Size = new System.Drawing.Size(250, 25);
+            this.rtbPhoneBill.Size = new System.Drawing.Size(249, 25);
             this.rtbPhoneBill.TabIndex = 131;
             this.rtbPhoneBill.Text = "";
+            this.rtbPhoneBill.TextChanged += new System.EventHandler(this.rtbPhoneBill_TextChanged);
             // 
             // rtbPublicTransportation
             // 
-            this.rtbPublicTransportation.Location = new System.Drawing.Point(296, 3148);
+            this.rtbPublicTransportation.Location = new System.Drawing.Point(285, 398);
+            this.rtbPublicTransportation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbPublicTransportation.Name = "rtbPublicTransportation";
-            this.rtbPublicTransportation.Size = new System.Drawing.Size(250, 25);
+            this.rtbPublicTransportation.Size = new System.Drawing.Size(249, 25);
             this.rtbPublicTransportation.TabIndex = 130;
             this.rtbPublicTransportation.Text = "";
+            this.rtbPublicTransportation.TextChanged += new System.EventHandler(this.rtbPublicTransportation_TextChanged);
             // 
             // rtbGasoline
             // 
-            this.rtbGasoline.Location = new System.Drawing.Point(21, 3148);
+            this.rtbGasoline.Location = new System.Drawing.Point(11, 398);
+            this.rtbGasoline.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbGasoline.Name = "rtbGasoline";
-            this.rtbGasoline.Size = new System.Drawing.Size(250, 25);
+            this.rtbGasoline.Size = new System.Drawing.Size(249, 25);
             this.rtbGasoline.TabIndex = 129;
             this.rtbGasoline.Text = "";
+            this.rtbGasoline.TextChanged += new System.EventHandler(this.rtbGasoline_TextChanged);
             // 
             // rtbCarPayment
             // 
-            this.rtbCarPayment.Location = new System.Drawing.Point(573, 3227);
+            this.rtbCarPayment.Location = new System.Drawing.Point(563, 476);
+            this.rtbCarPayment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbCarPayment.Name = "rtbCarPayment";
-            this.rtbCarPayment.Size = new System.Drawing.Size(250, 25);
+            this.rtbCarPayment.Size = new System.Drawing.Size(249, 25);
             this.rtbCarPayment.TabIndex = 134;
             this.rtbCarPayment.Text = "";
+            this.rtbCarPayment.TextChanged += new System.EventHandler(this.rtbCarPayment_TextChanged);
             // 
             // rtbGroceries
             // 
-            this.rtbGroceries.Location = new System.Drawing.Point(296, 3227);
+            this.rtbGroceries.Location = new System.Drawing.Point(285, 476);
+            this.rtbGroceries.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbGroceries.Name = "rtbGroceries";
-            this.rtbGroceries.Size = new System.Drawing.Size(250, 25);
+            this.rtbGroceries.Size = new System.Drawing.Size(249, 25);
             this.rtbGroceries.TabIndex = 133;
             this.rtbGroceries.Text = "";
+            this.rtbGroceries.TextChanged += new System.EventHandler(this.rtbGroceries_TextChanged);
             // 
             // rtbSanitationGarbageBill
             // 
-            this.rtbSanitationGarbageBill.Location = new System.Drawing.Point(21, 3227);
+            this.rtbSanitationGarbageBill.Location = new System.Drawing.Point(11, 476);
+            this.rtbSanitationGarbageBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbSanitationGarbageBill.Name = "rtbSanitationGarbageBill";
-            this.rtbSanitationGarbageBill.Size = new System.Drawing.Size(250, 25);
+            this.rtbSanitationGarbageBill.Size = new System.Drawing.Size(249, 25);
             this.rtbSanitationGarbageBill.TabIndex = 132;
             this.rtbSanitationGarbageBill.Text = "";
+            this.rtbSanitationGarbageBill.TextChanged += new System.EventHandler(this.rtbSanitationGarbageBill_TextChanged);
             // 
             // rtbOtherNeeds
             // 
-            this.rtbOtherNeeds.Location = new System.Drawing.Point(297, 3306);
+            this.rtbOtherNeeds.Location = new System.Drawing.Point(285, 555);
+            this.rtbOtherNeeds.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbOtherNeeds.Name = "rtbOtherNeeds";
-            this.rtbOtherNeeds.Size = new System.Drawing.Size(250, 25);
+            this.rtbOtherNeeds.Size = new System.Drawing.Size(249, 25);
             this.rtbOtherNeeds.TabIndex = 137;
             this.rtbOtherNeeds.Text = "";
+            this.rtbOtherNeeds.TextChanged += new System.EventHandler(this.rtbOtherNeeds_TextChanged);
             // 
             // rtbInternetBill
             // 
-            this.rtbInternetBill.Location = new System.Drawing.Point(21, 3306);
+            this.rtbInternetBill.Location = new System.Drawing.Point(11, 555);
+            this.rtbInternetBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbInternetBill.Name = "rtbInternetBill";
-            this.rtbInternetBill.Size = new System.Drawing.Size(250, 25);
+            this.rtbInternetBill.Size = new System.Drawing.Size(249, 25);
             this.rtbInternetBill.TabIndex = 135;
             this.rtbInternetBill.Text = "";
+            this.rtbInternetBill.TextChanged += new System.EventHandler(this.rtbInternetBill_TextChanged);
             // 
             // lWants
             // 
@@ -278,7 +311,7 @@
             this.lWants.BackColor = System.Drawing.Color.White;
             this.lWants.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lWants.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lWants.Location = new System.Drawing.Point(21, 3481);
+            this.lWants.Location = new System.Drawing.Point(11, 718);
             this.lWants.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lWants.Name = "lWants";
             this.lWants.Size = new System.Drawing.Size(204, 31);
@@ -291,90 +324,101 @@
             this.lNeeds.BackColor = System.Drawing.Color.White;
             this.lNeeds.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNeeds.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lNeeds.Location = new System.Drawing.Point(20, 2918);
+            this.lNeeds.Location = new System.Drawing.Point(9, 167);
             this.lNeeds.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lNeeds.Name = "lNeeds";
             this.lNeeds.Size = new System.Drawing.Size(206, 31);
             this.lNeeds.TabIndex = 140;
             this.lNeeds.Text = "Needs(monthly)";
+            this.lNeeds.Click += new System.EventHandler(this.lNeeds_Click);
             // 
             // rtbOtherWants
             // 
-            this.rtbOtherWants.Location = new System.Drawing.Point(22, 3798);
+            this.rtbOtherWants.Location = new System.Drawing.Point(11, 1034);
+            this.rtbOtherWants.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbOtherWants.Name = "rtbOtherWants";
-            this.rtbOtherWants.Size = new System.Drawing.Size(250, 25);
+            this.rtbOtherWants.Size = new System.Drawing.Size(249, 25);
             this.rtbOtherWants.TabIndex = 150;
             this.rtbOtherWants.Text = "";
             // 
             // rtbHomeDecorItems
             // 
-            this.rtbHomeDecorItems.Location = new System.Drawing.Point(574, 3719);
+            this.rtbHomeDecorItems.Location = new System.Drawing.Point(563, 955);
+            this.rtbHomeDecorItems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbHomeDecorItems.Name = "rtbHomeDecorItems";
-            this.rtbHomeDecorItems.Size = new System.Drawing.Size(250, 25);
+            this.rtbHomeDecorItems.Size = new System.Drawing.Size(249, 25);
             this.rtbHomeDecorItems.TabIndex = 149;
             this.rtbHomeDecorItems.Text = "";
             // 
             // rtbCableStreamingPackages
             // 
-            this.rtbCableStreamingPackages.Location = new System.Drawing.Point(297, 3719);
+            this.rtbCableStreamingPackages.Location = new System.Drawing.Point(285, 955);
+            this.rtbCableStreamingPackages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbCableStreamingPackages.Name = "rtbCableStreamingPackages";
-            this.rtbCableStreamingPackages.Size = new System.Drawing.Size(250, 25);
+            this.rtbCableStreamingPackages.Size = new System.Drawing.Size(249, 25);
             this.rtbCableStreamingPackages.TabIndex = 148;
             this.rtbCableStreamingPackages.Text = "";
             // 
             // rtbTravelExpenses
             // 
-            this.rtbTravelExpenses.Location = new System.Drawing.Point(22, 3719);
+            this.rtbTravelExpenses.Location = new System.Drawing.Point(11, 955);
+            this.rtbTravelExpenses.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbTravelExpenses.Name = "rtbTravelExpenses";
-            this.rtbTravelExpenses.Size = new System.Drawing.Size(250, 25);
+            this.rtbTravelExpenses.Size = new System.Drawing.Size(249, 25);
             this.rtbTravelExpenses.TabIndex = 147;
             this.rtbTravelExpenses.Text = "";
             // 
             // rtbGymClubMemberships
             // 
-            this.rtbGymClubMemberships.Location = new System.Drawing.Point(574, 3643);
+            this.rtbGymClubMemberships.Location = new System.Drawing.Point(563, 879);
+            this.rtbGymClubMemberships.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbGymClubMemberships.Name = "rtbGymClubMemberships";
-            this.rtbGymClubMemberships.Size = new System.Drawing.Size(250, 25);
+            this.rtbGymClubMemberships.Size = new System.Drawing.Size(249, 25);
             this.rtbGymClubMemberships.TabIndex = 146;
             this.rtbGymClubMemberships.Text = "";
             // 
             // rtbMovieConcertTickets
             // 
-            this.rtbMovieConcertTickets.Location = new System.Drawing.Point(297, 3643);
+            this.rtbMovieConcertTickets.Location = new System.Drawing.Point(285, 879);
+            this.rtbMovieConcertTickets.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbMovieConcertTickets.Name = "rtbMovieConcertTickets";
-            this.rtbMovieConcertTickets.Size = new System.Drawing.Size(250, 25);
+            this.rtbMovieConcertTickets.Size = new System.Drawing.Size(249, 25);
             this.rtbMovieConcertTickets.TabIndex = 145;
             this.rtbMovieConcertTickets.Text = "";
             // 
             // rtbAlcohol
             // 
-            this.rtbAlcohol.Location = new System.Drawing.Point(22, 3643);
+            this.rtbAlcohol.Location = new System.Drawing.Point(11, 879);
+            this.rtbAlcohol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbAlcohol.Name = "rtbAlcohol";
-            this.rtbAlcohol.Size = new System.Drawing.Size(250, 25);
+            this.rtbAlcohol.Size = new System.Drawing.Size(249, 25);
             this.rtbAlcohol.TabIndex = 144;
             this.rtbAlcohol.Text = "";
             // 
             // rtbSpecialMealsAtHome
             // 
-            this.rtbSpecialMealsAtHome.Location = new System.Drawing.Point(573, 3571);
+            this.rtbSpecialMealsAtHome.Location = new System.Drawing.Point(563, 807);
+            this.rtbSpecialMealsAtHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbSpecialMealsAtHome.Name = "rtbSpecialMealsAtHome";
-            this.rtbSpecialMealsAtHome.Size = new System.Drawing.Size(250, 25);
+            this.rtbSpecialMealsAtHome.Size = new System.Drawing.Size(249, 25);
             this.rtbSpecialMealsAtHome.TabIndex = 143;
             this.rtbSpecialMealsAtHome.Text = "";
             // 
             // rtbDiningOut
             // 
-            this.rtbDiningOut.Location = new System.Drawing.Point(297, 3571);
+            this.rtbDiningOut.Location = new System.Drawing.Point(285, 807);
+            this.rtbDiningOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbDiningOut.Name = "rtbDiningOut";
-            this.rtbDiningOut.Size = new System.Drawing.Size(250, 25);
+            this.rtbDiningOut.Size = new System.Drawing.Size(249, 25);
             this.rtbDiningOut.TabIndex = 142;
             this.rtbDiningOut.Text = "";
             // 
             // rtbClothingJewelry
             // 
-            this.rtbClothingJewelry.Location = new System.Drawing.Point(21, 3571);
+            this.rtbClothingJewelry.Location = new System.Drawing.Point(11, 807);
+            this.rtbClothingJewelry.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbClothingJewelry.Name = "rtbClothingJewelry";
-            this.rtbClothingJewelry.Size = new System.Drawing.Size(250, 25);
+            this.rtbClothingJewelry.Size = new System.Drawing.Size(249, 25);
             this.rtbClothingJewelry.TabIndex = 141;
             this.rtbClothingJewelry.Text = "";
             // 
@@ -384,7 +428,7 @@
             this.lSavingsAndDebt.BackColor = System.Drawing.Color.White;
             this.lSavingsAndDebt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lSavingsAndDebt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lSavingsAndDebt.Location = new System.Drawing.Point(15, 3940);
+            this.lSavingsAndDebt.Location = new System.Drawing.Point(-5, 1191);
             this.lSavingsAndDebt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lSavingsAndDebt.Name = "lSavingsAndDebt";
             this.lSavingsAndDebt.Size = new System.Drawing.Size(478, 31);
@@ -393,57 +437,64 @@
             // 
             // rtbOtherDebts
             // 
-            this.rtbOtherDebts.Location = new System.Drawing.Point(22, 4204);
+            this.rtbOtherDebts.Location = new System.Drawing.Point(3, 1455);
+            this.rtbOtherDebts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbOtherDebts.Name = "rtbOtherDebts";
-            this.rtbOtherDebts.Size = new System.Drawing.Size(250, 25);
+            this.rtbOtherDebts.Size = new System.Drawing.Size(249, 25);
             this.rtbOtherDebts.TabIndex = 159;
             this.rtbOtherDebts.Text = "";
             // 
             // rtbStudentLoanPayments
             // 
-            this.rtbStudentLoanPayments.Location = new System.Drawing.Point(574, 4127);
+            this.rtbStudentLoanPayments.Location = new System.Drawing.Point(555, 1378);
+            this.rtbStudentLoanPayments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbStudentLoanPayments.Name = "rtbStudentLoanPayments";
-            this.rtbStudentLoanPayments.Size = new System.Drawing.Size(250, 25);
+            this.rtbStudentLoanPayments.Size = new System.Drawing.Size(249, 25);
             this.rtbStudentLoanPayments.TabIndex = 157;
             this.rtbStudentLoanPayments.Text = "";
             // 
             // rtbCreditCardPayments
             // 
-            this.rtbCreditCardPayments.Location = new System.Drawing.Point(297, 4127);
+            this.rtbCreditCardPayments.Location = new System.Drawing.Point(277, 1378);
+            this.rtbCreditCardPayments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbCreditCardPayments.Name = "rtbCreditCardPayments";
-            this.rtbCreditCardPayments.Size = new System.Drawing.Size(250, 25);
+            this.rtbCreditCardPayments.Size = new System.Drawing.Size(249, 25);
             this.rtbCreditCardPayments.TabIndex = 156;
             this.rtbCreditCardPayments.Text = "";
             // 
             // rtbOtherInvestments
             // 
-            this.rtbOtherInvestments.Location = new System.Drawing.Point(22, 4127);
+            this.rtbOtherInvestments.Location = new System.Drawing.Point(3, 1378);
+            this.rtbOtherInvestments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbOtherInvestments.Name = "rtbOtherInvestments";
-            this.rtbOtherInvestments.Size = new System.Drawing.Size(250, 25);
+            this.rtbOtherInvestments.Size = new System.Drawing.Size(249, 25);
             this.rtbOtherInvestments.TabIndex = 155;
             this.rtbOtherInvestments.Text = "";
             // 
             // rtbIndividualRetirement
             // 
-            this.rtbIndividualRetirement.Location = new System.Drawing.Point(573, 4055);
+            this.rtbIndividualRetirement.Location = new System.Drawing.Point(553, 1306);
+            this.rtbIndividualRetirement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbIndividualRetirement.Name = "rtbIndividualRetirement";
-            this.rtbIndividualRetirement.Size = new System.Drawing.Size(250, 25);
+            this.rtbIndividualRetirement.Size = new System.Drawing.Size(249, 25);
             this.rtbIndividualRetirement.TabIndex = 154;
             this.rtbIndividualRetirement.Text = "";
             // 
             // rtbSavingsContributions
             // 
-            this.rtbSavingsContributions.Location = new System.Drawing.Point(297, 4055);
+            this.rtbSavingsContributions.Location = new System.Drawing.Point(277, 1306);
+            this.rtbSavingsContributions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbSavingsContributions.Name = "rtbSavingsContributions";
-            this.rtbSavingsContributions.Size = new System.Drawing.Size(250, 25);
+            this.rtbSavingsContributions.Size = new System.Drawing.Size(249, 25);
             this.rtbSavingsContributions.TabIndex = 153;
             this.rtbSavingsContributions.Text = "";
             // 
             // rtbEmergencyContributions
             // 
-            this.rtbEmergencyContributions.Location = new System.Drawing.Point(21, 4055);
+            this.rtbEmergencyContributions.Location = new System.Drawing.Point(1, 1306);
+            this.rtbEmergencyContributions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbEmergencyContributions.Name = "rtbEmergencyContributions";
-            this.rtbEmergencyContributions.Size = new System.Drawing.Size(250, 25);
+            this.rtbEmergencyContributions.Size = new System.Drawing.Size(249, 25);
             this.rtbEmergencyContributions.TabIndex = 152;
             this.rtbEmergencyContributions.Text = "";
             // 
@@ -453,7 +504,7 @@
             this.lTotalDebts.BackColor = System.Drawing.Color.White;
             this.lTotalDebts.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lTotalDebts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lTotalDebts.Location = new System.Drawing.Point(21, 4267);
+            this.lTotalDebts.Location = new System.Drawing.Point(1, 1518);
             this.lTotalDebts.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lTotalDebts.Name = "lTotalDebts";
             this.lTotalDebts.Size = new System.Drawing.Size(523, 31);
@@ -466,7 +517,7 @@
             this.lTotalDebtsAmount.BackColor = System.Drawing.Color.White;
             this.lTotalDebtsAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lTotalDebtsAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lTotalDebtsAmount.Location = new System.Drawing.Point(21, 4325);
+            this.lTotalDebtsAmount.Location = new System.Drawing.Point(4, 1575);
             this.lTotalDebtsAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lTotalDebtsAmount.Name = "lTotalDebtsAmount";
             this.lTotalDebtsAmount.Size = new System.Drawing.Size(44, 31);
@@ -479,7 +530,7 @@
             this.lTotalWantsAmount.BackColor = System.Drawing.Color.White;
             this.lTotalWantsAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lTotalWantsAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lTotalWantsAmount.Location = new System.Drawing.Point(24, 3897);
+            this.lTotalWantsAmount.Location = new System.Drawing.Point(4, 1148);
             this.lTotalWantsAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lTotalWantsAmount.Name = "lTotalWantsAmount";
             this.lTotalWantsAmount.Size = new System.Drawing.Size(44, 31);
@@ -492,7 +543,7 @@
             this.lTotalWants.BackColor = System.Drawing.Color.White;
             this.lTotalWants.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lTotalWants.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lTotalWants.Location = new System.Drawing.Point(24, 3839);
+            this.lTotalWants.Location = new System.Drawing.Point(4, 1090);
             this.lTotalWants.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lTotalWants.Name = "lTotalWants";
             this.lTotalWants.Size = new System.Drawing.Size(265, 31);
@@ -505,7 +556,7 @@
             this.lTotalNeedsAmount.BackColor = System.Drawing.Color.White;
             this.lTotalNeedsAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lTotalNeedsAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lTotalNeedsAmount.Location = new System.Drawing.Point(20, 3420);
+            this.lTotalNeedsAmount.Location = new System.Drawing.Point(9, 656);
             this.lTotalNeedsAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lTotalNeedsAmount.Name = "lTotalNeedsAmount";
             this.lTotalNeedsAmount.Size = new System.Drawing.Size(44, 31);
@@ -518,7 +569,7 @@
             this.lTotalNeeds.BackColor = System.Drawing.Color.White;
             this.lTotalNeeds.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lTotalNeeds.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lTotalNeeds.Location = new System.Drawing.Point(20, 3362);
+            this.lTotalNeeds.Location = new System.Drawing.Point(4, 614);
             this.lTotalNeeds.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lTotalNeeds.Name = "lTotalNeeds";
             this.lTotalNeeds.Size = new System.Drawing.Size(523, 31);
@@ -531,7 +582,7 @@
             this.lYourTotals.BackColor = System.Drawing.Color.White;
             this.lYourTotals.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lYourTotals.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lYourTotals.Location = new System.Drawing.Point(21, 4392);
+            this.lYourTotals.Location = new System.Drawing.Point(4, 1643);
             this.lYourTotals.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lYourTotals.Name = "lYourTotals";
             this.lYourTotals.Size = new System.Drawing.Size(152, 31);
@@ -544,7 +595,7 @@
             this.lFinalNeedsAmount.BackColor = System.Drawing.Color.White;
             this.lFinalNeedsAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lFinalNeedsAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lFinalNeedsAmount.Location = new System.Drawing.Point(21, 4501);
+            this.lFinalNeedsAmount.Location = new System.Drawing.Point(4, 1753);
             this.lFinalNeedsAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lFinalNeedsAmount.Name = "lFinalNeedsAmount";
             this.lFinalNeedsAmount.Size = new System.Drawing.Size(44, 31);
@@ -557,7 +608,7 @@
             this.lFinalNeeds.BackColor = System.Drawing.Color.White;
             this.lFinalNeeds.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lFinalNeeds.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lFinalNeeds.Location = new System.Drawing.Point(22, 4462);
+            this.lFinalNeeds.Location = new System.Drawing.Point(5, 1713);
             this.lFinalNeeds.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lFinalNeeds.Name = "lFinalNeeds";
             this.lFinalNeeds.Size = new System.Drawing.Size(75, 25);
@@ -570,7 +621,7 @@
             this.lFinalWantsAmount.BackColor = System.Drawing.Color.White;
             this.lFinalWantsAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lFinalWantsAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lFinalWantsAmount.Location = new System.Drawing.Point(21, 4589);
+            this.lFinalWantsAmount.Location = new System.Drawing.Point(4, 1840);
             this.lFinalWantsAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lFinalWantsAmount.Name = "lFinalWantsAmount";
             this.lFinalWantsAmount.Size = new System.Drawing.Size(44, 31);
@@ -583,7 +634,7 @@
             this.lFinalWants.BackColor = System.Drawing.Color.White;
             this.lFinalWants.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lFinalWants.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lFinalWants.Location = new System.Drawing.Point(22, 4550);
+            this.lFinalWants.Location = new System.Drawing.Point(5, 1801);
             this.lFinalWants.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lFinalWants.Name = "lFinalWants";
             this.lFinalWants.Size = new System.Drawing.Size(75, 25);
@@ -596,7 +647,7 @@
             this.lFinalDebtsAmount.BackColor = System.Drawing.Color.White;
             this.lFinalDebtsAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lFinalDebtsAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lFinalDebtsAmount.Location = new System.Drawing.Point(21, 4680);
+            this.lFinalDebtsAmount.Location = new System.Drawing.Point(4, 1931);
             this.lFinalDebtsAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lFinalDebtsAmount.Name = "lFinalDebtsAmount";
             this.lFinalDebtsAmount.Size = new System.Drawing.Size(44, 31);
@@ -609,24 +660,12 @@
             this.lFinalDebts.BackColor = System.Drawing.Color.White;
             this.lFinalDebts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lFinalDebts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lFinalDebts.Location = new System.Drawing.Point(22, 4641);
+            this.lFinalDebts.Location = new System.Drawing.Point(5, 1892);
             this.lFinalDebts.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lFinalDebts.Name = "lFinalDebts";
             this.lFinalDebts.Size = new System.Drawing.Size(267, 25);
             this.lFinalDebts.TabIndex = 172;
             this.lFinalDebts.Text = "Savings and debt repayment:\r\n";
-            // 
-            // lForBeautyDownBelow
-            // 
-            this.lForBeautyDownBelow.AutoSize = true;
-            this.lForBeautyDownBelow.BackColor = System.Drawing.Color.White;
-            this.lForBeautyDownBelow.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lForBeautyDownBelow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lForBeautyDownBelow.Location = new System.Drawing.Point(451, 4712);
-            this.lForBeautyDownBelow.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lForBeautyDownBelow.Name = "lForBeautyDownBelow";
-            this.lForBeautyDownBelow.Size = new System.Drawing.Size(0, 31);
-            this.lForBeautyDownBelow.TabIndex = 180;
             // 
             // lRentMortgage
             // 
@@ -634,12 +673,13 @@
             this.lRentMortgage.BackColor = System.Drawing.Color.White;
             this.lRentMortgage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lRentMortgage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lRentMortgage.Location = new System.Drawing.Point(21, 2972);
+            this.lRentMortgage.Location = new System.Drawing.Point(11, 222);
             this.lRentMortgage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lRentMortgage.Name = "lRentMortgage";
             this.lRentMortgage.Size = new System.Drawing.Size(140, 25);
             this.lRentMortgage.TabIndex = 181;
             this.lRentMortgage.Text = "Rent/mortgage";
+            this.lRentMortgage.Click += new System.EventHandler(this.lRentMortgage_Click);
             // 
             // lPropertyTaxBill
             // 
@@ -647,12 +687,13 @@
             this.lPropertyTaxBill.BackColor = System.Drawing.Color.White;
             this.lPropertyTaxBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lPropertyTaxBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lPropertyTaxBill.Location = new System.Drawing.Point(301, 2972);
+            this.lPropertyTaxBill.Location = new System.Drawing.Point(291, 222);
             this.lPropertyTaxBill.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lPropertyTaxBill.Name = "lPropertyTaxBill";
             this.lPropertyTaxBill.Size = new System.Drawing.Size(144, 25);
             this.lPropertyTaxBill.TabIndex = 182;
             this.lPropertyTaxBill.Text = "Property tax bill";
+            this.lPropertyTaxBill.Click += new System.EventHandler(this.lPropertyTaxBill_Click);
             // 
             // lAutoInsurancePremiums
             // 
@@ -660,12 +701,13 @@
             this.lAutoInsurancePremiums.BackColor = System.Drawing.Color.White;
             this.lAutoInsurancePremiums.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lAutoInsurancePremiums.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lAutoInsurancePremiums.Location = new System.Drawing.Point(577, 2972);
+            this.lAutoInsurancePremiums.Location = new System.Drawing.Point(565, 222);
             this.lAutoInsurancePremiums.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lAutoInsurancePremiums.Name = "lAutoInsurancePremiums";
             this.lAutoInsurancePremiums.Size = new System.Drawing.Size(233, 25);
             this.lAutoInsurancePremiums.TabIndex = 183;
             this.lAutoInsurancePremiums.Text = "Auto insurance premiums";
+            this.lAutoInsurancePremiums.Click += new System.EventHandler(this.lAutoInsurancePremiums_Click);
             // 
             // lElectricityAndGasBill
             // 
@@ -673,12 +715,13 @@
             this.lElectricityAndGasBill.BackColor = System.Drawing.Color.White;
             this.lElectricityAndGasBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lElectricityAndGasBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lElectricityAndGasBill.Location = new System.Drawing.Point(577, 3044);
+            this.lElectricityAndGasBill.Location = new System.Drawing.Point(565, 293);
             this.lElectricityAndGasBill.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lElectricityAndGasBill.Name = "lElectricityAndGasBill";
             this.lElectricityAndGasBill.Size = new System.Drawing.Size(197, 25);
             this.lElectricityAndGasBill.TabIndex = 186;
             this.lElectricityAndGasBill.Text = "Electricity and gas bill";
+            this.lElectricityAndGasBill.Click += new System.EventHandler(this.lElectricityAndGasBill_Click);
             // 
             // lLifeInsurancePremiums
             // 
@@ -686,12 +729,13 @@
             this.lLifeInsurancePremiums.BackColor = System.Drawing.Color.White;
             this.lLifeInsurancePremiums.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lLifeInsurancePremiums.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lLifeInsurancePremiums.Location = new System.Drawing.Point(301, 3044);
+            this.lLifeInsurancePremiums.Location = new System.Drawing.Point(291, 293);
             this.lLifeInsurancePremiums.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lLifeInsurancePremiums.Name = "lLifeInsurancePremiums";
             this.lLifeInsurancePremiums.Size = new System.Drawing.Size(223, 25);
             this.lLifeInsurancePremiums.TabIndex = 185;
             this.lLifeInsurancePremiums.Text = "Life insurance premiums";
+            this.lLifeInsurancePremiums.Click += new System.EventHandler(this.lLifeInsurancePremiums_Click);
             // 
             // lHealthInsurancePremiums
             // 
@@ -699,12 +743,13 @@
             this.lHealthInsurancePremiums.BackColor = System.Drawing.Color.White;
             this.lHealthInsurancePremiums.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lHealthInsurancePremiums.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lHealthInsurancePremiums.Location = new System.Drawing.Point(21, 3044);
+            this.lHealthInsurancePremiums.Location = new System.Drawing.Point(11, 293);
             this.lHealthInsurancePremiums.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lHealthInsurancePremiums.Name = "lHealthInsurancePremiums";
             this.lHealthInsurancePremiums.Size = new System.Drawing.Size(248, 25);
             this.lHealthInsurancePremiums.TabIndex = 184;
             this.lHealthInsurancePremiums.Text = "Health insurance premiums";
+            this.lHealthInsurancePremiums.Click += new System.EventHandler(this.lHealthInsurancePremiums_Click);
             // 
             // lPhoneBill
             // 
@@ -712,12 +757,13 @@
             this.lPhoneBill.BackColor = System.Drawing.Color.White;
             this.lPhoneBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lPhoneBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lPhoneBill.Location = new System.Drawing.Point(577, 3120);
+            this.lPhoneBill.Location = new System.Drawing.Point(565, 369);
             this.lPhoneBill.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lPhoneBill.Name = "lPhoneBill";
             this.lPhoneBill.Size = new System.Drawing.Size(97, 25);
             this.lPhoneBill.TabIndex = 189;
             this.lPhoneBill.Text = "Phone bill";
+            this.lPhoneBill.Click += new System.EventHandler(this.lPhoneBill_Click);
             // 
             // lPublicTransportation
             // 
@@ -725,12 +771,13 @@
             this.lPublicTransportation.BackColor = System.Drawing.Color.White;
             this.lPublicTransportation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lPublicTransportation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lPublicTransportation.Location = new System.Drawing.Point(301, 3120);
+            this.lPublicTransportation.Location = new System.Drawing.Point(291, 369);
             this.lPublicTransportation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lPublicTransportation.Name = "lPublicTransportation";
             this.lPublicTransportation.Size = new System.Drawing.Size(188, 25);
             this.lPublicTransportation.TabIndex = 188;
             this.lPublicTransportation.Text = "Public transportation";
+            this.lPublicTransportation.Click += new System.EventHandler(this.lPublicTransportation_Click);
             // 
             // lGasoline
             // 
@@ -738,12 +785,13 @@
             this.lGasoline.BackColor = System.Drawing.Color.White;
             this.lGasoline.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lGasoline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lGasoline.Location = new System.Drawing.Point(21, 3120);
+            this.lGasoline.Location = new System.Drawing.Point(11, 369);
             this.lGasoline.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lGasoline.Name = "lGasoline";
             this.lGasoline.Size = new System.Drawing.Size(89, 25);
             this.lGasoline.TabIndex = 187;
             this.lGasoline.Text = "Gasoline";
+            this.lGasoline.Click += new System.EventHandler(this.lGasoline_Click);
             // 
             // lCarPayment
             // 
@@ -751,12 +799,13 @@
             this.lCarPayment.BackColor = System.Drawing.Color.White;
             this.lCarPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lCarPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lCarPayment.Location = new System.Drawing.Point(577, 3199);
+            this.lCarPayment.Location = new System.Drawing.Point(565, 448);
             this.lCarPayment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lCarPayment.Name = "lCarPayment";
             this.lCarPayment.Size = new System.Drawing.Size(124, 25);
             this.lCarPayment.TabIndex = 192;
             this.lCarPayment.Text = "Car payment";
+            this.lCarPayment.Click += new System.EventHandler(this.lCarPayment_Click);
             // 
             // lGroceries
             // 
@@ -764,12 +813,13 @@
             this.lGroceries.BackColor = System.Drawing.Color.White;
             this.lGroceries.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lGroceries.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lGroceries.Location = new System.Drawing.Point(301, 3199);
+            this.lGroceries.Location = new System.Drawing.Point(291, 448);
             this.lGroceries.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lGroceries.Name = "lGroceries";
             this.lGroceries.Size = new System.Drawing.Size(96, 25);
             this.lGroceries.TabIndex = 191;
             this.lGroceries.Text = "Groceries";
+            this.lGroceries.Click += new System.EventHandler(this.lGroceries_Click);
             // 
             // lSanitationGarbageBill
             // 
@@ -777,12 +827,13 @@
             this.lSanitationGarbageBill.BackColor = System.Drawing.Color.White;
             this.lSanitationGarbageBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lSanitationGarbageBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lSanitationGarbageBill.Location = new System.Drawing.Point(21, 3199);
+            this.lSanitationGarbageBill.Location = new System.Drawing.Point(11, 448);
             this.lSanitationGarbageBill.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lSanitationGarbageBill.Name = "lSanitationGarbageBill";
             this.lSanitationGarbageBill.Size = new System.Drawing.Size(205, 25);
             this.lSanitationGarbageBill.TabIndex = 190;
             this.lSanitationGarbageBill.Text = "Sanitation/garbage bill";
+            this.lSanitationGarbageBill.Click += new System.EventHandler(this.lSanitationGarbageBill_Click);
             // 
             // lOtherNeeds
             // 
@@ -790,12 +841,13 @@
             this.lOtherNeeds.BackColor = System.Drawing.Color.White;
             this.lOtherNeeds.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lOtherNeeds.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lOtherNeeds.Location = new System.Drawing.Point(301, 3278);
+            this.lOtherNeeds.Location = new System.Drawing.Point(291, 527);
             this.lOtherNeeds.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lOtherNeeds.Name = "lOtherNeeds";
             this.lOtherNeeds.Size = new System.Drawing.Size(61, 25);
             this.lOtherNeeds.TabIndex = 195;
             this.lOtherNeeds.Text = "Other";
+            this.lOtherNeeds.Click += new System.EventHandler(this.lOtherNeeds_Click);
             // 
             // lInternetBill
             // 
@@ -803,12 +855,13 @@
             this.lInternetBill.BackColor = System.Drawing.Color.White;
             this.lInternetBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lInternetBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lInternetBill.Location = new System.Drawing.Point(21, 3278);
+            this.lInternetBill.Location = new System.Drawing.Point(11, 527);
             this.lInternetBill.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lInternetBill.Name = "lInternetBill";
             this.lInternetBill.Size = new System.Drawing.Size(105, 25);
             this.lInternetBill.TabIndex = 193;
             this.lInternetBill.Text = "Internet bill";
+            this.lInternetBill.Click += new System.EventHandler(this.lInternetBill_Click);
             // 
             // lSpecialMeals
             // 
@@ -816,7 +869,7 @@
             this.lSpecialMeals.BackColor = System.Drawing.Color.White;
             this.lSpecialMeals.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lSpecialMeals.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lSpecialMeals.Location = new System.Drawing.Point(580, 3543);
+            this.lSpecialMeals.Location = new System.Drawing.Point(569, 779);
             this.lSpecialMeals.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lSpecialMeals.Name = "lSpecialMeals";
             this.lSpecialMeals.Size = new System.Drawing.Size(209, 25);
@@ -829,7 +882,7 @@
             this.lDiningOut.BackColor = System.Drawing.Color.White;
             this.lDiningOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lDiningOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lDiningOut.Location = new System.Drawing.Point(304, 3543);
+            this.lDiningOut.Location = new System.Drawing.Point(293, 779);
             this.lDiningOut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lDiningOut.Name = "lDiningOut";
             this.lDiningOut.Size = new System.Drawing.Size(99, 25);
@@ -842,7 +895,7 @@
             this.lClothingJewelry.BackColor = System.Drawing.Color.White;
             this.lClothingJewelry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lClothingJewelry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lClothingJewelry.Location = new System.Drawing.Point(24, 3543);
+            this.lClothingJewelry.Location = new System.Drawing.Point(13, 779);
             this.lClothingJewelry.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lClothingJewelry.Name = "lClothingJewelry";
             this.lClothingJewelry.Size = new System.Drawing.Size(154, 25);
@@ -855,7 +908,7 @@
             this.lGymClubMemberships.BackColor = System.Drawing.Color.White;
             this.lGymClubMemberships.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lGymClubMemberships.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lGymClubMemberships.Location = new System.Drawing.Point(580, 3615);
+            this.lGymClubMemberships.Location = new System.Drawing.Point(569, 850);
             this.lGymClubMemberships.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lGymClubMemberships.Name = "lGymClubMemberships";
             this.lGymClubMemberships.Size = new System.Drawing.Size(217, 25);
@@ -868,7 +921,7 @@
             this.lMovieConcertTickets.BackColor = System.Drawing.Color.White;
             this.lMovieConcertTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lMovieConcertTickets.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lMovieConcertTickets.Location = new System.Drawing.Point(304, 3615);
+            this.lMovieConcertTickets.Location = new System.Drawing.Point(293, 850);
             this.lMovieConcertTickets.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lMovieConcertTickets.Name = "lMovieConcertTickets";
             this.lMovieConcertTickets.Size = new System.Drawing.Size(199, 25);
@@ -881,7 +934,7 @@
             this.lAlcohol.BackColor = System.Drawing.Color.White;
             this.lAlcohol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lAlcohol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lAlcohol.Location = new System.Drawing.Point(24, 3615);
+            this.lAlcohol.Location = new System.Drawing.Point(13, 850);
             this.lAlcohol.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lAlcohol.Name = "lAlcohol";
             this.lAlcohol.Size = new System.Drawing.Size(77, 25);
@@ -894,7 +947,7 @@
             this.lHomeDecorItems.BackColor = System.Drawing.Color.White;
             this.lHomeDecorItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lHomeDecorItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lHomeDecorItems.Location = new System.Drawing.Point(580, 3691);
+            this.lHomeDecorItems.Location = new System.Drawing.Point(569, 927);
             this.lHomeDecorItems.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lHomeDecorItems.Name = "lHomeDecorItems";
             this.lHomeDecorItems.Size = new System.Drawing.Size(169, 25);
@@ -907,7 +960,7 @@
             this.lCableStreamingPackages.BackColor = System.Drawing.Color.White;
             this.lCableStreamingPackages.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lCableStreamingPackages.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lCableStreamingPackages.Location = new System.Drawing.Point(304, 3691);
+            this.lCableStreamingPackages.Location = new System.Drawing.Point(293, 927);
             this.lCableStreamingPackages.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lCableStreamingPackages.Name = "lCableStreamingPackages";
             this.lCableStreamingPackages.Size = new System.Drawing.Size(245, 25);
@@ -920,7 +973,7 @@
             this.lTravelExpenses.BackColor = System.Drawing.Color.White;
             this.lTravelExpenses.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lTravelExpenses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lTravelExpenses.Location = new System.Drawing.Point(24, 3691);
+            this.lTravelExpenses.Location = new System.Drawing.Point(13, 927);
             this.lTravelExpenses.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lTravelExpenses.Name = "lTravelExpenses";
             this.lTravelExpenses.Size = new System.Drawing.Size(157, 25);
@@ -933,7 +986,7 @@
             this.lOtherWants.BackColor = System.Drawing.Color.White;
             this.lOtherWants.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lOtherWants.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lOtherWants.Location = new System.Drawing.Point(25, 3770);
+            this.lOtherWants.Location = new System.Drawing.Point(13, 1006);
             this.lOtherWants.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lOtherWants.Name = "lOtherWants";
             this.lOtherWants.Size = new System.Drawing.Size(61, 25);
@@ -946,7 +999,7 @@
             this.lIndividualRetirement.BackColor = System.Drawing.Color.White;
             this.lIndividualRetirement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lIndividualRetirement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lIndividualRetirement.Location = new System.Drawing.Point(578, 4027);
+            this.lIndividualRetirement.Location = new System.Drawing.Point(557, 1278);
             this.lIndividualRetirement.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lIndividualRetirement.Name = "lIndividualRetirement";
             this.lIndividualRetirement.Size = new System.Drawing.Size(185, 25);
@@ -959,7 +1012,7 @@
             this.lSavingsContributions.BackColor = System.Drawing.Color.White;
             this.lSavingsContributions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lSavingsContributions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lSavingsContributions.Location = new System.Drawing.Point(302, 4027);
+            this.lSavingsContributions.Location = new System.Drawing.Point(283, 1278);
             this.lSavingsContributions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lSavingsContributions.Name = "lSavingsContributions";
             this.lSavingsContributions.Size = new System.Drawing.Size(198, 25);
@@ -972,7 +1025,7 @@
             this.lEmergencyContributions.BackColor = System.Drawing.Color.White;
             this.lEmergencyContributions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lEmergencyContributions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lEmergencyContributions.Location = new System.Drawing.Point(22, 4027);
+            this.lEmergencyContributions.Location = new System.Drawing.Point(3, 1278);
             this.lEmergencyContributions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lEmergencyContributions.Name = "lEmergencyContributions";
             this.lEmergencyContributions.Size = new System.Drawing.Size(226, 25);
@@ -985,7 +1038,7 @@
             this.lStudentLoan.BackColor = System.Drawing.Color.White;
             this.lStudentLoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lStudentLoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lStudentLoan.Location = new System.Drawing.Point(578, 4099);
+            this.lStudentLoan.Location = new System.Drawing.Point(557, 1350);
             this.lStudentLoan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lStudentLoan.Name = "lStudentLoan";
             this.lStudentLoan.Size = new System.Drawing.Size(212, 25);
@@ -998,7 +1051,7 @@
             this.lCreditCardPayments.BackColor = System.Drawing.Color.White;
             this.lCreditCardPayments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lCreditCardPayments.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lCreditCardPayments.Location = new System.Drawing.Point(302, 4099);
+            this.lCreditCardPayments.Location = new System.Drawing.Point(283, 1350);
             this.lCreditCardPayments.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lCreditCardPayments.Name = "lCreditCardPayments";
             this.lCreditCardPayments.Size = new System.Drawing.Size(197, 25);
@@ -1011,7 +1064,7 @@
             this.lOtherInvestments.BackColor = System.Drawing.Color.White;
             this.lOtherInvestments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lOtherInvestments.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lOtherInvestments.Location = new System.Drawing.Point(22, 4099);
+            this.lOtherInvestments.Location = new System.Drawing.Point(3, 1350);
             this.lOtherInvestments.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lOtherInvestments.Name = "lOtherInvestments";
             this.lOtherInvestments.Size = new System.Drawing.Size(170, 25);
@@ -1024,7 +1077,7 @@
             this.lOtherDebts.BackColor = System.Drawing.Color.White;
             this.lOtherDebts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lOtherDebts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
-            this.lOtherDebts.Location = new System.Drawing.Point(25, 4176);
+            this.lOtherDebts.Location = new System.Drawing.Point(5, 1426);
             this.lOtherDebts.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lOtherDebts.Name = "lOtherDebts";
             this.lOtherDebts.Size = new System.Drawing.Size(61, 25);
@@ -1033,7 +1086,8 @@
             // 
             // btnSaveWants
             // 
-            this.btnSaveWants.Location = new System.Drawing.Point(665, 3798);
+            this.btnSaveWants.Location = new System.Drawing.Point(653, 1034);
+            this.btnSaveWants.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSaveWants.Name = "btnSaveWants";
             this.btnSaveWants.Size = new System.Drawing.Size(75, 23);
             this.btnSaveWants.TabIndex = 213;
@@ -1043,7 +1097,8 @@
             // 
             // btnSaveDebts
             // 
-            this.btnSaveDebts.Location = new System.Drawing.Point(665, 4204);
+            this.btnSaveDebts.Location = new System.Drawing.Point(645, 1455);
+            this.btnSaveDebts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSaveDebts.Name = "btnSaveDebts";
             this.btnSaveDebts.Size = new System.Drawing.Size(75, 23);
             this.btnSaveDebts.TabIndex = 214;
@@ -1051,19 +1106,30 @@
             this.btnSaveDebts.UseVisualStyleBackColor = true;
             this.btnSaveDebts.Click += new System.EventHandler(this.btnSaveDebts_Click);
             // 
-            // budgetPieChart1
+            // labelOnTheBottom
             // 
-            this.budgetPieChart1.Location = new System.Drawing.Point(296, 4310);
-            this.budgetPieChart1.Name = "budgetPieChart1";
-            this.budgetPieChart1.Size = new System.Drawing.Size(528, 430);
-            this.budgetPieChart1.TabIndex = 215;
+            this.labelOnTheBottom.AutoSize = true;
+            this.labelOnTheBottom.Location = new System.Drawing.Point(435, 1959);
+            this.labelOnTheBottom.Name = "labelOnTheBottom";
+            this.labelOnTheBottom.Size = new System.Drawing.Size(0, 16);
+            this.labelOnTheBottom.TabIndex = 215;
+            // 
+            // budgetPieChartExpenses
+            // 
+            this.budgetPieChartExpenses.Location = new System.Drawing.Point(313, 1562);
+            this.budgetPieChartExpenses.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.budgetPieChartExpenses.Name = "budgetPieChartExpenses";
+            this.budgetPieChartExpenses.Size = new System.Drawing.Size(480, 395);
+            this.budgetPieChartExpenses.TabIndex = 216;
+            this.budgetPieChartExpenses.Load += new System.EventHandler(this.budgetPieChart1_Load_1);
             // 
             // budgetPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.Controls.Add(this.budgetPieChart1);
+            this.Controls.Add(this.budgetPieChartExpenses);
+            this.Controls.Add(this.labelOnTheBottom);
             this.Controls.Add(this.btnSaveDebts);
             this.Controls.Add(this.btnSaveWants);
             this.Controls.Add(this.lOtherDebts);
@@ -1097,7 +1163,6 @@
             this.Controls.Add(this.lAutoInsurancePremiums);
             this.Controls.Add(this.lPropertyTaxBill);
             this.Controls.Add(this.lRentMortgage);
-            this.Controls.Add(this.lForBeautyDownBelow);
             this.Controls.Add(this.lFinalDebtsAmount);
             this.Controls.Add(this.lFinalDebts);
             this.Controls.Add(this.lFinalWantsAmount);
@@ -1149,8 +1214,9 @@
             this.Controls.Add(this.rtbPropertyTaxBill);
             this.Controls.Add(this.rtbRentMortgage);
             this.Controls.Add(this.rtbIncome);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "budgetPage";
-            this.Size = new System.Drawing.Size(853, 600);
+            this.Size = new System.Drawing.Size(823, 580);
             this.Load += new System.EventHandler(this.budgetPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1210,7 +1276,6 @@
         private System.Windows.Forms.Label lFinalWants;
         private System.Windows.Forms.Label lFinalDebtsAmount;
         private System.Windows.Forms.Label lFinalDebts;
-        private System.Windows.Forms.Label lForBeautyDownBelow;
         private System.Windows.Forms.Label lRentMortgage;
         private System.Windows.Forms.Label lPropertyTaxBill;
         private System.Windows.Forms.Label lAutoInsurancePremiums;
@@ -1244,6 +1309,7 @@
         private System.Windows.Forms.Label lOtherDebts;
         private System.Windows.Forms.Button btnSaveWants;
         private System.Windows.Forms.Button btnSaveDebts;
-        private BudgetPieChart budgetPieChart1;
+        private System.Windows.Forms.Label labelOnTheBottom;
+        private BudgetPieChart budgetPieChartExpenses;
     }
 }
