@@ -170,17 +170,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Statistics\StatisticsChart.cs">
+    <Compile Include="Statistics\StatisticsBarChart.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Statistics\StatisticsChart.Designer.cs">
-      <DependentUpon>StatisticsChart.cs</DependentUpon>
+    <Compile Include="Statistics\StatisticsBarChart.Designer.cs">
+      <DependentUpon>StatisticsBarChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\StatisticsLineChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Statistics\StatisticsLineChart.Designer.cs">
+      <DependentUpon>StatisticsLineChart.cs</DependentUpon>
     </Compile>
     <Compile Include="Statistics\statisticsPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Statistics\statisticsPage.Designer.cs">
       <DependentUpon>statisticsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\StatisticsPieChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Statistics\StatisticsPieChart.Designer.cs">
+      <DependentUpon>StatisticsPieChart.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Budget\budgetPage.resx">
       <DependentUpon>budgetPage.cs</DependentUpon>
@@ -243,11 +255,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Statistics\StatisticsChart.resx">
-      <DependentUpon>StatisticsChart.cs</DependentUpon>
+    <EmbeddedResource Include="Statistics\StatisticsBarChart.resx">
+      <DependentUpon>StatisticsBarChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\StatisticsLineChart.resx">
+      <DependentUpon>StatisticsLineChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Statistics\statisticsPage.resx">
       <DependentUpon>statisticsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\StatisticsPieChart.resx">
+      <DependentUpon>StatisticsPieChart.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

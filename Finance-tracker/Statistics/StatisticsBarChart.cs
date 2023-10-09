@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Finance_tracker.Statistics
 {
-    public partial class StatisticsChart : UserControl
+    public partial class StatisticsBarChart : UserControl
     {
-        public StatisticsChart()
+        public StatisticsBarChart()
         {
             InitializeComponent();
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -66,6 +66,7 @@
             this.cardPage = new Finance_tracker.Controls.cardPage();
             this.reportPage = new Finance_tracker.Controls.reportPage();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.statisticsPage = new Finance_tracker.Statistics.statisticsPage();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).BeginInit();
@@ -115,27 +116,24 @@
             this.panel1.Controls.Add(this.label33);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(281, 634);
+            this.panel1.Size = new System.Drawing.Size(211, 681);
             this.panel1.TabIndex = 0;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
-            this.panel5.Location = new System.Drawing.Point(0, 772);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Location = new System.Drawing.Point(0, 627);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(281, 2);
+            this.panel5.Size = new System.Drawing.Size(211, 2);
             this.panel5.TabIndex = 97;
             // 
             // pbLogo
             // 
             this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
-            this.pbLogo.Location = new System.Drawing.Point(-20, 10);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.pbLogo.Location = new System.Drawing.Point(-15, 8);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(245, 65);
+            this.pbLogo.Size = new System.Drawing.Size(184, 53);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 126;
             this.pbLogo.TabStop = false;
@@ -145,10 +143,9 @@
             this.lLogout.AutoSize = true;
             this.lLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(85)))), ((int)(((byte)(103)))));
-            this.lLogout.Location = new System.Drawing.Point(71, 791);
-            this.lLogout.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lLogout.Location = new System.Drawing.Point(53, 643);
             this.lLogout.Name = "lLogout";
-            this.lLogout.Size = new System.Drawing.Size(72, 25);
+            this.lLogout.Size = new System.Drawing.Size(59, 20);
             this.lLogout.TabIndex = 125;
             this.lLogout.Text = "Logout";
             this.lLogout.Click += new System.EventHandler(this.BLogout_Click);
@@ -156,10 +153,9 @@
             // pbLogout
             // 
             this.pbLogout.Image = ((System.Drawing.Image)(resources.GetObject("pbLogout.Image")));
-            this.pbLogout.Location = new System.Drawing.Point(16, 789);
-            this.pbLogout.Margin = new System.Windows.Forms.Padding(4);
+            this.pbLogout.Location = new System.Drawing.Point(12, 641);
             this.pbLogout.Name = "pbLogout";
-            this.pbLogout.Size = new System.Drawing.Size(33, 31);
+            this.pbLogout.Size = new System.Drawing.Size(25, 25);
             this.pbLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogout.TabIndex = 124;
             this.pbLogout.TabStop = false;
@@ -174,10 +170,9 @@
             this.BLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             this.BLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
-            this.BLogout.Location = new System.Drawing.Point(12, 782);
-            this.BLogout.Margin = new System.Windows.Forms.Padding(4);
+            this.BLogout.Location = new System.Drawing.Point(9, 635);
             this.BLogout.Name = "BLogout";
-            this.BLogout.Size = new System.Drawing.Size(256, 47);
+            this.BLogout.Size = new System.Drawing.Size(192, 38);
             this.BLogout.TabIndex = 123;
             this.BLogout.Text = "button22";
             this.BLogout.UseVisualStyleBackColor = false;
@@ -188,10 +183,9 @@
             this.lSettings.AutoSize = true;
             this.lSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(85)))), ((int)(((byte)(103)))));
-            this.lSettings.Location = new System.Drawing.Point(71, 727);
-            this.lSettings.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lSettings.Location = new System.Drawing.Point(53, 591);
             this.lSettings.Name = "lSettings";
-            this.lSettings.Size = new System.Drawing.Size(83, 25);
+            this.lSettings.Size = new System.Drawing.Size(68, 20);
             this.lSettings.TabIndex = 122;
             this.lSettings.Text = "Settings";
             this.lSettings.Click += new System.EventHandler(this.BSettings_Click);
@@ -199,10 +193,9 @@
             // pbSettings
             // 
             this.pbSettings.Image = ((System.Drawing.Image)(resources.GetObject("pbSettings.Image")));
-            this.pbSettings.Location = new System.Drawing.Point(16, 725);
-            this.pbSettings.Margin = new System.Windows.Forms.Padding(4);
+            this.pbSettings.Location = new System.Drawing.Point(12, 589);
             this.pbSettings.Name = "pbSettings";
-            this.pbSettings.Size = new System.Drawing.Size(33, 31);
+            this.pbSettings.Size = new System.Drawing.Size(25, 25);
             this.pbSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbSettings.TabIndex = 121;
             this.pbSettings.TabStop = false;
@@ -217,10 +210,9 @@
             this.BSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             this.BSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
-            this.BSettings.Location = new System.Drawing.Point(12, 718);
-            this.BSettings.Margin = new System.Windows.Forms.Padding(4);
+            this.BSettings.Location = new System.Drawing.Point(9, 583);
             this.BSettings.Name = "BSettings";
-            this.BSettings.Size = new System.Drawing.Size(256, 47);
+            this.BSettings.Size = new System.Drawing.Size(192, 38);
             this.BSettings.TabIndex = 120;
             this.BSettings.Text = "button23";
             this.BSettings.UseVisualStyleBackColor = false;
@@ -231,10 +223,9 @@
             this.lAccount.AutoSize = true;
             this.lAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(85)))), ((int)(((byte)(103)))));
-            this.lAccount.Location = new System.Drawing.Point(71, 454);
-            this.lAccount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lAccount.Location = new System.Drawing.Point(53, 369);
             this.lAccount.Name = "lAccount";
-            this.lAccount.Size = new System.Drawing.Size(84, 25);
+            this.lAccount.Size = new System.Drawing.Size(68, 20);
             this.lAccount.TabIndex = 119;
             this.lAccount.Text = "Account";
             this.lAccount.Click += new System.EventHandler(this.BAccount_Click);
@@ -242,10 +233,9 @@
             // pbAccount
             // 
             this.pbAccount.Image = ((System.Drawing.Image)(resources.GetObject("pbAccount.Image")));
-            this.pbAccount.Location = new System.Drawing.Point(16, 452);
-            this.pbAccount.Margin = new System.Windows.Forms.Padding(4);
+            this.pbAccount.Location = new System.Drawing.Point(12, 367);
             this.pbAccount.Name = "pbAccount";
-            this.pbAccount.Size = new System.Drawing.Size(33, 31);
+            this.pbAccount.Size = new System.Drawing.Size(25, 25);
             this.pbAccount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbAccount.TabIndex = 118;
             this.pbAccount.TabStop = false;
@@ -260,10 +250,9 @@
             this.BAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             this.BAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
-            this.BAccount.Location = new System.Drawing.Point(12, 444);
-            this.BAccount.Margin = new System.Windows.Forms.Padding(4);
+            this.BAccount.Location = new System.Drawing.Point(9, 361);
             this.BAccount.Name = "BAccount";
-            this.BAccount.Size = new System.Drawing.Size(256, 47);
+            this.BAccount.Size = new System.Drawing.Size(192, 38);
             this.BAccount.TabIndex = 117;
             this.BAccount.Text = "button15";
             this.BAccount.UseVisualStyleBackColor = false;
@@ -272,10 +261,9 @@
             // pbReport
             // 
             this.pbReport.Image = ((System.Drawing.Image)(resources.GetObject("pbReport.Image")));
-            this.pbReport.Location = new System.Drawing.Point(16, 398);
-            this.pbReport.Margin = new System.Windows.Forms.Padding(4);
+            this.pbReport.Location = new System.Drawing.Point(12, 323);
             this.pbReport.Name = "pbReport";
-            this.pbReport.Size = new System.Drawing.Size(33, 31);
+            this.pbReport.Size = new System.Drawing.Size(25, 25);
             this.pbReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbReport.TabIndex = 115;
             this.pbReport.TabStop = false;
@@ -286,10 +274,9 @@
             this.lReport.AutoSize = true;
             this.lReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(85)))), ((int)(((byte)(103)))));
-            this.lReport.Location = new System.Drawing.Point(69, 402);
-            this.lReport.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lReport.Location = new System.Drawing.Point(52, 327);
             this.lReport.Name = "lReport";
-            this.lReport.Size = new System.Drawing.Size(69, 25);
+            this.lReport.Size = new System.Drawing.Size(58, 20);
             this.lReport.TabIndex = 116;
             this.lReport.Text = "Report";
             this.lReport.Click += new System.EventHandler(this.BReport_Click);
@@ -303,10 +290,9 @@
             this.BReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             this.BReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
-            this.BReport.Location = new System.Drawing.Point(12, 390);
-            this.BReport.Margin = new System.Windows.Forms.Padding(4);
+            this.BReport.Location = new System.Drawing.Point(9, 317);
             this.BReport.Name = "BReport";
-            this.BReport.Size = new System.Drawing.Size(256, 47);
+            this.BReport.Size = new System.Drawing.Size(192, 38);
             this.BReport.TabIndex = 112;
             this.BReport.UseVisualStyleBackColor = false;
             this.BReport.Click += new System.EventHandler(this.BReport_Click);
@@ -316,10 +302,9 @@
             this.lStatistics.AutoSize = true;
             this.lStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lStatistics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(85)))), ((int)(((byte)(103)))));
-            this.lStatistics.Location = new System.Drawing.Point(71, 346);
-            this.lStatistics.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lStatistics.Location = new System.Drawing.Point(53, 281);
             this.lStatistics.Name = "lStatistics";
-            this.lStatistics.Size = new System.Drawing.Size(90, 25);
+            this.lStatistics.Size = new System.Drawing.Size(74, 20);
             this.lStatistics.TabIndex = 114;
             this.lStatistics.Text = "Statistics";
             this.lStatistics.Click += new System.EventHandler(this.BStatistics_Click);
@@ -327,10 +312,9 @@
             // pbStatistics
             // 
             this.pbStatistics.Image = ((System.Drawing.Image)(resources.GetObject("pbStatistics.Image")));
-            this.pbStatistics.Location = new System.Drawing.Point(16, 343);
-            this.pbStatistics.Margin = new System.Windows.Forms.Padding(4);
+            this.pbStatistics.Location = new System.Drawing.Point(12, 279);
             this.pbStatistics.Name = "pbStatistics";
-            this.pbStatistics.Size = new System.Drawing.Size(33, 31);
+            this.pbStatistics.Size = new System.Drawing.Size(25, 25);
             this.pbStatistics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbStatistics.TabIndex = 113;
             this.pbStatistics.TabStop = false;
@@ -345,10 +329,9 @@
             this.BStatistics.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             this.BStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BStatistics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
-            this.BStatistics.Location = new System.Drawing.Point(12, 336);
-            this.BStatistics.Margin = new System.Windows.Forms.Padding(4);
+            this.BStatistics.Location = new System.Drawing.Point(9, 273);
             this.BStatistics.Name = "BStatistics";
-            this.BStatistics.Size = new System.Drawing.Size(256, 47);
+            this.BStatistics.Size = new System.Drawing.Size(192, 38);
             this.BStatistics.TabIndex = 111;
             this.BStatistics.Text = "button17";
             this.BStatistics.UseVisualStyleBackColor = false;
@@ -357,10 +340,9 @@
             // pbPayment
             // 
             this.pbPayment.Image = ((System.Drawing.Image)(resources.GetObject("pbPayment.Image")));
-            this.pbPayment.Location = new System.Drawing.Point(16, 289);
-            this.pbPayment.Margin = new System.Windows.Forms.Padding(4);
+            this.pbPayment.Location = new System.Drawing.Point(12, 235);
             this.pbPayment.Name = "pbPayment";
-            this.pbPayment.Size = new System.Drawing.Size(33, 31);
+            this.pbPayment.Size = new System.Drawing.Size(25, 25);
             this.pbPayment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPayment.TabIndex = 109;
             this.pbPayment.TabStop = false;
@@ -371,10 +353,9 @@
             this.lPayment.AutoSize = true;
             this.lPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(85)))), ((int)(((byte)(103)))));
-            this.lPayment.Location = new System.Drawing.Point(69, 294);
-            this.lPayment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lPayment.Location = new System.Drawing.Point(52, 239);
             this.lPayment.Name = "lPayment";
-            this.lPayment.Size = new System.Drawing.Size(89, 25);
+            this.lPayment.Size = new System.Drawing.Size(71, 20);
             this.lPayment.TabIndex = 110;
             this.lPayment.Text = "Payment";
             this.lPayment.Click += new System.EventHandler(this.BPayment_Click);
@@ -388,10 +369,9 @@
             this.BPayment.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             this.BPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
-            this.BPayment.Location = new System.Drawing.Point(12, 282);
-            this.BPayment.Margin = new System.Windows.Forms.Padding(4);
+            this.BPayment.Location = new System.Drawing.Point(9, 229);
             this.BPayment.Name = "BPayment";
-            this.BPayment.Size = new System.Drawing.Size(256, 47);
+            this.BPayment.Size = new System.Drawing.Size(192, 38);
             this.BPayment.TabIndex = 106;
             this.BPayment.UseVisualStyleBackColor = false;
             this.BPayment.Click += new System.EventHandler(this.BPayment_Click);
@@ -401,10 +381,9 @@
             this.lBudget.AutoSize = true;
             this.lBudget.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lBudget.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(85)))), ((int)(((byte)(103)))));
-            this.lBudget.Location = new System.Drawing.Point(71, 238);
-            this.lBudget.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lBudget.Location = new System.Drawing.Point(53, 193);
             this.lBudget.Name = "lBudget";
-            this.lBudget.Size = new System.Drawing.Size(74, 25);
+            this.lBudget.Size = new System.Drawing.Size(61, 20);
             this.lBudget.TabIndex = 108;
             this.lBudget.Text = "Budget";
             this.lBudget.Click += new System.EventHandler(this.BBudget_Click);
@@ -412,10 +391,9 @@
             // pbBudget
             // 
             this.pbBudget.Image = ((System.Drawing.Image)(resources.GetObject("pbBudget.Image")));
-            this.pbBudget.Location = new System.Drawing.Point(16, 235);
-            this.pbBudget.Margin = new System.Windows.Forms.Padding(4);
+            this.pbBudget.Location = new System.Drawing.Point(12, 191);
             this.pbBudget.Name = "pbBudget";
-            this.pbBudget.Size = new System.Drawing.Size(33, 31);
+            this.pbBudget.Size = new System.Drawing.Size(25, 25);
             this.pbBudget.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbBudget.TabIndex = 107;
             this.pbBudget.TabStop = false;
@@ -430,10 +408,9 @@
             this.BBudget.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             this.BBudget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BBudget.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
-            this.BBudget.Location = new System.Drawing.Point(12, 228);
-            this.BBudget.Margin = new System.Windows.Forms.Padding(4);
+            this.BBudget.Location = new System.Drawing.Point(9, 185);
             this.BBudget.Name = "BBudget";
-            this.BBudget.Size = new System.Drawing.Size(256, 47);
+            this.BBudget.Size = new System.Drawing.Size(192, 38);
             this.BBudget.TabIndex = 105;
             this.BBudget.Text = "button19";
             this.BBudget.UseVisualStyleBackColor = false;
@@ -442,10 +419,9 @@
             // pbCard
             // 
             this.pbCard.Image = ((System.Drawing.Image)(resources.GetObject("pbCard.Image")));
-            this.pbCard.Location = new System.Drawing.Point(16, 181);
-            this.pbCard.Margin = new System.Windows.Forms.Padding(4);
+            this.pbCard.Location = new System.Drawing.Point(12, 147);
             this.pbCard.Name = "pbCard";
-            this.pbCard.Size = new System.Drawing.Size(33, 31);
+            this.pbCard.Size = new System.Drawing.Size(25, 25);
             this.pbCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCard.TabIndex = 103;
             this.pbCard.TabStop = false;
@@ -456,10 +432,9 @@
             this.lCard.AutoSize = true;
             this.lCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lCard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(85)))), ((int)(((byte)(103)))));
-            this.lCard.Location = new System.Drawing.Point(69, 186);
-            this.lCard.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lCard.Location = new System.Drawing.Point(52, 151);
             this.lCard.Name = "lCard";
-            this.lCard.Size = new System.Drawing.Size(55, 25);
+            this.lCard.Size = new System.Drawing.Size(43, 20);
             this.lCard.TabIndex = 104;
             this.lCard.Text = "Card";
             this.lCard.Click += new System.EventHandler(this.BCard_Click);
@@ -473,10 +448,9 @@
             this.BCard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             this.BCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BCard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
-            this.BCard.Location = new System.Drawing.Point(12, 174);
-            this.BCard.Margin = new System.Windows.Forms.Padding(4);
+            this.BCard.Location = new System.Drawing.Point(9, 141);
             this.BCard.Name = "BCard";
-            this.BCard.Size = new System.Drawing.Size(256, 47);
+            this.BCard.Size = new System.Drawing.Size(192, 38);
             this.BCard.TabIndex = 99;
             this.BCard.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.BCard.UseVisualStyleBackColor = false;
@@ -487,10 +461,9 @@
             this.lOverview.AutoSize = true;
             this.lOverview.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lOverview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(85)))), ((int)(((byte)(103)))));
-            this.lOverview.Location = new System.Drawing.Point(71, 129);
-            this.lOverview.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lOverview.Location = new System.Drawing.Point(53, 105);
             this.lOverview.Name = "lOverview";
-            this.lOverview.Size = new System.Drawing.Size(94, 25);
+            this.lOverview.Size = new System.Drawing.Size(72, 20);
             this.lOverview.TabIndex = 102;
             this.lOverview.Text = "Overview";
             this.lOverview.Click += new System.EventHandler(this.BOverview_Click);
@@ -498,10 +471,9 @@
             // pbOverview
             // 
             this.pbOverview.Image = ((System.Drawing.Image)(resources.GetObject("pbOverview.Image")));
-            this.pbOverview.Location = new System.Drawing.Point(16, 127);
-            this.pbOverview.Margin = new System.Windows.Forms.Padding(4);
+            this.pbOverview.Location = new System.Drawing.Point(12, 103);
             this.pbOverview.Name = "pbOverview";
-            this.pbOverview.Size = new System.Drawing.Size(33, 31);
+            this.pbOverview.Size = new System.Drawing.Size(25, 25);
             this.pbOverview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbOverview.TabIndex = 101;
             this.pbOverview.TabStop = false;
@@ -517,10 +489,9 @@
             this.BOverview.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             this.BOverview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BOverview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
-            this.BOverview.Location = new System.Drawing.Point(12, 119);
-            this.BOverview.Margin = new System.Windows.Forms.Padding(4);
+            this.BOverview.Location = new System.Drawing.Point(9, 97);
             this.BOverview.Name = "BOverview";
-            this.BOverview.Size = new System.Drawing.Size(256, 47);
+            this.BOverview.Size = new System.Drawing.Size(192, 38);
             this.BOverview.TabIndex = 98;
             this.BOverview.Text = "BOverview";
             this.BOverview.UseVisualStyleBackColor = false;
@@ -531,33 +502,33 @@
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(165)))), ((int)(((byte)(184)))));
-            this.label33.Location = new System.Drawing.Point(11, 86);
-            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label33.Location = new System.Drawing.Point(8, 70);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(131, 27);
+            this.label33.Size = new System.Drawing.Size(101, 22);
             this.label33.TabIndex = 100;
             this.label33.Text = "Main menu";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
+            this.panel2.Controls.Add(this.statisticsPage);
             this.panel2.Controls.Add(this.budgetPage);
             this.panel2.Controls.Add(this.paymentPage);
             this.panel2.Controls.Add(this.cardPage);
             this.panel2.Controls.Add(this.reportPage);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(281, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(211, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(965, 634);
+            this.panel2.Size = new System.Drawing.Size(1053, 681);
             this.panel2.TabIndex = 1;
             // 
             // budgetPage
             // 
             this.budgetPage.AutoScroll = true;
-            this.budgetPage.Location = new System.Drawing.Point(0, 0);
+            this.budgetPage.Location = new System.Drawing.Point(-2, 0);
+            this.budgetPage.Margin = new System.Windows.Forms.Padding(2);
             this.budgetPage.Name = "budgetPage";
-            this.budgetPage.Size = new System.Drawing.Size(965, 634);
+            this.budgetPage.Size = new System.Drawing.Size(1053, 681);
             this.budgetPage.TabIndex = 3;
             this.budgetPage.Load += new System.EventHandler(this.budgetPage_Load);
             // 
@@ -565,10 +536,10 @@
             // 
             this.paymentPage.BackColor = System.Drawing.Color.White;
             this.paymentPage.CardId = null;
-            this.paymentPage.Location = new System.Drawing.Point(-4, 0);
-            this.paymentPage.Margin = new System.Windows.Forms.Padding(5);
+            this.paymentPage.Location = new System.Drawing.Point(0, 0);
+            this.paymentPage.Margin = new System.Windows.Forms.Padding(4);
             this.paymentPage.Name = "paymentPage";
-            this.paymentPage.Size = new System.Drawing.Size(969, 634);
+            this.paymentPage.Size = new System.Drawing.Size(1056, 681);
             this.paymentPage.TabIndex = 2;
             this.paymentPage.Load += new System.EventHandler(this.paymentPage_Load);
             // 
@@ -576,9 +547,9 @@
             // 
             this.cardPage.BackColor = System.Drawing.Color.White;
             this.cardPage.Location = new System.Drawing.Point(0, 0);
-            this.cardPage.Margin = new System.Windows.Forms.Padding(5);
+            this.cardPage.Margin = new System.Windows.Forms.Padding(4);
             this.cardPage.Name = "cardPage";
-            this.cardPage.Size = new System.Drawing.Size(965, 634);
+            this.cardPage.Size = new System.Drawing.Size(1053, 681);
             this.cardPage.TabIndex = 0;
             this.cardPage.UserId = 0;
             this.cardPage.Visible = false;
@@ -586,22 +557,29 @@
             // reportPage
             // 
             this.reportPage.BackColor = System.Drawing.Color.White;
-            this.reportPage.Location = new System.Drawing.Point(-4, 0);
-            this.reportPage.Margin = new System.Windows.Forms.Padding(5);
+            this.reportPage.Location = new System.Drawing.Point(-3, 0);
+            this.reportPage.Margin = new System.Windows.Forms.Padding(4);
             this.reportPage.Name = "reportPage";
-            this.reportPage.Size = new System.Drawing.Size(1404, 838);
+            this.reportPage.Size = new System.Drawing.Size(1053, 681);
             this.reportPage.TabIndex = 1;
             this.reportPage.Visible = false;
             // 
+            // statisticsPage
+            // 
+            this.statisticsPage.Location = new System.Drawing.Point(0, -2);
+            this.statisticsPage.Margin = new System.Windows.Forms.Padding(2);
+            this.statisticsPage.Name = "statisticsPage";
+            this.statisticsPage.Size = new System.Drawing.Size(1053, 681);
+            this.statisticsPage.TabIndex = 4;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1246, 634);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Finance tracker";
@@ -662,6 +640,7 @@
         private Controls.reportPage reportPage;
         private PaymentPage.PaymentPage paymentPage;
         private Budget.budgetPage budgetPage;
+        private Statistics.statisticsPage statisticsPage;
     }
 }
 
