@@ -21,20 +21,19 @@ namespace Finance_tracker.Statistics
         {
 
         }
-
-        private void statisticsPieChart1_Load(object sender, EventArgs e)
+        private void radioButtonNeeds_CheckedChanged(object sender, EventArgs e)
         {
-
+            statisticsPieChart.DisplayPieChart("Needs");
         }
 
-        private void statisticsBarChart1_Load(object sender, EventArgs e)
+        private void radioButtonWants_CheckedChanged(object sender, EventArgs e)
         {
-
+            statisticsPieChart.DisplayPieChart("Wants");
         }
 
-        private void statisticsLineChart1_Load(object sender, EventArgs e)
+        private void radioButtonDebts_CheckedChanged(object sender, EventArgs e)
         {
-
+            statisticsPieChart.DisplayPieChart("Debts");
         }
     }
 }

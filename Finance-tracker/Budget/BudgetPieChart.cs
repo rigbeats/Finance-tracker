@@ -23,5 +23,10 @@ namespace Finance_tracker.Budget
             pieChartExpenses.Series["ExpensesSeries"].Points.AddXY("Savings/debts", "33");
 
         }
+
+        private void pieChartExpenses_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -42,7 +42,7 @@
             legend1.Name = "Legend1";
             this.pieChartExpenses.Legends.Add(legend1);
             this.pieChartExpenses.Location = new System.Drawing.Point(15, 4);
-            this.pieChartExpenses.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pieChartExpenses.Margin = new System.Windows.Forms.Padding(2);
             this.pieChartExpenses.Name = "pieChartExpenses";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
@@ -52,13 +52,14 @@
             this.pieChartExpenses.Size = new System.Drawing.Size(330, 309);
             this.pieChartExpenses.TabIndex = 216;
             this.pieChartExpenses.Text = "chart1";
+            this.pieChartExpenses.Click += new System.EventHandler(this.pieChartExpenses_Click);
             // 
             // BudgetPieChart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pieChartExpenses);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BudgetPieChart";
             this.Size = new System.Drawing.Size(360, 321);
             ((System.ComponentModel.ISupportInitialize)(this.pieChartExpenses)).EndInit();

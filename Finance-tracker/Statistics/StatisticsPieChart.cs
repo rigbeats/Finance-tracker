@@ -9,7 +9,8 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Windows.Forms.DataVisualization.Charting;
+// TODO: do something about the text on the chart it looks awful
 namespace Finance_tracker.Statistics
 {
     public partial class StatisticsPieChart : UserControl
@@ -17,15 +18,16 @@ namespace Finance_tracker.Statistics
         public StatisticsPieChart()
         {
             InitializeComponent();
+            DisplayPieChart("Needs");
         }
-
-        private List<BudgetEntry> GetTop5ExpensiveItems()
+        private List<BudgetEntry> GetTop6ExpensiveItems(string category)
         {
             using (var context = new FinanceTrackerContext())
             {
                 return context.BudgetEntries
+                    .Where(item => item.Category == category)
                     .OrderByDescending(item => item.Amount)
-                    .Take(5)
+                    .Take(6)
                     .ToList();
             }
         }
@@ -36,16 +38,34 @@ namespace Finance_tracker.Statistics
                 .Select(item => (Label: item.Name, Value: item.Amount))
                 .ToList();
         }
-        private void BindDataToPieChart(List<(string Label, int Value)> data)
+        private void BindDataToPieChart(List<(string Label, int Value)> pieChartData, string category)
         {
-            pieChartStatistics.Series["Expenses"].Points.DataBind(data, "Label", "Value", "");
+            pieChartStatistics.Series.Clear();
+            var series = new Series(category);
+            series.ChartType = SeriesChartType.Pie;
+
+            foreach (var dataPoint in pieChartData)
+            {
+                series.Points.AddXY(dataPoint.Label, dataPoint.Value);
+            }
+
+            pieChartStatistics.Series.Add(series);
         }
-        public void DisplayPieChart()
+        public void DisplayPieChart(string category)
         {
-            var top5Items = GetTop5ExpensiveItems();
-            var pieChartData = PrepareDataForPieChart(top5Items);
-            BindDataToPieChart(pieChartData);
+            var top6Items = GetTop6ExpensiveItems(category);
+            var pieChartData = PrepareDataForPieChart(top6Items);
+            BindDataToPieChart(pieChartData, category);
         }
 
+        private void pieChartStatistics_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StatisticsPieChart_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

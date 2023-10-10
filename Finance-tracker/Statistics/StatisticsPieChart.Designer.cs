@@ -41,7 +41,7 @@
             this.pieChartStatistics.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.pieChartStatistics.Legends.Add(legend1);
-            this.pieChartStatistics.Location = new System.Drawing.Point(-19, 3);
+            this.pieChartStatistics.Location = new System.Drawing.Point(0, 3);
             this.pieChartStatistics.Name = "pieChartStatistics";
             series1.BorderColor = System.Drawing.Color.Black;
             series1.BorderWidth = 2;
@@ -56,6 +56,7 @@
             this.pieChartStatistics.Size = new System.Drawing.Size(400, 300);
             this.pieChartStatistics.TabIndex = 0;
             this.pieChartStatistics.Text = "chart1";
+            this.pieChartStatistics.Click += new System.EventHandler(this.pieChartStatistics_Click);
             // 
             // StatisticsPieChart
             // 
@@ -64,6 +65,7 @@
             this.Controls.Add(this.pieChartStatistics);
             this.Name = "StatisticsPieChart";
             this.Size = new System.Drawing.Size(400, 300);
+            this.Load += new System.EventHandler(this.StatisticsPieChart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pieChartStatistics)).EndInit();
             this.ResumeLayout(false);
 
