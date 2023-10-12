@@ -80,6 +80,7 @@ namespace Finance_tracker
             cardPage.Visible = false;
             paymentPage.Visible = false;
             budgetPage.Visible = false;
+            statisticsPage.Visible = false;
         }
 
         private void BCard_Click(object sender, EventArgs e)
@@ -158,6 +159,7 @@ namespace Finance_tracker
                 pbStatistics,
                 lStatistics
                 );
+            statisticsPage.Visible = true;
         }
 
         private void BAccount_Click(object sender, EventArgs e)

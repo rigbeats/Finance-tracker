@@ -35,5 +35,10 @@ namespace Finance_tracker.Statistics
         {
             statisticsPieChart.DisplayPieChart("Debts");
         }
+
+        private void statisticsBarChart1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

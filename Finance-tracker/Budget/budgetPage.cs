@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Objects;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -59,6 +60,10 @@ namespace Finance_tracker.Budget
                 return result;
             }
             return 0;
+        }
+        public string FormatAsDdMmYyyy(DateTime date)
+        {
+            return date.ToString("dd.MM.yyyy");
         }
         #region loading and saving data
         public void LoadData()
@@ -288,11 +293,14 @@ namespace Finance_tracker.Budget
         {
             using (var context = new FinanceTrackerContext())
             {
-                var entry = context.BudgetEntries.SingleOrDefault(e => e.Category == category && e.Name == name);
+                DateTime today = DateTime.Now.Date;
+                DateTime todayDate = DateTime.Now;
+                var entry = context.BudgetEntries.SingleOrDefault(e =>
+                    e.Category == category && e.Name == name && System.Data.Entity.DbFunctions.TruncateTime(e.Date) == today);
                 if (entry == null)
                 {
                     // Insert a new entry if it doesn't exist
-                    entry = new BudgetEntry { Category = category, Name = name, Amount = amount };
+                    entry = new BudgetEntry { Category = category, Name = name, Amount = amount, Date = todayDate };
                     context.BudgetEntries.Add(entry);
                 }
                 else

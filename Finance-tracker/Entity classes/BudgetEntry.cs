@@ -13,7 +13,6 @@ namespace Finance_tracker.Entity_classes
         public string Category { get; set; }
         public string Name { get; set; }
         public int Amount { get; set; }
-        // TODO: add dates to all budget entries(save data, load data)
-        //public DateTime Date {  get; set; } 
+        public DateTime Date {  get; set; } 
     }
 }
