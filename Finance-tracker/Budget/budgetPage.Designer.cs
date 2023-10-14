@@ -124,7 +124,6 @@
             this.rtbIncome.Size = new System.Drawing.Size(188, 21);
             this.rtbIncome.TabIndex = 0;
             this.rtbIncome.Text = "";
-            this.rtbIncome.TextChanged += new System.EventHandler(this.rtbIncome_TextChanged);
             // 
             // rtbRentMortgage
             // 
@@ -134,7 +133,6 @@
             this.rtbRentMortgage.Size = new System.Drawing.Size(188, 21);
             this.rtbRentMortgage.TabIndex = 1;
             this.rtbRentMortgage.Text = "";
-            this.rtbRentMortgage.TextChanged += new System.EventHandler(this.rtbRentMortgage_TextChanged);
             // 
             // rtbPropertyTaxBill
             // 
@@ -144,7 +142,6 @@
             this.rtbPropertyTaxBill.Size = new System.Drawing.Size(188, 21);
             this.rtbPropertyTaxBill.TabIndex = 2;
             this.rtbPropertyTaxBill.Text = "";
-            this.rtbPropertyTaxBill.TextChanged += new System.EventHandler(this.rtbPropertyTaxBill_TextChanged);
             // 
             // btnSaveNeeds
             // 
@@ -168,7 +165,6 @@
             this.lMonthlyIncome.Size = new System.Drawing.Size(163, 25);
             this.lMonthlyIncome.TabIndex = 123;
             this.lMonthlyIncome.Text = "Monthly income";
-            this.lMonthlyIncome.Click += new System.EventHandler(this.lMonthlyIncome_Click);
             // 
             // lExpenses
             // 
@@ -181,7 +177,6 @@
             this.lExpenses.Size = new System.Drawing.Size(107, 25);
             this.lExpenses.TabIndex = 124;
             this.lExpenses.Text = "Expenses";
-            this.lExpenses.Click += new System.EventHandler(this.lExpenses_Click);
             // 
             // rtbAutoInsurancePremiums
             // 
@@ -191,7 +186,6 @@
             this.rtbAutoInsurancePremiums.Size = new System.Drawing.Size(188, 21);
             this.rtbAutoInsurancePremiums.TabIndex = 125;
             this.rtbAutoInsurancePremiums.Text = "";
-            this.rtbAutoInsurancePremiums.TextChanged += new System.EventHandler(this.rtbAutoInsurancePremiums_TextChanged);
             // 
             // rtbElectricityAndGasBill
             // 
@@ -201,7 +195,6 @@
             this.rtbElectricityAndGasBill.Size = new System.Drawing.Size(188, 21);
             this.rtbElectricityAndGasBill.TabIndex = 128;
             this.rtbElectricityAndGasBill.Text = "";
-            this.rtbElectricityAndGasBill.TextChanged += new System.EventHandler(this.rtbElectricityAndGasBill_TextChanged);
             // 
             // rtbLifeInsurancePremiums
             // 
@@ -211,7 +204,6 @@
             this.rtbLifeInsurancePremiums.Size = new System.Drawing.Size(188, 21);
             this.rtbLifeInsurancePremiums.TabIndex = 127;
             this.rtbLifeInsurancePremiums.Text = "";
-            this.rtbLifeInsurancePremiums.TextChanged += new System.EventHandler(this.rtbLifeInsurancePremiums_TextChanged);
             // 
             // rtbHealthInsurancePremiums
             // 
@@ -221,7 +213,6 @@
             this.rtbHealthInsurancePremiums.Size = new System.Drawing.Size(188, 21);
             this.rtbHealthInsurancePremiums.TabIndex = 126;
             this.rtbHealthInsurancePremiums.Text = "";
-            this.rtbHealthInsurancePremiums.TextChanged += new System.EventHandler(this.rtbHealthInsurancePremiums_TextChanged);
             // 
             // rtbPhoneBill
             // 
@@ -231,7 +222,6 @@
             this.rtbPhoneBill.Size = new System.Drawing.Size(188, 21);
             this.rtbPhoneBill.TabIndex = 131;
             this.rtbPhoneBill.Text = "";
-            this.rtbPhoneBill.TextChanged += new System.EventHandler(this.rtbPhoneBill_TextChanged);
             // 
             // rtbPublicTransportation
             // 
@@ -241,7 +231,6 @@
             this.rtbPublicTransportation.Size = new System.Drawing.Size(188, 21);
             this.rtbPublicTransportation.TabIndex = 130;
             this.rtbPublicTransportation.Text = "";
-            this.rtbPublicTransportation.TextChanged += new System.EventHandler(this.rtbPublicTransportation_TextChanged);
             // 
             // rtbGasoline
             // 
@@ -251,7 +240,6 @@
             this.rtbGasoline.Size = new System.Drawing.Size(188, 21);
             this.rtbGasoline.TabIndex = 129;
             this.rtbGasoline.Text = "";
-            this.rtbGasoline.TextChanged += new System.EventHandler(this.rtbGasoline_TextChanged);
             // 
             // rtbCarPayment
             // 
@@ -261,7 +249,6 @@
             this.rtbCarPayment.Size = new System.Drawing.Size(188, 21);
             this.rtbCarPayment.TabIndex = 134;
             this.rtbCarPayment.Text = "";
-            this.rtbCarPayment.TextChanged += new System.EventHandler(this.rtbCarPayment_TextChanged);
             // 
             // rtbGroceries
             // 
@@ -271,7 +258,6 @@
             this.rtbGroceries.Size = new System.Drawing.Size(188, 21);
             this.rtbGroceries.TabIndex = 133;
             this.rtbGroceries.Text = "";
-            this.rtbGroceries.TextChanged += new System.EventHandler(this.rtbGroceries_TextChanged);
             // 
             // rtbSanitationGarbageBill
             // 
@@ -281,7 +267,6 @@
             this.rtbSanitationGarbageBill.Size = new System.Drawing.Size(188, 21);
             this.rtbSanitationGarbageBill.TabIndex = 132;
             this.rtbSanitationGarbageBill.Text = "";
-            this.rtbSanitationGarbageBill.TextChanged += new System.EventHandler(this.rtbSanitationGarbageBill_TextChanged);
             // 
             // rtbOtherNeeds
             // 
@@ -291,7 +276,6 @@
             this.rtbOtherNeeds.Size = new System.Drawing.Size(188, 21);
             this.rtbOtherNeeds.TabIndex = 137;
             this.rtbOtherNeeds.Text = "";
-            this.rtbOtherNeeds.TextChanged += new System.EventHandler(this.rtbOtherNeeds_TextChanged);
             // 
             // rtbInternetBill
             // 
@@ -301,7 +285,6 @@
             this.rtbInternetBill.Size = new System.Drawing.Size(188, 21);
             this.rtbInternetBill.TabIndex = 135;
             this.rtbInternetBill.Text = "";
-            this.rtbInternetBill.TextChanged += new System.EventHandler(this.rtbInternetBill_TextChanged);
             // 
             // lWants
             // 
@@ -326,7 +309,6 @@
             this.lNeeds.Size = new System.Drawing.Size(163, 25);
             this.lNeeds.TabIndex = 140;
             this.lNeeds.Text = "Needs(monthly)";
-            this.lNeeds.Click += new System.EventHandler(this.lNeeds_Click);
             // 
             // rtbOtherWants
             // 
@@ -660,7 +642,6 @@
             this.lRentMortgage.Size = new System.Drawing.Size(116, 20);
             this.lRentMortgage.TabIndex = 181;
             this.lRentMortgage.Text = "Rent/mortgage";
-            this.lRentMortgage.Click += new System.EventHandler(this.lRentMortgage_Click);
             // 
             // lPropertyTaxBill
             // 
@@ -673,7 +654,6 @@
             this.lPropertyTaxBill.Size = new System.Drawing.Size(115, 20);
             this.lPropertyTaxBill.TabIndex = 182;
             this.lPropertyTaxBill.Text = "Property tax bill";
-            this.lPropertyTaxBill.Click += new System.EventHandler(this.lPropertyTaxBill_Click);
             // 
             // lAutoInsurancePremiums
             // 
@@ -686,7 +666,6 @@
             this.lAutoInsurancePremiums.Size = new System.Drawing.Size(189, 20);
             this.lAutoInsurancePremiums.TabIndex = 183;
             this.lAutoInsurancePremiums.Text = "Auto insurance premiums";
-            this.lAutoInsurancePremiums.Click += new System.EventHandler(this.lAutoInsurancePremiums_Click);
             // 
             // lElectricityAndGasBill
             // 
@@ -699,7 +678,6 @@
             this.lElectricityAndGasBill.Size = new System.Drawing.Size(159, 20);
             this.lElectricityAndGasBill.TabIndex = 186;
             this.lElectricityAndGasBill.Text = "Electricity and gas bill";
-            this.lElectricityAndGasBill.Click += new System.EventHandler(this.lElectricityAndGasBill_Click);
             // 
             // lLifeInsurancePremiums
             // 
@@ -712,7 +690,6 @@
             this.lLifeInsurancePremiums.Size = new System.Drawing.Size(181, 20);
             this.lLifeInsurancePremiums.TabIndex = 185;
             this.lLifeInsurancePremiums.Text = "Life insurance premiums";
-            this.lLifeInsurancePremiums.Click += new System.EventHandler(this.lLifeInsurancePremiums_Click);
             // 
             // lHealthInsurancePremiums
             // 
@@ -725,7 +702,6 @@
             this.lHealthInsurancePremiums.Size = new System.Drawing.Size(202, 20);
             this.lHealthInsurancePremiums.TabIndex = 184;
             this.lHealthInsurancePremiums.Text = "Health insurance premiums";
-            this.lHealthInsurancePremiums.Click += new System.EventHandler(this.lHealthInsurancePremiums_Click);
             // 
             // lPhoneBill
             // 
@@ -738,7 +714,6 @@
             this.lPhoneBill.Size = new System.Drawing.Size(77, 20);
             this.lPhoneBill.TabIndex = 189;
             this.lPhoneBill.Text = "Phone bill";
-            this.lPhoneBill.Click += new System.EventHandler(this.lPhoneBill_Click);
             // 
             // lPublicTransportation
             // 
@@ -751,7 +726,6 @@
             this.lPublicTransportation.Size = new System.Drawing.Size(154, 20);
             this.lPublicTransportation.TabIndex = 188;
             this.lPublicTransportation.Text = "Public transportation";
-            this.lPublicTransportation.Click += new System.EventHandler(this.lPublicTransportation_Click);
             // 
             // lGasoline
             // 
@@ -764,7 +738,6 @@
             this.lGasoline.Size = new System.Drawing.Size(72, 20);
             this.lGasoline.TabIndex = 187;
             this.lGasoline.Text = "Gasoline";
-            this.lGasoline.Click += new System.EventHandler(this.lGasoline_Click);
             // 
             // lCarPayment
             // 
@@ -777,7 +750,6 @@
             this.lCarPayment.Size = new System.Drawing.Size(99, 20);
             this.lCarPayment.TabIndex = 192;
             this.lCarPayment.Text = "Car payment";
-            this.lCarPayment.Click += new System.EventHandler(this.lCarPayment_Click);
             // 
             // lGroceries
             // 
@@ -790,7 +762,6 @@
             this.lGroceries.Size = new System.Drawing.Size(78, 20);
             this.lGroceries.TabIndex = 191;
             this.lGroceries.Text = "Groceries";
-            this.lGroceries.Click += new System.EventHandler(this.lGroceries_Click);
             // 
             // lSanitationGarbageBill
             // 
@@ -803,7 +774,6 @@
             this.lSanitationGarbageBill.Size = new System.Drawing.Size(166, 20);
             this.lSanitationGarbageBill.TabIndex = 190;
             this.lSanitationGarbageBill.Text = "Sanitation/garbage bill";
-            this.lSanitationGarbageBill.Click += new System.EventHandler(this.lSanitationGarbageBill_Click);
             // 
             // lOtherNeeds
             // 
@@ -816,7 +786,6 @@
             this.lOtherNeeds.Size = new System.Drawing.Size(49, 20);
             this.lOtherNeeds.TabIndex = 195;
             this.lOtherNeeds.Text = "Other";
-            this.lOtherNeeds.Click += new System.EventHandler(this.lOtherNeeds_Click);
             // 
             // lInternetBill
             // 
@@ -829,7 +798,6 @@
             this.lInternetBill.Size = new System.Drawing.Size(87, 20);
             this.lInternetBill.TabIndex = 193;
             this.lInternetBill.Text = "Internet bill";
-            this.lInternetBill.Click += new System.EventHandler(this.lInternetBill_Click);
             // 
             // lSpecialMeals
             // 
@@ -1073,7 +1041,6 @@
             this.budgetPieChartExpenses.Name = "budgetPieChartExpenses";
             this.budgetPieChartExpenses.Size = new System.Drawing.Size(360, 321);
             this.budgetPieChartExpenses.TabIndex = 216;
-            this.budgetPieChartExpenses.Load += new System.EventHandler(this.budgetPieChart1_Load_1);
             // 
             // budgetPage
             // 
