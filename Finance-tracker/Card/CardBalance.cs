@@ -52,5 +52,10 @@ namespace Finance_tracker.Controls
 
             return true;
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

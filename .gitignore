@@ -356,3 +356,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Finance-tracker/Data/FinanceTracker.mdf
+/Finance-tracker/Data/FinanceTracker_log.ldf

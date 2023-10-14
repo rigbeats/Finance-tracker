@@ -12,9 +12,10 @@ using Finance_tracker.Entity_classes;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using Finance_tracker.Controls;
+using System.Runtime.CompilerServices;
 
 namespace Finance_tracker
-{
+{ 
     public partial class Form1 : Form
     {
         string projectPath = Path.GetFullPath(Path.Combine(Application.StartupPath, "..\\.."));
@@ -78,6 +79,8 @@ namespace Finance_tracker
             reportPage.Visible = false;
             cardPage.Visible = false;
             paymentPage.Visible = false;
+            budgetPage.Visible = false;
+            statisticsPage.Visible = false;
         }
 
         private void BCard_Click(object sender, EventArgs e)
@@ -143,6 +146,8 @@ namespace Finance_tracker
                 pbBudget,
                 lBudget
                 );
+            budgetPage.Visible = true;
+            budgetPage.LoadData();
         }
 
         private void BStatistics_Click(object sender, EventArgs e)
@@ -154,6 +159,7 @@ namespace Finance_tracker
                 pbStatistics,
                 lStatistics
                 );
+            statisticsPage.Visible = true;
         }
 
         private void BAccount_Click(object sender, EventArgs e)
@@ -228,6 +234,16 @@ namespace Finance_tracker
 
 
             }
+        }
+
+        private void paymentPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void budgetPage_Load(object sender, EventArgs e)
+        {
+
         }
 
         ///////////////////////////////////////////
