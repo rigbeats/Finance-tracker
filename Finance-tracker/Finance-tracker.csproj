@@ -176,12 +176,6 @@
     <Compile Include="Statistics\StatisticsBarChart.Designer.cs">
       <DependentUpon>StatisticsBarChart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Statistics\StatisticsLineChart.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Statistics\StatisticsLineChart.Designer.cs">
-      <DependentUpon>StatisticsLineChart.cs</DependentUpon>
-    </Compile>
     <Compile Include="Statistics\statisticsPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -257,9 +251,6 @@
     </Compile>
     <EmbeddedResource Include="Statistics\StatisticsBarChart.resx">
       <DependentUpon>StatisticsBarChart.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Statistics\StatisticsLineChart.resx">
-      <DependentUpon>StatisticsLineChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Statistics\statisticsPage.resx">
       <DependentUpon>statisticsPage.cs</DependentUpon>

@@ -61,12 +61,12 @@
             this.BOverview = new System.Windows.Forms.Button();
             this.label33 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.statisticsPage = new Finance_tracker.Statistics.statisticsPage();
             this.budgetPage = new Finance_tracker.Budget.budgetPage();
             this.paymentPage = new Finance_tracker.PaymentPage.PaymentPage();
             this.cardPage = new Finance_tracker.Controls.cardPage();
             this.reportPage = new Finance_tracker.Controls.reportPage();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.statisticsPage = new Finance_tracker.Statistics.statisticsPage();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).BeginInit();
@@ -522,6 +522,15 @@
             this.panel2.Size = new System.Drawing.Size(1053, 681);
             this.panel2.TabIndex = 1;
             // 
+            // statisticsPage
+            // 
+            this.statisticsPage.AutoScroll = true;
+            this.statisticsPage.Location = new System.Drawing.Point(0, -2);
+            this.statisticsPage.Margin = new System.Windows.Forms.Padding(2);
+            this.statisticsPage.Name = "statisticsPage";
+            this.statisticsPage.Size = new System.Drawing.Size(1053, 681);
+            this.statisticsPage.TabIndex = 4;
+            // 
             // budgetPage
             // 
             this.budgetPage.AutoScroll = true;
@@ -563,14 +572,6 @@
             this.reportPage.Size = new System.Drawing.Size(1053, 681);
             this.reportPage.TabIndex = 1;
             this.reportPage.Visible = false;
-            // 
-            // statisticsPage
-            // 
-            this.statisticsPage.Location = new System.Drawing.Point(0, -2);
-            this.statisticsPage.Margin = new System.Windows.Forms.Padding(2);
-            this.statisticsPage.Name = "statisticsPage";
-            this.statisticsPage.Size = new System.Drawing.Size(1053, 681);
-            this.statisticsPage.TabIndex = 4;
             // 
             // Form1
             // 

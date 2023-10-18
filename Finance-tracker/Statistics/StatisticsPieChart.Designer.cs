@@ -53,7 +53,7 @@
             series1.MarkerBorderColor = System.Drawing.Color.Transparent;
             series1.Name = "Series1";
             this.pieChartStatistics.Series.Add(series1);
-            this.pieChartStatistics.Size = new System.Drawing.Size(400, 300);
+            this.pieChartStatistics.Size = new System.Drawing.Size(450, 300);
             this.pieChartStatistics.TabIndex = 0;
             this.pieChartStatistics.Text = "chart1";
             this.pieChartStatistics.Click += new System.EventHandler(this.pieChartStatistics_Click);
@@ -64,7 +64,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pieChartStatistics);
             this.Name = "StatisticsPieChart";
-            this.Size = new System.Drawing.Size(400, 300);
+            this.Size = new System.Drawing.Size(450, 300);
             this.Load += new System.EventHandler(this.StatisticsPieChart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pieChartStatistics)).EndInit();
             this.ResumeLayout(false);

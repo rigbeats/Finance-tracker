@@ -18,7 +18,6 @@ namespace Finance_tracker.Statistics
         public StatisticsPieChart()
         {
             InitializeComponent();
-            DisplayPieChart("Needs");
         }
         private List<BudgetEntry> GetTop6ExpensiveItems(string category)
         {
@@ -43,6 +42,8 @@ namespace Finance_tracker.Statistics
             pieChartStatistics.Series.Clear();
             var series = new Series(category);
             series.ChartType = SeriesChartType.Pie;
+
+            series["PieLabelStyle"] = "Disabled";
 
             foreach (var dataPoint in pieChartData)
             {
