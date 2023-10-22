@@ -13,6 +13,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using Finance_tracker.Controls;
 using System.Runtime.CompilerServices;
+using Finance_tracker.Account;
 
 namespace Finance_tracker
 { 
@@ -81,6 +82,7 @@ namespace Finance_tracker
             paymentPage.Visible = false;
             budgetPage.Visible = false;
             statisticsPage.Visible = false;
+            accountPage.Visible = false;
         }
 
         private void BCard_Click(object sender, EventArgs e)
@@ -171,6 +173,7 @@ namespace Finance_tracker
                 pbAccount,
                 lAccount
                 );
+            accountPage.Visible = true;
         }
 
         private void BLogout_Click(object sender, EventArgs e)
@@ -242,6 +245,11 @@ namespace Finance_tracker
         }
 
         private void budgetPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void statisticsPage_Load(object sender, EventArgs e)
         {
 
         }

@@ -38,14 +38,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
             this.statisticsPieChart = new Finance_tracker.Statistics.StatisticsPieChart();
-            this.label5 = new System.Windows.Forms.Label();
             this.statisticsBarChart = new Finance_tracker.Statistics.StatisticsBarChart();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // radioButtonNeeds
             // 
             this.radioButtonNeeds.AutoSize = true;
-            this.radioButtonNeeds.Location = new System.Drawing.Point(286, 85);
+            this.radioButtonNeeds.Location = new System.Drawing.Point(315, 153);
             this.radioButtonNeeds.Name = "radioButtonNeeds";
             this.radioButtonNeeds.Size = new System.Drawing.Size(56, 17);
             this.radioButtonNeeds.TabIndex = 4;
@@ -57,7 +58,7 @@
             // radioButtonWants
             // 
             this.radioButtonWants.AutoSize = true;
-            this.radioButtonWants.Location = new System.Drawing.Point(286, 131);
+            this.radioButtonWants.Location = new System.Drawing.Point(315, 199);
             this.radioButtonWants.Name = "radioButtonWants";
             this.radioButtonWants.Size = new System.Drawing.Size(56, 17);
             this.radioButtonWants.TabIndex = 5;
@@ -69,7 +70,7 @@
             // radioButtonDebts
             // 
             this.radioButtonDebts.AutoSize = true;
-            this.radioButtonDebts.Location = new System.Drawing.Point(286, 175);
+            this.radioButtonDebts.Location = new System.Drawing.Point(315, 243);
             this.radioButtonDebts.Name = "radioButtonDebts";
             this.radioButtonDebts.Size = new System.Drawing.Size(94, 17);
             this.radioButtonDebts.TabIndex = 6;
@@ -81,7 +82,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(475, 952);
+            this.label1.Location = new System.Drawing.Point(475, 982);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 9;
@@ -90,7 +91,7 @@
             // 
             this.dateTimePickerFrom.CustomFormat = "MMMM dd, yyyy";
             this.dateTimePickerFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerFrom.Location = new System.Drawing.Point(12, 115);
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(26, 183);
             this.dateTimePickerFrom.MinDate = new System.DateTime(1901, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(200, 20);
@@ -100,10 +101,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(7, 9);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(21, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(469, 25);
+            this.label2.Size = new System.Drawing.Size(410, 24);
             this.label2.TabIndex = 11;
             this.label2.Text = "Please choose the time period and the category";
             // 
@@ -111,7 +112,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(8, 82);
+            this.label3.Location = new System.Drawing.Point(22, 150);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 20);
             this.label3.TabIndex = 12;
@@ -121,7 +122,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(8, 138);
+            this.label4.Location = new System.Drawing.Point(22, 206);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 20);
             this.label4.TabIndex = 13;
@@ -131,7 +132,7 @@
             // 
             this.dateTimePickerTo.CustomFormat = "MMMM dd, yyyy";
             this.dateTimePickerTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerTo.Location = new System.Drawing.Point(12, 161);
+            this.dateTimePickerTo.Location = new System.Drawing.Point(26, 229);
             this.dateTimePickerTo.MinDate = new System.DateTime(1901, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(200, 20);
@@ -140,35 +141,47 @@
             // 
             // statisticsPieChart
             // 
-            this.statisticsPieChart.Location = new System.Drawing.Point(513, 9);
+            this.statisticsPieChart.Location = new System.Drawing.Point(524, 76);
             this.statisticsPieChart.Name = "statisticsPieChart";
             this.statisticsPieChart.Size = new System.Drawing.Size(450, 300);
             this.statisticsPieChart.TabIndex = 16;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(8, 37);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 20);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "From";
-            // 
             // statisticsBarChart
             // 
-            this.statisticsBarChart.Location = new System.Drawing.Point(29, 315);
+            this.statisticsBarChart.Location = new System.Drawing.Point(26, 382);
             this.statisticsBarChart.Name = "statisticsBarChart";
             this.statisticsBarChart.Size = new System.Drawing.Size(951, 600);
             this.statisticsBarChart.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(21, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(99, 25);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Statistics";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(138)))), ((int)(((byte)(155)))));
+            this.label6.Location = new System.Drawing.Point(23, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(397, 18);
+            this.label6.TabIndex = 124;
+            this.label6.Text = "Here you can view the statistics for a certain time interval";
             // 
             // statisticsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.Controls.Add(this.statisticsBarChart);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.statisticsBarChart);
             this.Controls.Add(this.statisticsPieChart);
             this.Controls.Add(this.dateTimePickerTo);
             this.Controls.Add(this.label4);
@@ -181,7 +194,7 @@
             this.Controls.Add(this.radioButtonNeeds);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "statisticsPage";
-            this.Size = new System.Drawing.Size(934, 630);
+            this.Size = new System.Drawing.Size(1053, 681);
             this.Load += new System.EventHandler(this.statisticsPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -199,7 +212,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePickerTo;
         private StatisticsPieChart statisticsPieChart;
-        private System.Windows.Forms.Label label5;
         private StatisticsBarChart statisticsBarChart;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

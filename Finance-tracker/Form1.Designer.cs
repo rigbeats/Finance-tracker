@@ -67,6 +67,7 @@
             this.paymentPage = new Finance_tracker.PaymentPage.PaymentPage();
             this.cardPage = new Finance_tracker.Controls.cardPage();
             this.reportPage = new Finance_tracker.Controls.reportPage();
+            this.accountPage = new Finance_tracker.Account.accountPage();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).BeginInit();
@@ -511,6 +512,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
+            this.panel2.Controls.Add(this.accountPage);
             this.panel2.Controls.Add(this.statisticsPage);
             this.panel2.Controls.Add(this.budgetPage);
             this.panel2.Controls.Add(this.paymentPage);
@@ -530,6 +532,7 @@
             this.statisticsPage.Name = "statisticsPage";
             this.statisticsPage.Size = new System.Drawing.Size(1053, 681);
             this.statisticsPage.TabIndex = 4;
+            this.statisticsPage.Load += new System.EventHandler(this.statisticsPage_Load);
             // 
             // budgetPage
             // 
@@ -572,6 +575,13 @@
             this.reportPage.Size = new System.Drawing.Size(1053, 681);
             this.reportPage.TabIndex = 1;
             this.reportPage.Visible = false;
+            // 
+            // accountPage
+            // 
+            this.accountPage.Location = new System.Drawing.Point(0, 0);
+            this.accountPage.Name = "accountPage";
+            this.accountPage.Size = new System.Drawing.Size(1053, 681);
+            this.accountPage.TabIndex = 5;
             // 
             // Form1
             // 
@@ -642,6 +652,7 @@
         private PaymentPage.PaymentPage paymentPage;
         private Budget.budgetPage budgetPage;
         private Statistics.statisticsPage statisticsPage;
+        private Account.accountPage accountPage;
     }
 }
 
