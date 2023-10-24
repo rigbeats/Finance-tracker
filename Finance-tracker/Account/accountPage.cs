@@ -16,5 +16,20 @@ namespace Finance_tracker.Account
         {
             InitializeComponent();
         }
+
+        private void accountPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

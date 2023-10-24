@@ -18,7 +18,7 @@ namespace Finance_tracker.Entity_classes
 
         public int DefaultCardId { get; set; }
 
-        public virtual UserData userId { get; set; }
+        //public virtual UserData userId { get; set; }
 
         public virtual ICollection<Card> Cards { get; set; }
     }
