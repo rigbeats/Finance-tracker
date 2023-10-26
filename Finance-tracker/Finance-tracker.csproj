@@ -85,6 +85,25 @@
     <Compile Include="Account\accountPage.Designer.cs">
       <DependentUpon>accountPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Account\CountryComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Account\CountryComboBox.Designer.cs">
+      <DependentUpon>CountryComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\CountryInfo.cs" />
+    <Compile Include="Account\PasswordUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Account\PasswordUserControl.Designer.cs">
+      <DependentUpon>PasswordUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\PhoneNumberUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Account\PhoneNumberUserControl.Designer.cs">
+      <DependentUpon>PhoneNumberUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Budget\budgetPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -198,6 +217,15 @@
     <EmbeddedResource Include="Account\accountPage.resx">
       <DependentUpon>accountPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Account\CountryComboBox.resx">
+      <DependentUpon>CountryComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\PasswordUserControl.resx">
+      <DependentUpon>PasswordUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\PhoneNumberUserControl.resx">
+      <DependentUpon>PhoneNumberUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Budget\budgetPage.resx">
       <DependentUpon>budgetPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -290,6 +318,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>FinanceTracker.mdf</DependentUpon>
     </Content>
+    <None Include="Icons\closed_eye_icon.png" />
     <Content Include="Icons\compass_icon.png" />
     <Content Include="Icons\credit_card_icon.png" />
     <Content Include="Icons\dollar_sign_icon.png" />
@@ -298,6 +327,7 @@
     <Content Include="Icons\home_icon.png" />
     <Content Include="Icons\internet_icon.png" />
     <Content Include="Icons\money_icon.png" />
+    <None Include="Icons\open_eye_icon.png" />
     <Content Include="Icons\phone_icon.png" />
     <Content Include="Icons\plus_icon.png" />
     <Content Include="Icons\save_icon.png" />

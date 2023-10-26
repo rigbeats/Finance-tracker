@@ -71,7 +71,6 @@ namespace Finance_tracker.Statistics
             foreach (var entry in data)
             {
                 series.Points.AddXY(entry.Name, entry.Amount);
-                Console.WriteLine(entry.Name, entry.Amount);
             }
 
             chart.Series.Add(series);

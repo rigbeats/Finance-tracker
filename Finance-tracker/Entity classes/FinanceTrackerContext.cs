@@ -9,9 +9,9 @@ namespace Finance_tracker.Entity_classes
 {
     public class FinanceTrackerContext : DbContext
     {
-        /*public FinanceTrackerContext() : base("FinanceTrackerConnection")
+        public FinanceTrackerContext() : base("FinanceTrackerConnection")
         {
-        }*/
+        }
 
         public DbSet<User> Users { get; set; }
         public DbSet<UserData> UserData { get; set; }

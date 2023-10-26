@@ -75,7 +75,7 @@ namespace Finance_tracker.Budget
 
                 foreach (var entry in entries)
                 {
-
+                    
                     //Income
 
                     if (entry.Name == "Income")
