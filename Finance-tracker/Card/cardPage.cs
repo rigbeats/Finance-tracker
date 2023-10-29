@@ -67,5 +67,10 @@ namespace Finance_tracker.Controls
         {
 
         }
+
+        private void selectCard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

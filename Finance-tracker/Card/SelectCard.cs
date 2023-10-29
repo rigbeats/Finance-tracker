@@ -243,5 +243,10 @@ namespace Finance_tracker.Controls
 
             return transactions;
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

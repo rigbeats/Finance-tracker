@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Finance_tracker.Entity_classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,16 +15,19 @@ namespace Finance_tracker.Account
 {
     public partial class accountPage : UserControl
     {
+        public int accountId { get; set; }
         public accountPage()
         {
             InitializeComponent();
+            User currentUser = new User();
         }
 
         private void accountPage_Load(object sender, EventArgs e)
         {
 
         }
-
+        //TODO: связать выбранную страну с меткой номера телефона
+        //TODO: поменять иконки на кнопке пароля
         #region textbox events
         private void textBoxFirstName_Enter(object sender, EventArgs e)
         {
@@ -70,6 +75,17 @@ namespace Finance_tracker.Account
             {
                 textBoxFirstName.Text = "First name";
             }
+            string newFirstName = textBoxFirstName.Text;
+
+            using (var context = new FinanceTrackerContext())
+            {
+                UserData userData = context.UserData.SingleOrDefault();
+                if (userData != null)
+                {
+                    userData.FirstName = newFirstName;
+                    context.SaveChanges();
+                }
+            }
         }
 
         private void textBoxLastName_Leave(object sender, EventArgs e)
@@ -109,5 +125,23 @@ namespace Finance_tracker.Account
 
         }
         #endregion
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+                using (var context = new FinanceTrackerContext())
+                {
+                    var userData = context.UserData.FirstOrDefault(u => u.userId == accountId);
+
+                    if (userData != null)
+                    {
+                        userData.FirstName = textBoxFirstName.Text;
+                        userData.LastName = textBoxLastName.Text;
+                        userData.Country = countryComboBox.SelectedCountry.ToString();
+                        userData.PhoneNumber = phoneNumberUserControl.Text;
+
+                        context.SaveChanges();
+                    }
+                }
+        }
     }
 }

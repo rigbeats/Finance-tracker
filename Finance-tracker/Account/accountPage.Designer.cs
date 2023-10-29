@@ -37,7 +37,9 @@
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.phoneNumberUserControl = new Finance_tracker.Account.PhoneNumberUserControl();
             this.countryComboBox = new Finance_tracker.Account.CountryComboBox();
-            this.passwordUserControl1 = new Finance_tracker.Account.PasswordUserControl();
+            this.passwordUserControl = new Finance_tracker.Account.PasswordUserControl();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -132,19 +134,42 @@
             this.countryComboBox.Size = new System.Drawing.Size(306, 38);
             this.countryComboBox.TabIndex = 134;
             // 
-            // passwordUserControl1
+            // passwordUserControl
             // 
-            this.passwordUserControl1.Location = new System.Drawing.Point(389, 160);
-            this.passwordUserControl1.Name = "passwordUserControl1";
-            this.passwordUserControl1.Password = "";
-            this.passwordUserControl1.Size = new System.Drawing.Size(306, 38);
-            this.passwordUserControl1.TabIndex = 141;
+            this.passwordUserControl.Location = new System.Drawing.Point(389, 160);
+            this.passwordUserControl.Name = "passwordUserControl";
+            this.passwordUserControl.Password = "";
+            this.passwordUserControl.Size = new System.Drawing.Size(306, 38);
+            this.passwordUserControl.TabIndex = 141;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSave.Location = new System.Drawing.Point(113, 406);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(83, 31);
+            this.buttonSave.TabIndex = 142;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCancel.Location = new System.Drawing.Point(480, 406);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(83, 31);
+            this.buttonCancel.TabIndex = 143;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
             // 
             // accountPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.passwordUserControl1);
+            this.Controls.Add(this.buttonCancel);
+            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.passwordUserControl);
             this.Controls.Add(this.textBoxAddress);
             this.Controls.Add(this.textBoxCity);
             this.Controls.Add(this.textBoxEmailAddress);
@@ -173,6 +198,8 @@
         private System.Windows.Forms.TextBox textBoxEmailAddress;
         private System.Windows.Forms.TextBox textBoxCity;
         private System.Windows.Forms.TextBox textBoxAddress;
-        private PasswordUserControl passwordUserControl1;
+        private PasswordUserControl passwordUserControl;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }
