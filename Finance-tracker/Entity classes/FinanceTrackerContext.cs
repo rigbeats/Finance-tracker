@@ -21,5 +21,12 @@ namespace Finance_tracker.Entity_classes
 
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<BudgetEntry> BudgetEntries { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>()
+                .HasOptional(u => u.UserData)
+                .WithRequired(ud => ud.User);
+        }
     }
 }
