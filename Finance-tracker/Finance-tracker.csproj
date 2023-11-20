@@ -234,6 +234,12 @@
     <Compile Include="Statistics\StatisticsPieChart.Designer.cs">
       <DependentUpon>StatisticsPieChart.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProgressBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProgressBar.Designer.cs">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Account\accountPage.resx">
       <DependentUpon>accountPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Payment\TypeOfPayment.resx">
       <DependentUpon>TypeOfPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressBar.resx">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\reportPage.resx">
       <DependentUpon>reportPage.cs</DependentUpon>

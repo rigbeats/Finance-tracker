@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -128,20 +129,25 @@ namespace Finance_tracker.Account
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-                using (var context = new FinanceTrackerContext())
+            using (var context = new FinanceTrackerContext())
+            {
+                var user = context.Users.Include(u => u.UserData).FirstOrDefault(u => u.Id == accountId);
+
+                if (user != null)
                 {
-                    var userData = context.UserData.FirstOrDefault(u => u.userId == accountId);
+                    user.UserData.FirstName = textBoxFirstName.Text;
+                    user.UserData.LastName = textBoxLastName.Text;
+                    user.UserData.Country = countryComboBox.SelectedCountry.ToString();
+                    user.UserData.PhoneNumber = phoneNumberUserControl.Text;
 
-                    if (userData != null)
-                    {
-                        userData.FirstName = textBoxFirstName.Text;
-                        userData.LastName = textBoxLastName.Text;
-                        userData.Country = countryComboBox.SelectedCountry.ToString();
-                        userData.PhoneNumber = phoneNumberUserControl.Text;
+                    // No need to modify the UserDataId (identity column)
+                    context.Entry(user.UserData).State = EntityState.Modified;
 
-                        context.SaveChanges();
-                    }
+                    // Save changes
+                    context.SaveChanges();
                 }
+            }   
         }
+
     }
 }

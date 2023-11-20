@@ -62,12 +62,12 @@
             this.label33 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.accountPage = new Finance_tracker.Account.accountPage();
             this.statisticsPage = new Finance_tracker.Statistics.statisticsPage();
             this.budgetPage = new Finance_tracker.Budget.budgetPage();
             this.paymentPage = new Finance_tracker.PaymentPage.PaymentPage();
             this.cardPage = new Finance_tracker.Controls.cardPage();
             this.reportPage = new Finance_tracker.Controls.reportPage();
-            this.accountPage = new Finance_tracker.Account.accountPage();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).BeginInit();
@@ -524,6 +524,14 @@
             this.panel2.Size = new System.Drawing.Size(1053, 681);
             this.panel2.TabIndex = 1;
             // 
+            // accountPage
+            // 
+            this.accountPage.accountId = 0;
+            this.accountPage.Location = new System.Drawing.Point(0, 0);
+            this.accountPage.Name = "accountPage";
+            this.accountPage.Size = new System.Drawing.Size(1053, 681);
+            this.accountPage.TabIndex = 5;
+            // 
             // statisticsPage
             // 
             this.statisticsPage.AutoScroll = true;
@@ -575,13 +583,6 @@
             this.reportPage.Size = new System.Drawing.Size(1053, 681);
             this.reportPage.TabIndex = 1;
             this.reportPage.Visible = false;
-            // 
-            // accountPage
-            // 
-            this.accountPage.Location = new System.Drawing.Point(0, 0);
-            this.accountPage.Name = "accountPage";
-            this.accountPage.Size = new System.Drawing.Size(1053, 681);
-            this.accountPage.TabIndex = 5;
             // 
             // Form1
             // 
