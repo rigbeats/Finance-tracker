@@ -162,6 +162,18 @@
     </Compile>
     <Compile Include="Entity classes\UserData.cs" />
     <Compile Include="Entity classes\BudgetEntry.cs" />
+    <Compile Include="Overview\ColumnChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Overview\ColumnChart.Designer.cs">
+      <DependentUpon>ColumnChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Overview\overviewPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Overview\overviewPage.Designer.cs">
+      <DependentUpon>overviewPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Payment\Payment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -234,10 +246,10 @@
     <Compile Include="Statistics\StatisticsPieChart.Designer.cs">
       <DependentUpon>StatisticsPieChart.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProgressBar.cs">
+    <Compile Include="Overview\ProgressBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ProgressBar.Designer.cs">
+    <Compile Include="Overview\ProgressBar.Designer.cs">
       <DependentUpon>ProgressBar.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Account\accountPage.resx">
@@ -270,6 +282,12 @@
     <EmbeddedResource Include="Card\cardPage.resx">
       <DependentUpon>cardPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Overview\ColumnChart.resx">
+      <DependentUpon>ColumnChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Overview\overviewPage.resx">
+      <DependentUpon>overviewPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Payment\Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
@@ -291,7 +309,7 @@
     <EmbeddedResource Include="Payment\TypeOfPayment.resx">
       <DependentUpon>TypeOfPayment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProgressBar.resx">
+    <EmbeddedResource Include="Overview\ProgressBar.resx">
       <DependentUpon>ProgressBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\reportPage.resx">

@@ -1,16 +1,8 @@
 ﻿using Finance_tracker.Entity_classes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Finance_tracker.Account
 {
@@ -127,7 +119,7 @@ namespace Finance_tracker.Account
         }
         #endregion
 
-        private void buttonSave_Click(object sender, EventArgs e)
+        private async void buttonSave_Click(object sender, EventArgs e)
         {
             using (var context = new FinanceTrackerContext())
             {
@@ -144,9 +136,9 @@ namespace Finance_tracker.Account
                     context.Entry(user.UserData).State = EntityState.Modified;
 
                     // Save changes
-                    context.SaveChanges();
+                    context.SaveChangesAsync();
                 }
-            }   
+            }
         }
 
     }

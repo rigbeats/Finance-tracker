@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Dynamic;
+﻿using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using Finance_tracker.Entity_classes;
 
 
 namespace Finance_tracker.Controls
@@ -33,14 +26,14 @@ namespace Finance_tracker.Controls
         }
 
         public Color TbHolderBackColor
-        { 
-            set { tbCardHolder.BackColor = value; } 
+        {
+            set { tbCardHolder.BackColor = value; }
             get { return tbCardHolder.BackColor; }
         }
 
         public Color TbValidThruBackColor
         {
-            set { tbValidThru.BackColor = value; } 
+            set { tbValidThru.BackColor = value; }
             get { return tbValidThru.BackColor; }
         }
 

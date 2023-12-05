@@ -1,15 +1,11 @@
-﻿using System;
+﻿using Finance_tracker.Entity_classes;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Finance_tracker.Entity_classes;
-using Org.BouncyCastle.Asn1.X509;
 
 namespace Finance_tracker.Controls
 {

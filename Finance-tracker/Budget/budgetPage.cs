@@ -1,13 +1,7 @@
 ﻿using Finance_tracker.Entity_classes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.Entity.Core.Objects;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Finance_tracker.Budget
@@ -75,7 +69,7 @@ namespace Finance_tracker.Budget
 
                 foreach (var entry in entries)
                 {
-                    
+
                     //Income
 
                     if (entry.Name == "Income")
@@ -257,7 +251,7 @@ namespace Finance_tracker.Budget
             UpdateOrInsertBudgetEntry("Needs", "Car payment", ParseInt(rtbCarPayment.Text));
             UpdateOrInsertBudgetEntry("Needs", "Internet bill", ParseInt(rtbInternetBill.Text));
             UpdateOrInsertBudgetEntry("Needs", "Other needs", ParseInt(rtbOtherNeeds.Text));
-            
+
             //Wants
 
             UpdateOrInsertBudgetEntry("Wants", "Clothing, jewelry", ParseInt(rtbClothingJewelry.Text));

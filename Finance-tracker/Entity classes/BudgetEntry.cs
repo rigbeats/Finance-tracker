@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Finance_tracker.Entity_classes
 {
@@ -13,6 +8,6 @@ namespace Finance_tracker.Entity_classes
         public string Category { get; set; }
         public string Name { get; set; }
         public int Amount { get; set; }
-        public DateTime Date {  get; set; } 
+        public DateTime Date { get; set; }
     }
 }

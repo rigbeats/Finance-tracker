@@ -61,13 +61,14 @@
             this.BOverview = new System.Windows.Forms.Button();
             this.label33 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.accountPage = new Finance_tracker.Account.accountPage();
             this.statisticsPage = new Finance_tracker.Statistics.statisticsPage();
             this.budgetPage = new Finance_tracker.Budget.budgetPage();
             this.paymentPage = new Finance_tracker.PaymentPage.PaymentPage();
             this.cardPage = new Finance_tracker.Controls.cardPage();
             this.reportPage = new Finance_tracker.Controls.reportPage();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.overviewPage1 = new Finance_tracker.Overview.overviewPage();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).BeginInit();
@@ -512,6 +513,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
+            this.panel2.Controls.Add(this.overviewPage1);
             this.panel2.Controls.Add(this.accountPage);
             this.panel2.Controls.Add(this.statisticsPage);
             this.panel2.Controls.Add(this.budgetPage);
@@ -584,6 +586,13 @@
             this.reportPage.TabIndex = 1;
             this.reportPage.Visible = false;
             // 
+            // overviewPage1
+            // 
+            this.overviewPage1.Location = new System.Drawing.Point(0, 0);
+            this.overviewPage1.Name = "overviewPage1";
+            this.overviewPage1.Size = new System.Drawing.Size(1053, 681);
+            this.overviewPage1.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -654,6 +663,7 @@
         private Budget.budgetPage budgetPage;
         private Statistics.statisticsPage statisticsPage;
         private Account.accountPage accountPage;
+        private Overview.overviewPage overviewPage1;
     }
 }
 

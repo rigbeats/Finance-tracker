@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Finance_tracker.Account;
+using Finance_tracker.Controls;
+using Finance_tracker.Entity_classes;
+using System;
 using System.Data;
 using System.Data.Entity;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Finance_tracker.Entity_classes;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using Finance_tracker.Controls;
-using System.Runtime.CompilerServices;
-using Finance_tracker.Account;
 
 namespace Finance_tracker
-{ 
+{
     public partial class Form1 : Form
     {
         string projectPath = Path.GetFullPath(Path.Combine(Application.StartupPath, "..\\.."));
@@ -83,6 +78,7 @@ namespace Finance_tracker
             budgetPage.Visible = false;
             statisticsPage.Visible = false;
             accountPage.Visible = false;
+            //overviewPage.Visible = false;
         }
 
         private void BCard_Click(object sender, EventArgs e)
@@ -137,6 +133,8 @@ namespace Finance_tracker
                 pbOverview,
                 lOverview
                 );
+
+            //overviewPage.Visible = true;
         }
 
         private void BBudget_Click(object sender, EventArgs e)
@@ -253,6 +251,12 @@ namespace Finance_tracker
         {
 
         }
+
+        private void overviewPage1_Load(object sender, EventArgs e)
+        {
+
+        }
+
         ///////////////////////////////////////////
     }
 }

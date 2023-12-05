@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Finance_tracker.Entity_classes;
+using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using Finance_tracker.Entity_classes;
 
 namespace Finance_tracker.PaymentPage
 {
@@ -36,7 +36,7 @@ namespace Finance_tracker.PaymentPage
                     var cardBalance = context.Cards
                         .Where(x => x.Id == CardId)
                         .Select(x => x.Balance)
-                        .FirstOrDefault();    
+                        .FirstOrDefault();
 
                     var amountOfTransaction = Convert.ToDecimal(transaction.Amount);
 
@@ -53,7 +53,7 @@ namespace Finance_tracker.PaymentPage
                         context.SaveChanges();
 
                         MessageBox.Show("The payment was successful");
-                        
+
                         if (sender.GetType() == typeof(Payment.Payment))
                             payment.ClearTitles();
                         else if (sender.GetType() == typeof(Payment.TransferToTheCard))
